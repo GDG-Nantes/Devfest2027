@@ -1,0 +1,72 @@
+name: deploy
+
+on: [push]
+#  push:
+#    tags:
+#      - v*
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+    steps:
+      # Setup
+
+      - uses: actions/checkout@v4
+
+      - name: Get the version
+        id: get_version
+        run: |
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            echo "VERSION=$(echo $GITHUB_REF | cut -d / -f 3)" >> $GITHUB_OUTPUT
+            echo "PROMOTE=true" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION=vdev" >> $GITHUB_OUTPUT
+            echo "PROMOTE=false" >> $GITHUB_OUTPUT
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+
+      - id: "auth"
+        uses: "google-github-actions/auth@v2"
+        with:
+          workload_identity_provider: "projects/757916926387/locations/global/workloadIdentityPools/github/providers/github"
+          service_account: "github-actions@devfest2025-451108.iam.gserviceaccount.com"
+
+      # Build/Deploy
+      # AppEngine sait faire tout ça seul, mais on veut
+      # 1: avoir le résultat du build vite en CI
+      # 2: utiliser seulement le node_modules de nextJs standalone, pour lequel on a pas la liste des dépendances
+
+      - run: npm ci --verbose
+      - run: npm run build
+      - run: cp -a .next/standalone/. .appengine
+
+      - run: mv package-appengine.json package.json
+        working-directory: .appengine
+      - run: tar -czf node_modules.tar.gz node_modules
+        working-directory: .appengine
+
+      - id: "deploy"
+        name: "Deploy to App Engine"
+        uses: "google-github-actions/deploy-appengine@v2"
+        with:
+          working_directory: ".appengine"
+          promote: ${{ steps.get_version.outputs.PROMOTE }}
+          version: ${{ steps.get_version.outputs.VERSION }}
+          project_id: 'devfest2025-451108'
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        if: always()
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_TITLE: Déploiement ${{ job.status }}
+          SLACK_MESSAGE: Version ${{ steps.get_version.outputs.VERSION }} "${{ steps.deploy.outputs.url }}"
+          SLACK_ICON: https://github.com/fluidicon.png
+          SLACK_USERNAME: Github Actions
