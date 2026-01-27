@@ -7,7 +7,7 @@ import { MyComponent } from '@/types';
 import Image from 'next/image';
 import LogoDevfest from '@/images/logo-blanc.png';
 import './jumbo.scss';
-import { Android, Apple } from '@mui/icons-material';
+import { Android, Apple, PhotoSharp, YouTube } from '@mui/icons-material';
 
 export const HomeJumbo: MyComponent = ({ params }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -45,9 +45,9 @@ export const HomeJumbo: MyComponent = ({ params }) => {
             className='jumbo-text'
             sx={{ maxWidth: { xs: '90%', sm: '75%', md: '50%' } }}
           >
-            <Typography variant='h1' textAlign='center'>
+            {/*<Typography variant='h1' textAlign='center'>
               {tSite('site.theme')}
-            </Typography>
+            </Typography>*/}
             {/*<Typography*/}
             {/*  variant="h2"*/}
             {/*  textAlign="center"*/}
@@ -59,7 +59,7 @@ export const HomeJumbo: MyComponent = ({ params }) => {
               textAlign='center'
               style={{ marginTop: '10px', marginBottom: '25px' }}
             >
-              {t('date')}
+              {t('come-back')}
             </Typography>
           </Stack>
           <Stack className={'jumbo-buttons'} direction='column' spacing={3}>
@@ -82,7 +82,7 @@ export const HomeJumbo: MyComponent = ({ params }) => {
             {/*  {t("cfp")}*/}
             {/*</Button>*/}
             {/*</Stack>*/}
-            <Stack direction='row' spacing={3} justifyContent={'center'}>
+            {/*<Stack direction='row' spacing={3} justifyContent={'center'}>*/}
               {/* <Button
                 color='secondary'
                 variant='contained'
@@ -109,37 +109,37 @@ export const HomeJumbo: MyComponent = ({ params }) => {
               >
                 {t('become-volunteer')}
               </Button> */}
-              <Button
+              {/*<Button
               color="secondary"
               variant="contained"
               aria-label={t('schedule')}
               href="/schedule"
               >
                 {t('schedule')}
-              </Button> 
-            </Stack>
+              </Button> */}
+            {/*</Stack>*/}
             <Stack direction='row' spacing={3} justifyContent={'center'}>
-              {/*<Button*/}
-              {/*  color="secondary"*/}
-              {/*  startIcon={<PhotoSharp />}*/}
-              {/*  variant="contained"*/}
-              {/*  href="https://photos.app.goo.gl/iQPsdQ8KKeXH8JrT8"*/}
-              {/*  aria-label="Photos"*/}
-              {/*  target="_blank"*/}
-              {/*>*/}
-              {/*  Photos*/}
-              {/*</Button> */}
-              {/*<Button*/}
-              {/*  color="secondary"*/}
-              {/*  startIcon={<YouTube />}*/}
-              {/*  variant="contained"*/}
-              {/*  href="https://www.youtube.com/watch?v=xuKrkOh_mzk&list=PLuZ_sYdawLiWenx-X315dfZNOaliVnSTY"*/}
-              {/*  aria-label="Videos"*/}
-              {/*  target={"_blank"}*/}
-              {/*>*/}
-              {/*  Videos*/}
-              {/*</Button>*/}
               <Button
+                color="secondary"
+                startIcon={<PhotoSharp />}
+                variant="contained"
+                href="https://photos.app.goo.gl/H1EqkeCNkjjYMxCCA"
+                aria-label="Photos"
+                target="_blank"
+              >
+                Photos 2025
+              </Button> 
+              <Button
+                color="secondary"
+                startIcon={<YouTube />}
+                variant="contained"
+                href="https://www.youtube.com/watch?v=ZhEMS_6m8PI&list=PLuZ_sYdawLiWvkdETEVYDFjV2ibwJ2E-9&index=4"
+                aria-label="Videos"
+                target={"_blank"}
+              >
+                Videos 2025
+              </Button>
+              {/*<Button
                 color='secondary'
                 variant='contained'
                 href='https://billetterie.gdgnantes.com'
@@ -147,15 +147,15 @@ export const HomeJumbo: MyComponent = ({ params }) => {
                 target={'_blank'}
               >
                 {t('resend-tickets')}
-              </Button>
-              <Button
+              </Button>*/}
+              {/*<Button
                 color="secondary"
                 variant="contained"
                 onClick={() => setModalOpen(true)}
                 aria-label={t('get-app')}
                 >
                 {t('get-app')}
-              </Button>
+              </Button>*/}
               {/*</Stack>*/}
               {/*  <Stack direction="row" spacing={3} justifyContent={"center"}>*/}
               {/*      <Button*/}
