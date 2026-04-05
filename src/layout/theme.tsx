@@ -1,7 +1,7 @@
 'use client';
 import './globals.scss';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Cinzel, Roboto } from 'next/font/google';
+import { Bebas_Neue, Roboto } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 const roboto = Roboto({
@@ -11,15 +11,15 @@ const roboto = Roboto({
   variable: '--font-roboto',
 });
 
-const cinzel = Cinzel({
-  weight: ['500', '700'],
+const bebasNeue = Bebas_Neue({
+  weight: ['400'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-cinzel',
+  variable: '--font-heading',
 });
 
-const primary = '#3b5a49';
-const secondary = '#b14c36';
+const primary = '#0d1b2a';
+const secondary = '#e63946';
 const theme = createTheme({
   cssVariables: true,
   typography: {
@@ -46,18 +46,22 @@ const theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          fontSize: '2rem',
-          lineHeight: '1.2',
+          fontSize: '2.5rem',
+          lineHeight: '1.1',
           margin: '3rem 0',
           fontWeight: 'normal',
-          fontFamily: 'var(--font-cinzel)',
+          fontFamily: 'var(--font-heading)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em',
         },
         h2: {
-          fontSize: '1.7rem',
-          lineHeight: '1.2',
+          fontSize: '2rem',
+          lineHeight: '1.1',
           margin: '3rem 0',
           fontWeight: 'normal',
-          fontFamily: 'var(--font-cinzel)',
+          fontFamily: 'var(--font-heading)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em',
         },
         h3: {
           fontSize: '1.17rem',
@@ -74,8 +78,8 @@ const theme = createTheme({
   },
 });
 
-export const bodyClass = ''; //roboto.variable + ' ' + cinzel.variable;
-export const htmlClass = roboto.variable + ' ' + cinzel.variable;
+export const bodyClass = '';
+export const htmlClass = roboto.variable + ' ' + bebasNeue.variable;
 
 export const MuiProvider: React.FC<React.PropsWithChildren> = ({
   children,

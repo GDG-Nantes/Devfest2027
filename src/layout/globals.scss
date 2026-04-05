@@ -7,12 +7,9 @@ body {
   --primary: var(--mui-palette-primary-main);
   --secondary: var(--mui-palette-secondary-main);
   --primary-dark: var(--mui-palette-primary-dark);
-  --tertiary: #fcefb2;
-  --tertiary-dark: #f9e075;
+  --tertiary: #f4d35e;
+  --tertiary-dark: #e8c547;
   --md-breakpoint: 900px;
-  //--primary: #408330;
-  //--secondary: #FFB74D;
-  //--primary-dark: rgb(44, 91, 33);
 
   font-family: var(--font-roboto);
   margin: 0;
@@ -61,19 +58,12 @@ main > div:not(.jumbo) {
       &:before,
       &:after {
         content: '';
-        background-image: url('/images/feuilles-gauche.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
         display: inline-block;
         vertical-align: middle;
-
-        width: 60px;
-        height: 20px;
-      }
-
-      &:after {
-        background-image: url('/images/feuilles-droite.svg');
+        width: 40px;
+        height: 3px;
+        margin: 0 12px;
+        background: var(--secondary);
       }
     }
   }
@@ -99,7 +89,3 @@ footer {
   height: 1px;
   overflow: hidden;
 }
-
-//.MuiButton-contained.MuiButton-colorSecondary {
-//  color: white;
-//}

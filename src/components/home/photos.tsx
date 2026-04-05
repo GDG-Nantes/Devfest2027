@@ -124,8 +124,8 @@ const ButtonTile: React.FC<{
     <Stack style={{ gridColumn }} alignItems='center' justifyContent='center'>
       <p>{label}</p>
       <p style={{ marginTop: 0 }}>{subLabel}</p>
-      <MyLink href='https://photos.app.goo.gl/iQPsdQ8KKeXH8JrT8'>
-        <Button variant='contained' color='primary' aria-label='Photos 2024'>
+      <MyLink href='https://photos.app.goo.gl/H1EqkeCNkjjYMxCCA'>
+        <Button variant='contained' color='primary' aria-label='Photos 2025'>
           {buttonLabel}
         </Button>
       </MyLink>

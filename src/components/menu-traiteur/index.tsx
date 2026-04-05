@@ -47,7 +47,7 @@ export const MenuTraiteur: React.FC<MenuTraiteurProps> = ({ locale }) => {
   React.useEffect(() => {
     if (
       refVendredi.current &&
-      new Date().toLocaleDateString('fr') === '17/10/2027'
+      new Date().toLocaleDateString('fr') === '12/03/2027'
     ) {
       refVendredi.current.scrollIntoView();
     }
@@ -55,7 +55,7 @@ export const MenuTraiteur: React.FC<MenuTraiteurProps> = ({ locale }) => {
   return (
     <>
       {Object.entries(MenuFR).map(([jour, sectionsJour], i) => {
-        const jourEn = jour === 'Jeudi' ? 'Thursday' : 'Friday';
+        const jourEn = jour === 'Mercredi' ? 'Wednesday' : 'Thursday';
         return (
           <PrimarySection padding='none' key={jour}>
             {i !== 0 && <Divider />}

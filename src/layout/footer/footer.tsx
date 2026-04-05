@@ -42,7 +42,7 @@ export const Footer: MyComponent = async ({ params }) => {
       type: 'youtube',
     },
     {
-      login: 'GDG-Nantes/Devfest2024',
+      login: 'GDG-Nantes/Devfest2027',
       type: 'github',
     },
     {
@@ -86,6 +86,10 @@ export const Footer: MyComponent = async ({ params }) => {
   ];
 
   const previousEditions: FooterLink[] = [
+    {
+      url: `https://devfest2025.gdgnantes.com`,
+      label: 'Devfest Nantes 2025',
+    },
     {
       url: `https://devfest2024.gdgnantes.com`,
       label: 'Devfest Nantes 2024',

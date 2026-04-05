@@ -6,7 +6,7 @@ export const PlanCite = () => {
   return (
     <Image
       src={PlanCiteImage}
-      alt='Plan Cité des Congrès'
+      alt='Plan H Arena'
       objectFit='contain'
       style={{ maxHeight: '600px', width: 'auto' }}
     />

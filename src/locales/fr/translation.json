@@ -1,7 +1,7 @@
 {
   "site": {
     "description": "Le DevFest, ou 'Developers Festival', est une conférence technique destinée aux développeuses et développeurs. Elle s'adresse aussi bien aux étudiantes et étudiants, aux professionnels ou tout simplement aux curieuses et curieux technophiles.",
-    "theme": "Cette année plongez dans le monde enchanté des contes et légendes !"
+    "theme": "Cette année, place au sport ! Enfilez vos crampons et préparez-vous pour une édition sportive !"
   },
   "pages": {
     "home": {
@@ -9,7 +9,7 @@
       "what-is": "Le DevFest Nantes",
       "jumbo": {
         "come-back": "Nous serons de retour pour une édition sportive",
-        "date": "les 4 et 5 Mars 2027",
+        "date": "les 11 et 12 Mars 2027",
         "cfp": "Devenir speaker",
         "previous": "Édition 2025",
         "become_sponsor": "Devenir sponsor",
@@ -46,18 +46,18 @@
         "seeAll": "Voir tous les speakers"
       },
       "photos": {
-        "p1": "Quelques photos du DevFest Nantes 2024",
-        "p2": "Avec un thème effrayant 😱",
+        "p1": "Quelques photos du DevFest Nantes 2025",
+        "p2": "Avec un thème enchanteur !",
         "button": "Voir toutes les photos"
       },
       "animations": {
         "citd": {
           "title": "Code in the dark",
-          "description": "Entrez dans Code in the Dark, où coder à l'aveugle pendant 30 minutes devient un cauchemar. Une erreur, et tout peut basculer. Qui triomphera du chaos numérique ? Venez le découvrir… si vous l'osez !"
+          "description": "Entrez dans Code in the Dark, où coder à l'aveugle pendant 30 minutes devient un véritable challenge. Une erreur, et tout peut basculer. Qui triomphera du chaos numérique ? Venez le découvrir !"
         },
         "secret": {
-          "title": "Animations fouloscopie",
-          "description": "Vous suivez Fouloscopie et vous avez toujours voulu participer à une de ces \"expériences\" ? Ça tombe bien il est là pour ça ! Retrouvez donc Medhi jeudi uniquement à 10h et à 14h dans la zone d'animation (emplacement 13 sur le plan). Pour participer, il suffit d'être à l'heure à l'espace dédié. Attention, le nombre de place est limité, seuls 50 participant·es seront accepté par session.",
+          "title": "Animations sportives",
+          "description": "Retrouvez nos animations sportives tout au long de l'événement ! Détails à venir...",
           "coming-soon": "Bientôt disponible"
         },
         "sessions": "Sessions",
@@ -68,7 +68,7 @@
       "name": "Attending",
       "map": {
         "title": "Le Lieu",
-        "description": "Située en plein cœur de ville, La Cité des Congrès de Nantes propose pour le DevFest Nantes plus de 3000m² de salles de conférences, codelabs et lieu de rencontre…"
+        "description": "Située à Nantes, La H Arena propose pour le DevFest Nantes plus de 3000m² de salles de conférences, codelabs et lieu de rencontre…"
       }
     },
     "partners": {
@@ -120,10 +120,10 @@
     },
     "schedule": {
       "name": "Programme",
-      "day1-number": "Jeudi 4",
-      "day2-number": "Vendredi 5",
-      "day1": "Jeudi",
-      "day2": "Vendredi",
+      "day1-number": "Mercredi 11",
+      "day2-number": "Jeudi 12",
+      "day1": "Mercredi",
+      "day2": "Jeudi",
       "opening": "Ouverture",
       "keynote": "Keynote",
       "break": "Pause",

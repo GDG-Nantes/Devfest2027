@@ -4,8 +4,8 @@ export const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Event',
   name: 'Devfest Nantes 2027',
-  startDate: '2027-03-04T09:00:00',
-  endDate: '2027-03-05T19:00:00',
+  startDate: '2027-03-11T09:00:00',
+  endDate: '2027-03-12T19:00:00',
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   eventStatus: 'https://schema.org/EventScheduled',
   location: {
@@ -13,9 +13,9 @@ export const jsonLd = {
     name: 'H Arena Nantes',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'H Arena',
+      streetAddress: '44 Boulevard de la Prairie au Duc',
       addressLocality: 'Nantes',
-      postalCode: '44000',
+      postalCode: '44200',
       addressRegion: 'Loire Atlantique',
       addressCountry: 'France',
     },

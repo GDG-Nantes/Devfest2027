@@ -48,8 +48,8 @@ export default async function SessionPage({
   const t = await getTranslation(params, 'pages.sessions');
   const slotLabel = getSessionSlotLabel(session.slot, { params });
   const dateSession = session.slot.startsWith('day-1')
-    ? '2027-03-04'
-    : '2027-03-05';
+    ? '2027-03-11'
+    : '2027-03-12';
   const urlOpenfeedback = `https://openfeedback.io/devfestnantes2027/${dateSession}/${session.openfeedbackId}?hideHeader=true&forceColorScheme=dark`;
 
   return (

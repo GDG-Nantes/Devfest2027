@@ -31,9 +31,9 @@
 .ticket {
   width: 300px;
   padding: 1.5rem;
-  border-top: 2px dashed #d9b08c;
-  border-bottom: 2px dashed #d9b08c;
-  background: #fffaf4;
+  border-top: 2px dashed var(--secondary);
+  border-bottom: 2px dashed var(--secondary);
+  background: #1b2838;
   text-align: center;
   transition: 0.3s ease;
   overflow: hidden;
@@ -66,7 +66,7 @@
 
   &:hover::before {
     z-index: -1;
-    background: linear-gradient(120deg, #fffaf4 30%, #efdecf 50%, #fffaf4 70%);
+    background: linear-gradient(120deg, #1b2838 30%, #2a3f55 50%, #1b2838 70%);
     background-size: 300% 300%;
     background-position: 130% 0;
     animation: shine-border 1s linear normal;
@@ -81,16 +81,18 @@
   }
 
   .ticket-header {
-    font-family: var(--font-cinzel);
+    font-family: var(--font-heading);
     font-size: 1.6rem;
-    color: #b35f8d;
+    color: var(--tertiary);
     margin-bottom: 1rem;
     transition: text-shadow 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .ticket-price {
     font-size: 1.5rem;
-    color: #aa5a5a;
+    color: var(--secondary);
     font-weight: bold;
     margin-bottom: 0.5rem;
 
@@ -103,7 +105,7 @@
   .ticket-info {
     p {
       font-size: 0.9rem;
-      color: var(--mui-palette-primary-dark);
+      color: #ccc;
       margin: 0.2rem 0;
     }
   }
@@ -117,7 +119,3 @@
     background-position: 0 0;
   }
 }
-
-
-
-

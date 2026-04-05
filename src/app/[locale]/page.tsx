@@ -18,8 +18,6 @@ import React from 'react';
 import './home.scss';
 import { PartnersList } from '@/components/partners/partners';
 import { PlanCite } from '@/components/home/plan';
-import { Animations } from '@/components/home/animations';
-
 export default async function Home({ params }: CommonParams) {
   const t = await getTranslation(params);
   return (
@@ -39,14 +37,13 @@ export default async function Home({ params }: CommonParams) {
         </Section>
 
         <OurValuesLink params={params} />
-        <Youtube id='t_1-8ajyO6c' title='Teaser 2025' />
+        <Youtube id='t_1-8ajyO6c' title='Teaser 2027' />
       </PrimarySection>
       <PrimarySection fullWidth style={{ background: 'var(--tertiary)' }}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <PlanCite />
         </div>
       </PrimarySection>
-      <Animations params={params} />
       <HomeMap params={params} />
       <PrimarySection fullWidth>
         <Typography variant='h2'>{t('pages.home.tickets.name')}</Typography>

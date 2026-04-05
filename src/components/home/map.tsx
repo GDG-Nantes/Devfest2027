@@ -44,11 +44,11 @@ const Description: MyComponent = async ({ params }) => {
       <Typography variant='h2' style={{ marginTop: 0 }}>
         {t('title')}
       </Typography>
-      <Typography variant='h3'>Cité des Congrès, Nantes, France</Typography>
+      <Typography variant='h3'>H Arena, Nantes, France</Typography>
       <p>{t('description')}</p>
-      <MyLink href='https://www.google.com/maps/dir/?api=1&destination=47.2129658,-1.5425652'>
+      <MyLink href='https://www.google.com/maps/dir/?api=1&destination=47.2058,-1.5243'>
         <Button variant='contained' color='secondary' endIcon={<Directions />}>
-          5 rue de Valmy, 44000 Nantes
+          44 Bd de la Prairie au Duc, 44200 Nantes
         </Button>
       </MyLink>
     </>

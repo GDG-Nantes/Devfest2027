@@ -1,7 +1,7 @@
 {
   "site": {
     "description": "The Devfest (i.e Developers Festival), is a technical conference destined to developers. It's meant for students, professionals, or any curious techie",
-    "theme": "This year step into the magical world of legends and tales!"
+    "theme": "This year, it's game on! Lace up and get ready for a sporty edition!"
   },
   "pages": {
     "home": {
@@ -9,7 +9,7 @@
       "what-is": "What is DevFest Nantes?",
       "jumbo": {
         "come-back": "Devfest Nantes will be back for a sporty edition",
-        "date": "on March 4th and 5th, 2027",
+        "date": "on March 11th and 12th, 2027",
         "cfp": "Become speaker",
         "become_sponsor": "Become sponsor",
         "previous": "2025 Edition",
@@ -30,7 +30,7 @@
         "sessions": "Sessions",
         "tracks": "Tracks",
         "speakers": "Speakers",
-        "our-values": "Read about our values"
+        "our-values": "Read about our values"
       },
       "tickets": {
         "name": "Tickets",
@@ -46,18 +46,18 @@
         "seeAll": "See all speakers"
       },
       "photos": {
-        "p1": "Some pictures of the 2024 DevFest Nantes",
-        "p2": "with a frightening theme \uD83D\uDE31",
+        "p1": "Some pictures of the 2025 DevFest Nantes",
+        "p2": "with an enchanting theme!",
         "button": "See all photos"
       },
       "animations": {
         "citd": {
           "title": "Code in the Dark",
-          "description": "Enter Code in the Dark, where coding blindly for 30 minutes becomes a nightmare. One mistake, and everything can go wrong. Who will triumph over the digital chaos? Come and find out… if you dare!"
+          "description": "Enter Code in the Dark, where coding blindly for 30 minutes becomes a nightmare. One mistake, and everything can go wrong. Who will triumph over the digital chaos? Come and find out... if you dare!"
         },
         "secret": {
           "title": "Secret Animation",
-          "description": "Come and discover the frightening secrets of our animation!",
+          "description": "Come and discover the secrets of our animation!",
           "coming-soon": "Coming soon"
         },
         "sessions": "Sessions",
@@ -68,7 +68,7 @@
       "name": "Attending",
       "map": {
         "title": "The Venue",
-        "description": "Located in the center of Nantes, the event takes place in the “Cité des Congrès” with more than 3000m² of conference rooms, hand’s on and networking space…"
+        "description": "Located in Nantes, the event takes place at the H Arena with more than 3000m\u00b2 of conference rooms, hands-on labs and networking space."
       }
     },
     "partners": {
@@ -120,10 +120,10 @@
     },
     "schedule": {
       "name": "Schedule",
-      "day1-number": "Thursday 16th",
-      "day2-number": "Friday 17th",
-      "day1": "Thursday",
-      "day2": "Friday",
+      "day1-number": "Wednesday 11th",
+      "day2-number": "Thursday 12th",
+      "day1": "Wednesday",
+      "day2": "Thursday",
       "opening": "Opening",
       "keynote": "Keynote",
       "break": "Break",
@@ -155,7 +155,7 @@
     "media-kit": "Media Kit",
     "previous-editions": "Previous editions",
     "partners": "For Partners",
-    "organizers": "Organized with ❤️ by GDG Nantes",
+    "organizers": "Organized with \u2764\ufe0f by GDG Nantes",
     "no-spam": "No spam, only the latest news and updates!",
     "news-button": "Discover"
   }
