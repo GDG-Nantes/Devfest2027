@@ -208,7 +208,7 @@ function findSlot(start: string, talkType: string) {
   const sessionDate = new Date(start);
   const sessionTime = start.substring(11, 16); // HH:mm
 
-  const day = sessionDate.getUTCDate() === 16 ? 1 : 2;
+  const day = sessionDate.getUTCDate() === 4 ? 1 : 2;
 
   const slot = slots.find((s) => {
     if (!s.key.startsWith(`day-${day}`)) {

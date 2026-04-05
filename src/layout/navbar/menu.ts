@@ -35,10 +35,10 @@ export const MENU: Array<MenuItem> = [
   },
   {
     label: 'Tickets',
-    link: 'https://www.billetweb.fr/billet-devfest-nantes-2025',
+    link: 'https://www.billetweb.fr/billet-devfest-nantes-2027',
   },
   // {
   //   label: "📣 CFP",
-  //   link: "https://conference-hall.io/devfest-nantes-2025",
+  //   link: "https://conference-hall.io/devfest-nantes-2027",
   // },
 ];

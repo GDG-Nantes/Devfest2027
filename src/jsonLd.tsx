@@ -1,19 +1,19 @@
-const URLSite = 'https://devfest2025.gdgnantes.com';
+const URLSite = 'https://devfest2027.gdgnantes.com';
 
 export const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Event',
-  name: 'Devfest Nantes 2025',
-  startDate: '2025-10-16T09:00:00',
-  endDate: '2025-10-17T19:00:00',
+  name: 'Devfest Nantes 2027',
+  startDate: '2027-03-04T09:00:00',
+  endDate: '2027-03-05T19:00:00',
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   eventStatus: 'https://schema.org/EventScheduled',
   location: {
     '@type': 'Place',
-    name: 'Cité des Congrès de Nantes',
+    name: 'H Arena Nantes',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '5 Rue de Valmy',
+      streetAddress: 'H Arena',
       addressLocality: 'Nantes',
       postalCode: '44000',
       addressRegion: 'Loire Atlantique',

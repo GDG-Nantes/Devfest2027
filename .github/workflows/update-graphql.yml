@@ -2,11 +2,11 @@ name: update
 
 on:
   push:
-    branches: 
+    branches:
       - main
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -v -X POST --data "" http://confetti-app.dev/update/devfestnantes2025
+      - run: curl -v -X POST --data "" http://confetti-app.dev/update/devfestnantes2027

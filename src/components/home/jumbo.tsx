@@ -21,7 +21,7 @@ export const HomeJumbo: MyComponent = ({ params }) => {
       setT(() => translation);
       setTSite(() => siteTranslation);
     };
-    
+
     loadTranslations();
   }, [params]);
 
@@ -59,34 +59,35 @@ export const HomeJumbo: MyComponent = ({ params }) => {
               textAlign='center'
               style={{ marginTop: '10px', marginBottom: '25px' }}
             >
-              {t('come-back')}
+              <p>{t('come-back')}</p>
+              <p>{t('date')}</p>
             </Typography>
           </Stack>
           <Stack className={'jumbo-buttons'} direction='column' spacing={3}>
-            {/*<Stack direction='row' spacing={3} justifyContent={'center'}>*/}
-            {/*<Button*/}
-            {/*  color='secondary'*/}
-            {/*  variant='contained'*/}
-            {/*  href='https://www.billetweb.fr/partenaire-devfest-nantes-2025'*/}
-            {/*  target='_blank'*/}
-            {/*  aria-label={t('become_sponsor')}*/}
-            {/*>*/}
-            {/*  {t('become_sponsor')}*/}
-            {/*</Button>*/}
+            <Stack direction='row' spacing={3} justifyContent={'center'}>
+            <Button
+              color='secondary'
+              variant='contained'
+              href='https://www.billetweb.fr/partenaire-devfest-nantes-2027'
+              target='_blank'
+              aria-label={t('become_sponsor')}
+            >
+              {t('become_sponsor')}
+            </Button>
             {/*<Button*/}
             {/*  color="secondary"*/}
             {/*  variant="contained"*/}
-            {/*  href="https://conference-hall.io/devfest-nantes-2025"*/}
+            {/*  href="https://conference-hall.io/devfest-nantes-2027"*/}
             {/*  aria-label={t("cfp")}*/}
             {/*>*/}
             {/*  {t("cfp")}*/}
             {/*</Button>*/}
-            {/*</Stack>*/}
+            </Stack>
             {/*<Stack direction='row' spacing={3} justifyContent={'center'}>*/}
               {/* <Button
                 color='secondary'
                 variant='contained'
-                href='https://devfest2024.gdgnantes.com'
+                href='https://devfest2025.gdgnantes.com'
                 aria-label={t('previous')}
               >
                 {t('previous')}
@@ -94,7 +95,7 @@ export const HomeJumbo: MyComponent = ({ params }) => {
               <Button
                 color='secondary'
                 variant='contained'
-                href='https://www.billetweb.fr/billet-devfest-nantes-2025'
+                href='https://www.billetweb.fr/billet-devfest-nantes-2027'
                 aria-label={t('buy-tickets')}
                 target='_blank'
               >
@@ -128,7 +129,7 @@ export const HomeJumbo: MyComponent = ({ params }) => {
                 target="_blank"
               >
                 Photos 2025
-              </Button> 
+              </Button>
               <Button
                 color="secondary"
                 startIcon={<YouTube />}

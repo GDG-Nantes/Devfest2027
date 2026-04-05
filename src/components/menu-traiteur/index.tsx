@@ -47,7 +47,7 @@ export const MenuTraiteur: React.FC<MenuTraiteurProps> = ({ locale }) => {
   React.useEffect(() => {
     if (
       refVendredi.current &&
-      new Date().toLocaleDateString('fr') === '17/10/2025'
+      new Date().toLocaleDateString('fr') === '17/10/2027'
     ) {
       refVendredi.current.scrollIntoView();
     }

@@ -20,13 +20,13 @@ export const Tickets: MyComponent = async ({ params }) => {
         label={t('2days-2nd')}
         price={110}
         quantity={2400}
-        date='11/09/2025 23h55'
+        date='11/09/2027 23h55'
       />
       <Ticket
         label={t('1day')}
         price={70}
         quantity={700}
-        date='11/09/2025 23h55'
+        date='11/09/2027 23h55'
       />
     </Grid>
   );
@@ -49,7 +49,7 @@ const Ticket: React.FC<{
       }}
     >
       <MyLink
-        href='https://www.billetweb.fr/billet-devfest-nantes-2025'
+        href='https://www.billetweb.fr/billet-devfest-nantes-2027'
         style={{ cursor: 'default' }}
       >
         <div className="ticket-wrapper">

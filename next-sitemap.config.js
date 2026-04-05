@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://devfest2025.gdgnantes.com',
+  siteUrl: 'https://devfest2027.gdgnantes.com',
   generateRobotsTxt: true,
   transform: (config, path) => {
     if (!path.startsWith('/fr') && !path.startsWith('/en')) {

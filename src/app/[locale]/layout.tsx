@@ -8,7 +8,7 @@ import { Analytics } from '@/analytics';
 import { Metadata } from 'next';
 import { jsonLd } from '@/jsonLd';
 
-const URLSite = 'https://devfest2025.gdgnantes.com';
+const URLSite = 'https://devfest2027.gdgnantes.com';
 
 export async function generateMetadata({
   params,
