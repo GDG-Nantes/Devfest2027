@@ -1,0 +1,19 @@
+---
+key: become_a_wizard_and_make_the_browser_your_own
+openfeedbackId: becomeawizardandmakethebrowseryourown
+title: Become a wizard and make the browser your own
+language: English
+talkType: conference
+tags:
+  - web
+complexity: Intermediate
+speakers:
+  - oliver_dunk
+slot: day-1-conference-4
+room: Tour Bretagne
+abstract: |-
+  Imagine being able to control your browser with the wave of a wand! This talk will cover the magic of WebExtensions, and share tales old and new about how you can build extensions for millions of users with just knowledge of HTML, CSS and JavaScript.
+
+  It's always fun to hear a modern twist on an old tale, and so I'll also share some new additions to the extensions platform across browsers. It doesn't take long to become an extension wizard and so we'll have time to look more closely at how various extensions are built - from content-filtering to DevTools integrations.
+
+  No good magician works alone - so we'll also talk about the W3C WebExtensions Community Group. As an editor, I get to see real magic happen many times a year, from a developer sharing a new capability they'd like to see to a new API being rolled out across all major browsers. I'll tell you how that happens and how you can get involved.

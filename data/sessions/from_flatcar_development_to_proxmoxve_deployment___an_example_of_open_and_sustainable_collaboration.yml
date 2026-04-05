@@ -1,0 +1,15 @@
+---
+key: from_flatcar_development_to_proxmoxve_deployment___an_example_of_open_and_sustainable_collaboration
+openfeedbackId: fromflatcardevelopmenttoproxmoxvedeploymentanexampleofopenandsus
+title: From Flatcar development to ProxmoxVE deployment - an example of open and sustainable collaboration
+language: French
+talkType: conference
+tags:
+  - cloud_devops
+complexity: Intermediate
+speakers:
+  - alexandre_buisine
+  - mathieu_tortuyaux
+slot: day-1-conference-1
+room: Tour Bretagne
+abstract: '[Flatcar](https://flatcar.org) is a Linux based Operating System designed to run container workloads: single containers or larger scale deployment with Kubernetes. Recently, [Enix](https://enix.io/en/) folks contributed to Flatcar by implementing a long awaited feature: [Proxmox VE](https://www.proxmox.com/en/proxmox-virtual-environment) support. Proxmox VE is an open-source virtualization platform experiencing growing adoption in response to recent changes in the industry. In this talk, Alexandre and Mathieu will share the takeaways of these contributions that now benefit multiple communities. This open collaboration has indeed paved the way for other communities like Fedora CoreOS or MicroOS to support Proxmox VE. From early provisioning with Ignition in the initramfs to updates and going through deployment, let''s cover the fundamentals of this CNCF OS applied to the Proxmox Virtual Environment.'

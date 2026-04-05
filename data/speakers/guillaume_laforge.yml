@@ -1,0 +1,11 @@
+---
+key: guillaume_laforge
+name: Guillaume Laforge
+company: Google
+companyLogo: google.png
+city: Paris, France
+photoUrl: guillaume_laforge.jpg
+socials:
+  github: glaforge
+  twitter: glaforge
+bio: '**Guillaume Laforge** est Developer Advocate chez **Google** Cloud. Depuis plus de deux ans déjà, il se focalise sur l''**intelligence artificielle générative**, et en particulier les large language models comme Gemini. Il couvre souvent d''autres thèmes comme les architectures orientées événement, l''orchestration de microservices, ou les technologies serverless. En dehors de Google, Guillaume est plus connu pour sa casquette de **Java Champion**, pour avoir co-fondé le langage de programmation **Groovy** et être committer sur le projet **LangChain4j**, et est aussi (plus ou moins) célèbre pour son humour au sein du podcast **"Les Cast Codeurs"**.'

@@ -1,0 +1,27 @@
+---
+key: quantum_computing_in_practice__where_we_are__what_works__and_what_s_next
+openfeedbackId: quantumcomputinginpracticewherewearewhatworksandwhatsnext
+title: 'Quantum Computing in Practice: Where We Are, What Works, and What’s Next'
+language: English
+talkType: conference
+tags:
+  - discovery
+complexity: Intermediate
+speakers:
+  - lennart
+  - florent_houbart
+slot: day-2-conference-3
+room: Tour Bretagne
+abstract: |-
+  Quantum computing is evolving rapidly—from theoretical promise to early practical applications. But what does that mean for software developers and architects today? This talk takes a grounded look at the current capabilities of quantum systems, the real limitations, and emerging hybrid approaches that combine quantum and classical computation.
+
+  We’ll explore:
+  - A technical overview of quantum computing principles (superposition, entanglement, gate vs. annealing models).
+  - The landscape of current quantum hardware and its challenges (scalability, noise, error correction).
+  - Use cases that are already delivering results, including logistics optimization and scheduling problems.
+  - The role of hybrid quantum-classical algorithms and where they outperform traditional methods.
+  - A concise walkthrough of a demo: solving a real-world combinatorial problem using a quantum annealer on AWS.
+
+  The session finishes on the implications of quantum computing for cybersecurity and the current state of post-quantum cryptography and how to get started implementing these protocols. 
+
+  This talk is for tech professionals who want a realistic, technically informed view of quantum computing today—beyond the hype—with insights into how to experiment and get involved.

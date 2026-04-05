@@ -1,0 +1,14 @@
+---
+key: optimizing_third_parties_in_frameworks_with_dx
+openfeedbackId: optimizingthirdpartiesinframeworkswithdx
+title: Optimizing third parties in frameworks with DX
+language: English
+talkType: conference
+tags:
+  - web
+complexity: Intermediate
+speakers:
+  - julien_huang
+slot: day-2-conference-2
+room: Tour Bretagne
+abstract: Today, most websites are loading third-party scripts that are not fully under the control of the developer. Statistically, the more third parties you load, the lower your web performance will be. Unhead, a library from the UNJS eco-system has released a new composable `useScript`to improve DX for loading third-party scripts. We'll see what issues you can encounter with third-parties and how to solve it by just using unhead.

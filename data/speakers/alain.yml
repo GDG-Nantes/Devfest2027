@@ -1,0 +1,11 @@
+---
+key: alain
+name: Alain Lesage
+photoUrl: alain_lesage.jpeg
+company: Dalibo
+city: Clermont-Ferrand, France
+socials: {
+  linkedin: lesagealain
+}
+bio: |-
+  DBA passionné, je m’intéresse à ce qui reste quand tout change : les données. Spécialiste de PostgreSQL, LA plate-forme libre référence dans la gestion des données. Grâce à un moteur fiable et un écosystème d’extensions extrêmement riche, elle est capable de couvrir tous les usages métier d''aujourd''hui.

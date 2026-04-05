@@ -1,0 +1,11 @@
+---
+key: sasha_denisov
+name: Sasha Denisov
+company: EPAM Systems
+companyLogo: epam_systems.png
+photoUrl: sasha_denisov.jpg
+city: Berlin, Germany
+socials:
+  github: denisovav
+  twitter: shuregdenisov
+bio: Sasha is a software developer with over 20 years in multiple technologies and domains. A tech lead, architect, and mobile solutions expert, he specializes in AI integrations for mobile apps, focusing on on-device AI. He excels in Flutter, Firebase, and generative AI for robust, scalable apps. Sasha is Chief Software Engineer and Head of Flutter Discipline at EPAM, GDE for AI, Firebase, Flutter, Dart, and co-organizes Flutter Berlin Community

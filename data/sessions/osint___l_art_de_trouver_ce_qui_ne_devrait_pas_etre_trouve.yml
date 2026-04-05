@@ -1,0 +1,17 @@
+---
+key: osint___l_art_de_trouver_ce_qui_ne_devrait_pas_etre_trouve
+openfeedbackId: osintlartdetrouvercequinedevraitpasetretrouve
+title: 'OSINT : L’art de trouver ce qui ne devrait pas être trouvé'
+language: French
+talkType: quickie
+tags:
+  - discovery
+complexity: Beginner
+speakers:
+  - marie_viley
+slot: day-1-quickie-2
+room: Titan
+abstract: |-
+  Dans un monde où l’information est partout, savoir chercher est un pouvoir. L’OSINT (Open Source Intelligence) permet de collecter et d’exploiter des informations publiquement accessibles pour découvrir et croiser des faits .
+
+  Dans ce talk vous allez découvrir les bases de l'OSINT en explorant des techniques et outils pour exploiter des données publiques de manière stratégiques. Et enfin nous mettrons ces techniques en pratique lors d'une étude de cas.

@@ -1,0 +1,21 @@
+---
+key: _c_etait_dans_quel_episode_deja______bref__j_ai_indexe_une_serie_culte
+openfeedbackId: cetaitdansquelepisodedejabrefjaiindexeuneserieculte
+title: '"C''était dans quel épisode déjà ?" - Bref, j''ai indexé une série culte'
+language: French
+talkType: quickie
+tags:
+  - web
+complexity: Intermediate
+speakers:
+  - tim_carry
+slot: day-1-quickie-2
+room: Jules Verne
+abstract: |-
+  | - Mais si tu sais, c'est quand il dit "Capitaine ! Capitaine ! Vous n'êtes pas le capitaine !"
+
+  On a tous·tes une série culte dont on connaît les répliques par cœur. Mais quand il faut retrouver la scène précise pour la montrer à un·e ami·e, on passe souvent plus de temps à chercher qu'à regarder la scène elle-même.
+
+  La sortie de la saison 2 de Bref m'a motivé à chercher à résoudre ce problème pour une de mes séries préférées. J'ai donc développé [brefsearch.com](brefsearch.com), un site qui me permet de retrouver (et revoir) n'importe quelle scène de la saison 1 de Bref, juste à partir de quelques mot clés. 
+
+  Dans ce talk, je vous montrerai comment transformer n'importe quelle playlist YouTube en une expérience de recherche immersive. On parlera d'outils en ligne de commande, de services en SaaS, d'optimisation front-end et un peu d'IA.

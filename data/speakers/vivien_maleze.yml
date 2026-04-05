@@ -1,0 +1,15 @@
+---
+key: vivien_maleze
+name: Vivien Maleze
+company: Ippon Technologies
+companyLogo: ippon_technologies.png
+photoUrl: vivien_maleze.jpeg
+city: Bordeaux, France
+socials:
+  github: vmaleze
+  twitter: vmaleze
+bio: |-
+  Vivien est architecte technique chez Ippon Technologies. Son gros sujet, c'est améliorer l'expérience de développement de ses collaborateurs
+  Passioné de nouvelles technologies, il est toujours avide de découvrir de nouveaux sujets, mais aussi de les partager.
+
+  Vivien a eu l'occasion de travailler sur de multiples architectures distribuées chez de nombreux clients avec chacune leur facette bien spécifique. Il a eu la chance de travailler aussi bien sur le développement de microservices, que sur leur déploiement et leur maintien sur les plateformes clouds

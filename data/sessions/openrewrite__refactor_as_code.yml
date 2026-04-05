@@ -1,0 +1,29 @@
+---
+key: openrewrite__refactor_as_code
+openfeedbackId: openrewriterefactorascode
+title: 'OpenRewrite: Refactor as code'
+language: French
+talkType: conference
+tags:
+  - languages
+complexity: Beginner
+speakers:
+  - jerome_tama
+slot: day-1-conference-1
+room: Belem
+abstract: |-
+  Vous êtes dans la team __Doc as code, Infrastructure as code, Ci as code__ ? La réponse à ces questions vous semble évidente.
+
+  Les bienfaits de l'approche _"as code"_ ne sont plus à démontrer et pourtant il reste un domaine laissé pour compte.
+
+  Oui parce que si je vous pose ces questions pour vos refactorings et vos migrations, ça sera plutôt : 
+
+     Vous êtes plutôt team __chercher/remplacer__ ? __regexp__ ? __IDE click droit *rename method*__ ?
+
+  Eh oui, les cordonniers sont toujours les plus mal chaussés, et nous continuons a écrire des guides de migrations longs comme un dimanche de pluie. Fatigué de mener des migrations JUnit4 ->JUnit 5? Spring-boot 2 -> Spring-boot 3?
+
+  Est-ce qu’il ne serait pas temps d’entrer dans la team ___refactoring as code___? 
+
+  OpenRewrite est la boîte à outils parfaite pour écrire, versionner et partager vos refactoring. L'Ansible du refactoring.
+
+  Ne repartez pas sans une nouvelle as corde à votre arc, ne faite plus jamais vos migrations à la main.

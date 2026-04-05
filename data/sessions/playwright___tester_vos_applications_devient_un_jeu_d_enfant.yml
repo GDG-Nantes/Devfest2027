@@ -1,0 +1,25 @@
+---
+key: playwright___tester_vos_applications_devient_un_jeu_d_enfant
+openfeedbackId: playwrighttestervosapplicationsdevientunjeudenfant
+title: 'Playwright : tester vos applications devient un jeu d''enfant'
+language: French
+talkType: codelab
+tags:
+  - web
+complexity: Beginner
+speakers:
+  - benjamin_cavy
+slot: day-1-codelab-1
+room: Hangar
+abstract: |-
+  Tester unitairement ses composants graphiques c'est bien, tester le bon fonctionnement de toute son application via un navigateur pilotable programmatiquement c'est mieux !
+
+  C'est ce que propose Playwright, un outil de tests end to end qui, en plus de très bonne performances, propose une excellent expérience développeur.
+
+  Je vous propose au cours de ce hand's on de découvrir par la pratique cet outil et de voir comment il peut vous permettre d'écrire des tests simples, maintenables et résilients.
+
+  Prérequis:
+  - Avoir node d'installé sur sa machine
+  - Idéalement faire l'étape de mise en place [décrite ici](https://github.com/ptitFicus/devquest-consignes?tab=readme-ov-file#mise-en-place)
+  - Encore plus idéalement télécharger une version (java, docker ou binaire) de [l'application de test](https://github.com/ptitFicus/devquest)
+

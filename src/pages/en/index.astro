@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getTranslation } from '@/i18n/i18n';
 import HomeJumbo from '@/components/react/HomeJumbo';
+import InteractiveMap from '@/components/react/InteractiveMap';
 import '@/styles/jumbo.scss';
 import '@/styles/home.scss';
 
@@ -77,25 +78,12 @@ const photos = [
     </div>
   </div>
 
-  <div class="section map-section-mobile">
-    <h2 style="margin-top: 0;">{tMap('title')}</h2>
-    <h3>H Arena, Nantes, France</h3>
-    <p>{tMap('description')}</p>
-    <a href="https://www.google.com/maps/dir/?api=1&destination=47.2058,-1.5243" target="_blank" class="btn btn-secondary">
-      44 Bd de la Prairie au Duc, 44200 Nantes →
-    </a>
-  </div>
-  <div class="map-section-desktop">
-    <img alt="world map" src="/images/home/map.jpg" style="height: 100%; width: 100%; object-fit: cover;" />
-    <div class="map-overlay">
-      <h2 style="margin-top: 0;">{tMap('title')}</h2>
-      <h3>H Arena, Nantes, France</h3>
-      <p>{tMap('description')}</p>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=47.2058,-1.5243" target="_blank" class="btn btn-secondary">
-        44 Bd de la Prairie au Duc, 44200 Nantes →
-      </a>
-    </div>
-  </div>
+  <InteractiveMap
+    client:only="react"
+    title={tMap('title')}
+    description={tMap('description')}
+    locale={locale}
+  />
 
   <div class="section full-width">
     <h2>{tTickets('name')}</h2>
@@ -170,10 +158,10 @@ const photos = [
   .number-item h2 { margin: 10px 0; }
   .youtube-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
   .youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-  .map-section-mobile { display: block; }
-  .map-section-desktop { display: none; position: relative; height: 600px; width: 100%; }
-  @media (min-width: 600px) { .map-section-mobile { display: none; } .map-section-desktop { display: block; } }
-  .map-overlay { position: absolute; bottom: 20px; left: 20px; background-color: var(--primary); color: white; padding: 20px; max-width: 40vw; }
+  :global(.interactive-map-section) { position: relative; width: 100%; height: 500px; }
+  :global(.interactive-map-section .leaflet-container) { width: 100%; height: 100%; }
+  :global(.map-info-overlay) { position: absolute; bottom: 20px; left: 20px; background-color: var(--primary); color: white; padding: 20px; max-width: 40vw; z-index: 1000; }
+  @media (max-width: 600px) { :global(.interactive-map-section) { height: 450px; } :global(.map-info-overlay) { position: relative; bottom: auto; left: auto; max-width: 100%; } }
   .tickets-grid { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 20px 0; }
   .partners-grid { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
   .partners-grid.pxl .partner-link { max-width: 475px; max-height: 275px; }

@@ -1,0 +1,35 @@
+---
+key: de_frankenstein_a_shakespeare___ressusciter_vos_conferences_en_articles_avec_aws_amplify_gen_2_et_amazon_bedrock
+openfeedbackId: defrankensteinashakespeareressuscitervosconferencesenarticlesave
+title: 'Ressusciter vos présentations en articles de blog avec AWS Amplify Gen 2 et Amazon Bedrock'
+language: French
+talkType: conference
+tags:
+  - cloud_devops
+complexity: Intermediate
+speakers:
+  - adrien_lebret
+slot: day-1-conference-1
+room: Jules Verne
+abstract: |-
+  # Proposition de Session DevFest Nantes 2025
+
+  Et si chaque présentation que vous donnez pouvait générer automatiquement des dizaines de contenus différents ? Articles de blog, résumés, posts LinkedIn, threads Twitter... 
+
+  Dans ce retour d'expérience, je vous présente comment j'ai développé l'**AWS Blog Post Generator** avec AWS Amplify Gen 2 - une application full-stack qui transforme vos enregistrements de conférences en articles de blog professionnels grâce à l'IA générative.
+
+  **Ce que vous découvrirez :**
+  - 🚀 **AWS Amplify Gen 2** : La nouvelle génération du framework full-stack AWS
+  - 🤖 **Amazon Bedrock & Claude** : Intégration de l'IA générative dans votre app
+  - 🎯 **Architecture moderne** : TypeScript, React, infrastructure as code
+  - 📈 **ROI concret** : Comment rentabiliser vos interventions publiques
+
+  **Le use case concret :**
+  L'application prend en entrée votre enregistrement vidéo/audio + slides et génère automatiquement :
+  - Un plan d'article structuré
+  - Un titre accrocheur 
+  - Une introduction engageante
+  - Le contenu détaillé par sections
+  - Une conclusion avec call-to-action
+
+  Une session technique et pratique qui vous donnera les clés pour créer votre propre générateur de contenu !

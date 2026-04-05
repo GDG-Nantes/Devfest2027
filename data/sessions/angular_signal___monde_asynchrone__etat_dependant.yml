@@ -1,0 +1,35 @@
+---
+key: angular_signal___monde_asynchrone__etat_dependant
+openfeedbackId: angularsignalmondeasynchroneetatdependant
+title: Angular Signal - Monde Asynchrone, État dépendant
+language: French
+talkType: codelab
+tags:
+  - web
+complexity: Intermediate
+speakers:
+  - modeste_assiongbon
+  - camille_pillot
+slot: day-2-codelab-1
+room: Les Machines
+abstract: |-
+  Signal et monde asynchrone :
+  Depuis Angular 16, les signaux ont été introduits comme une nouvelle primitive pour créer des applications réactives. Par nature, ils sont synchrones, alors que la majorité des applications nécessitent de gérer des opérations asynchrones, souvent déclenchées par des interactions utilisateurs.
+
+  Un temps, nous avons cru que les effects proposés par l’API des signaux pouvaient répondre à ce besoin. Mais Alex Rickabaugh, de l’équipe Angular, a montré qu’ils ne sont pas conçus pour cela — et qu’il est même déconseillé de les utiliser dans la plupart des cas.
+
+  Pour répondre à ce besoin, Angular 19 introduit les resources (resource/rxResource, httpResource), de nouvelles APIs qui font le lien entre le monde synchrone des signaux et l’asynchrone, offrant une solution plus adaptée.
+
+  État dépendant :
+  Parmi les primitives disponibles, on retrouve aussi les computed, qui permettent de dériver un état à partir d’un ou plusieurs signaux. Leur limitation ? Ils sont en lecture seule. Mais que faire si l’on souhaite dériver une valeur tout en pouvant la modifier ? C’est là qu’interviennent les LinkedSignal, sortes de computed modifiables.
+
+  Malgré leur simplicité apparente, leur usage n’est pas toujours intuitif : quand les utiliser ? Quels problèmes permettent-ils de résoudre ?
+
+  Ce workshop a pour but de clarifier l’intérêt de ces nouvelles APIs, notamment resource/rxResource, httpResource et LinkedSignal, à travers des cas concrets et des exemples pratiques.
+
+  Le workshop se basera sur la version 20 d'Angular.
+  
+  Prérequis :
+  - Avoir nvm (Node Version Manager) installé sur sa machine.
+  - Ou l'une des version de Node.js suivantes : ^20.19.0 || ^22.12.0 || ^24.0.0.
+  - S’assurer d’avoir la possibilité d’installer des paquets tiers depuis NPM (pas de restrictions liées aux VPN ou aux proxys que l’on rencontre généralement sur les machines d’entreprise).

@@ -1,0 +1,12 @@
+---
+key: oliver_dunk
+name: Oliver Dunk
+photoUrl: oliver_dunk.jpg
+city: London, United Kingdom
+company: Google
+companyLogo: google.png
+socials: {
+  linkedin: oliverdunk
+}
+bio: |-
+  Oliver is a Developer Relations Engineer working on Chrome Extensions at Google. He is also an editor in the W3C WebExtensions Community Group. Outside of this, he enjoys bouldering, photography and travel.

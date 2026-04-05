@@ -1,0 +1,13 @@
+---
+key: vincent_daligault
+name: Vincent Daligault
+company: Datadog
+companyLogo: datadog.png
+photoUrl: vincent_daligault.jpeg
+city: Nantes, France
+socials:
+  linkedin: vincentdaligault
+bio: |-
+  Vincent Daligault est Senior Software Engineer à Datadog, une plateforme de monitoring et de sécurité pour les environnements cloud. Il travaille sur l'autoscaling et les modèles d'isolation.
+
+  Quand il n'est devant son clavier, on peut le trouver sur son vélo.

@@ -1,0 +1,14 @@
+---
+key: julien_crestin
+name: Julien Crestin
+photoUrl: julien_crestin.jpeg
+city: Nantes, France
+company: Datadog
+companyLogo: datadog.png
+socials: {
+  linkedin: julien-crestin
+}
+bio: |-
+  Julien Crestin est software engineer chez Datadog, une plateforme de monitoring et de sécurité pour les environnements cloud, où il travaille sur l'automatisation du cycle de vie des modèles d'isolation.
+
+  Et quand il n'automatise pas des systèmes en production, il automatise sa maison.

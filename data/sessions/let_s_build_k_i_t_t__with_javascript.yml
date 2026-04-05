@@ -1,0 +1,14 @@
+---
+key: let_s_build_k_i_t_t__with_javascript
+openfeedbackId: letsbuildkittwithjavascript
+title: Let’s build K.I.T.T. with JavaScript
+language: English
+talkType: conference
+tags:
+  - web
+complexity: Intermediate
+speakers:
+  - nico_martin
+slot: day-1-conference-5
+room: Titan
+abstract: In the 1982 TV series "knight rider", the idea of a talking, intelligent car was pure science fiction. Now, more than 40 years later, we have all the tools needed to bring this vision to life - right in the browser, using JavaScript. In this talk, we’ll combine AI techniques like Retrieval-Augmented Generation (RAG) and function calling with advanced browser APIs like WebBluetooth to create an AI agent with personality, memory, and autonomous decision-making abilities. Leveraging WebAssembly, WebGPU, and other cutting-edge browser technologies, this entire experience happens directly in the browser, running fully offline and privacy preserving by default!

@@ -1,0 +1,27 @@
+---
+key: conception_d_une_ia_de_jeu_video_avec_l_apprentissage_par_renforcement
+openfeedbackId: conceptionduneiadejeuvideoaveclapprentissageparrenforcement
+title: Conception d'une IA de jeu vidéo avec l'apprentissage par renforcement
+language: French
+talkType: quickie
+tags:
+  - bigdata_ai
+complexity: Intermediate
+speakers:
+  - vincent_ogloblinsky
+slot: day-2-quickie-1
+room: Titan
+abstract: |-
+  Dans ce talk, venez découvrir la conception d'une intelligence artificielle capable de jouer à un jeu vidéo de palet "fonte/laiton sur planche bois/plomb" grâce à l'apprentissage par renforcement.
+
+  Je vous emmènerai dans les coulisses de ce projet où j'ai implémenté une architecture Actor-Critic - deux réseaux de neurones collaborant comme un joueur et son coach personnel. Cette approche m'a permis de créer une IA capable d'apprendre des stratégies complexes pour un jeu en tour par tour impliquant des actions continues (force, direction, rotation) tout en maintenant un apprentissage stable.
+
+  Nous explorerons:
+
+  - les fondamentaux de l'apprentissage par renforcement appliqués aux jeux vidéo
+  - pourquoi l'architecture Actor-Critic est idéale pour les jeux à actions continues
+  - l'implémentation technique avec TensorFlow.js et Playwright pour l'automatisation
+  - les défis rencontrés lors de l'entraînement de l'IA
+  - les résultats obtenus, l'intégration dans le jeu final et les leçons apprises
+
+  Cette session s'adresse aux développeurs curieux d'explorer l'IA dans les jeux vidéo, avec des démonstrations concrètes et des conseils pratiques pour implémenter vos propres solutions d'apprentissage par renforcement.

@@ -1,0 +1,17 @@
+---
+key: francois_nollen
+name: François Nollen
+company: SNCF Connect & Tech
+companyLogo: sncf_connect___tech.png
+city: Paris, France
+photoUrl: francois_nollen.jpg
+socials:
+  github: francoisno
+  twitter: FrancoisN0
+  linkedin: francois-nollen
+bio: |-
+  Staff Engineer chez SNCF Connect & Tech.
+  Membre association « TOSIT : The Open Source I Trust » (https://tosit.fr).
+  Committer « Tock: The Open Conversation Kit » (https://doc.tock.ai). 
+
+  Topics: Flutter ChatBots OpenSource DevOps Observability Git Maven KotlinJVM...

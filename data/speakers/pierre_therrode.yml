@@ -1,0 +1,15 @@
+---
+key: pierre_therrode
+name: Pierre Therrode
+company: SNCF Connect & Tech
+companyLogo: sncf_connect___tech.png
+photoUrl: pierre_therrode.jpg
+city: Paris, France
+socials:
+  github: pi-2r
+  twitter: pi2r3
+  linkedin: ptherrode
+bio: |-
+  **Lead Developer** chez **SNCF Connect & Tech** sur la partie chatbot depuis près de 5 ans.
+  Geek et curieux, j'aime comprendre le fonctionnement des choses qui nous entourent.
+  Contributeur à la plateforme open source [Tock - The Open Conversation Kit](https://doc.tock.ai/)

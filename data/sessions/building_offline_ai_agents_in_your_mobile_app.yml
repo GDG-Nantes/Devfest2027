@@ -1,0 +1,23 @@
+---
+key: building_offline_ai_agents_in_your_mobile_app
+openfeedbackId: buildingofflineaiagentsinyourmobileapp
+title: Building Offline AI Agents in Your Mobile App
+language: English
+talkType: conference
+tags:
+  - mobile
+complexity: Intermediate
+speakers:
+  - sasha_denisov
+slot: day-2-conference-1
+room: Belem
+abstract: |-
+  Dive into building the next generation of mobile apps powered by Offline AI Agents. This talk explores how to leverage the power of Edge AI and on-device processing to create intelligent agents that function entirely without an internet connection—enhancing privacy, reducing latency, and enabling innovative features independent of the cloud.
+
+  We'll focus on using lightweight, state-of-the-art open models, particularly Google's Gemma family (including upcoming versions like Gemma 3), which are designed to run efficiently on modern mobile devices. These models serve as the "brain" of offline AI agents, unlocking powerful capabilities right at the edge.
+
+  While the ideas apply broadly to mobile development, special attention will be given to Flutter, where the benefits of cross-platform delivery meet the power of on-device AI. As the maintainer of the flutter_gemma plugin, I’ll share practical insights on running LLMs like Gemma directly in Flutter apps, enabling real-time intelligence without backend dependencies.
+
+  You’ll learn practical steps for implementing these agents—from selecting the right on-device model variant (such as Gemma, Deepseek, or Mistral Small) based on task complexity and device constraints, to integrating and orchestrating them within your app. We’ll also explore the trade-offs involved: the advantages of offline AI (privacy, low latency, resilience) versus the limitations (model size, device compute capacity) when compared to cloud-based alternatives.
+
+  Beyond that, the talk introduces advanced use cases like on-device Retrieval-Augmented Generation (RAG), enabling your agents to access and utilize local data (such as stored notes or embedded databases) for personalized, context-aware interaction—entirely offline.

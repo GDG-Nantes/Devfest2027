@@ -1,0 +1,17 @@
+---
+key: ai_right_in_the_browser_with_chrome_s_built_in_ai_apis
+openfeedbackId: airightinthebrowserwithchromesbuiltinaiapis
+title: AI right in the browser with Chrome's built-in AI APIs
+language: English
+talkType: quickie
+tags:
+  - web
+complexity: Intermediate
+speakers:
+  - thomas_steiner
+slot: day-1-quickie-1
+room: Titan
+abstract: |-
+  Imagine empowering your web apps with summarization, writing assistance, and translation – privately, without server-side complexity or API keys, and without needing to manage your own AI models.
+  Built-in AI, a set of experimental Chrome APIs, can make this a reality.
+  In this talk, Thomas Steiner and Maud Nalpas from Google Chrome's AI team dive into the various built-in AI APIs that the team is currently exploring. First, there's the exploratory Prompt API that allows for free-form interactions with the Gemini Nano model. Second, there are the different task APIs that are fine-tuned to work well for a particular task like translations, language detection, summarization, proofreading, and writing or rewriting. And third, there are the exciting multimodal APIs that allow for interesting new use cases with audio and images. After introducing the APIs, the final part of the talk focuses on demos, applications, and use cases unlocked through these APIs.

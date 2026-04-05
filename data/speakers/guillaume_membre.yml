@@ -1,0 +1,14 @@
+---
+key: guillaume_membre
+name: Guillaume Membré
+company: Zenika
+companyLogo: zenika.png
+city: Nantes, France
+photoUrl: guillaume_membre.jpg
+socials: {
+  linkedin: gmembre
+}
+bio: |-
+  Geek à toute heure, je travaille principalement sur des sujets de migration d’architecture sur le cloud d'AWS et également sur des problématiques d'intégration et de déploiement continu. Je partage mon expérience pour faciliter la mise en place de démarche devops chez différents acteurs. J'adore bidouiller des RaspberryPi ou Arduino pour créer des choses inutiles donc indispensables !
+  Lorsque le temps le permet, je décris mes aventures sur mon [site web](https://www.mydiy.dev/).
+  Vous pouvez me suivre sur mastodon : @gmembre@piaille.fr

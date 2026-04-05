@@ -1,0 +1,21 @@
+---
+key: karpenter___keda___le_duo_gagnant_du_finops
+openfeedbackId: karpenterkedaleduogagnantdufinops
+title: 'Karpenter * Keda : Le duo gagnant du FinOps'
+language: French
+talkType: conference
+tags:
+  - cloud_devops
+complexity: Beginner
+speakers:
+  - guillaume_membre
+  - sebastien_fourreau
+slot: day-2-conference-1
+room: Titan
+abstract: |-
+  La gestion des coûts est un enjeu majeur sur les plateformes Cloud. Sans une approche rigoureuse, l’élasticité et la flexibilité promises peuvent rapidement se transformer en dépenses imprévisibles. 
+
+  RCA utilise le service managé Kubernetes EKS d’AWS. Afin de gérer les variations de charge des applications, nous avons déployé KEDA pour ajuster automatiquement le nombre d’instances en fonction de l’activité des utilisateurs et des périodes de la journée. Dans une optique FinOps, le dimensionnement des nœuds est optimisé via Karpenter, garantissant ainsi une adéquation au plus juste entre les ressources allouées et les besoins des applications.
+
+  En combinant ces solutions avec une stratégie hybride de facturation avec des instances Spot et des instances réservées en fonction des environnements, nous maximisons l’efficacité tout en réduisant les coûts.
+  Lors de cette présentation, nous vous partagerons nos astuces et nos difficultés sur l'intégration de ces outils sur AWS dans une approche FinOps.

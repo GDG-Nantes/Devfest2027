@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getTranslation } from '@/i18n/i18n';
 import HomeJumbo from '@/components/react/HomeJumbo';
+import InteractiveMap from '@/components/react/InteractiveMap';
 import '@/styles/jumbo.scss';
 import '@/styles/home.scss';
 
@@ -102,25 +103,12 @@ const photos = [
   </div>
 
   <!-- Map -->
-  <div class="section map-section-mobile">
-    <h2 style="margin-top: 0;">{tMap('title')}</h2>
-    <h3>H Arena, Nantes, France</h3>
-    <p>{tMap('description')}</p>
-    <a href="https://www.google.com/maps/dir/?api=1&destination=47.2058,-1.5243" target="_blank" class="btn btn-secondary">
-      44 Bd de la Prairie au Duc, 44200 Nantes →
-    </a>
-  </div>
-  <div class="map-section-desktop">
-    <img alt="world map" src="/images/home/map.jpg" style="height: 100%; width: 100%; object-fit: cover;" />
-    <div class="map-overlay">
-      <h2 style="margin-top: 0;">{tMap('title')}</h2>
-      <h3>H Arena, Nantes, France</h3>
-      <p>{tMap('description')}</p>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=47.2058,-1.5243" target="_blank" class="btn btn-secondary">
-        44 Bd de la Prairie au Duc, 44200 Nantes →
-      </a>
-    </div>
-  </div>
+  <InteractiveMap
+    client:only="react"
+    title={tMap('title')}
+    description={tMap('description')}
+    locale={locale}
+  />
 
   <!-- Tickets -->
   <div class="section full-width">
@@ -251,20 +239,16 @@ const photos = [
     height: 100%;
   }
 
-  .map-section-mobile {
-    display: block;
-  }
-  .map-section-desktop {
-    display: none;
+  :global(.interactive-map-section) {
     position: relative;
-    height: 600px;
     width: 100%;
+    height: 500px;
   }
-  @media (min-width: 600px) {
-    .map-section-mobile { display: none; }
-    .map-section-desktop { display: block; }
+  :global(.interactive-map-section .leaflet-container) {
+    width: 100%;
+    height: 100%;
   }
-  .map-overlay {
+  :global(.map-info-overlay) {
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -272,6 +256,18 @@ const photos = [
     color: white;
     padding: 20px;
     max-width: 40vw;
+    z-index: 1000;
+  }
+  @media (max-width: 600px) {
+    :global(.interactive-map-section) {
+      height: 450px;
+    }
+    :global(.map-info-overlay) {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      max-width: 100%;
+    }
   }
 
   .tickets-grid {

@@ -1,0 +1,26 @@
+---
+key: detectives_de_la_prod___resoudre_l_enquete_avant_le_crash
+openfeedbackId: detectivesdelaprodresoudrelenqueteavantlecrash
+title: 'Détectives de la prod : résoudre l’enquête avant le crash'
+language: French
+talkType: conference
+tags:
+  - cloud_devops
+complexity: Beginner
+speakers:
+  - sebastien_ferrer
+slot: day-1-conference-2
+room: Belem
+abstract: |-
+  Saviez-vous que, derrière les coulisses de vos outils de travail, se cachent des équipes prêtes à intervenir à tout moment ?
+
+  Ces équipes, souvent discrètes mais essentielles, gèrent des dizaines de projets avec des effectifs réduits.
+  Mais quand une alerte survient, elles doivent réagir vite. Très vite.
+  Comment réussir à diagnostiquer et résoudre un incident en pleine production, sans perdre une précieuse seconde ?
+
+  Dans ce talk je vous emmène au cœur de l'action, où je partage notre méthodologie pour transformer chaque crise en une enquête méthodique et efficace.
+  Nous explorerons comment des outils bien pensés, une organisation affûtée, et un soupçon d'intuition transforment la gestion d'incidents en une véritable enquête… parfois aussi palpitante qu’une partie de Cluedo.
+
+  Au programme : bonnes pratiques de troubleshooting, logging et monitoring, pour que vous repartiez avec des clés concrètes pour dompter les incidents dans vos propres projets.
+
+  Vous verrez qu'en production, chaque problème cache une histoire… à résoudre en équipe.

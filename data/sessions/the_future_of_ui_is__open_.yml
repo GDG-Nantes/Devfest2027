@@ -1,0 +1,16 @@
+---
+key: the_future_of_ui_is__open_
+openfeedbackId: thefutureofuiisopen
+title: Select it! Styling new HTML UI capabilities
+language: English
+talkType: conference
+tags:
+  - web
+complexity: Intermediate
+speakers:
+  - brecht_de_ruyte
+slot: day-2-conference-4
+room: Titan
+abstract: |-
+  We are getting spoiled with increased UI capabilities, partially thanks to the efforts from the W3C community group Open UI. One of those features is the customizable select. This new capability for selects seems to love new CSS features, and that love is mutual. 
+  This presentation is a love letter to W3C community groups, new UI capabilities, and CSS, showing you how to combine features such as anchoring, transitioning, scroll snapping, and much more to create fun, progressively enhanced, customized select elements.

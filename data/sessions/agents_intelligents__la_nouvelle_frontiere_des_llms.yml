@@ -1,0 +1,19 @@
+---
+key: agents_intelligents__la_nouvelle_frontiere_des_llms
+openfeedbackId: agentsintelligentslanouvellefrontieredesllms
+title: Agents intelligents, la nouvelle frontière des LLMs
+language: French
+talkType: conference
+tags:
+  - bigdata_ai
+complexity: Intermediate
+speakers:
+  - guillaume_laforge
+slot: day-2-conference-4
+room: Jules Verne
+abstract: |-
+  Vous connaissez les **Large Language Models** sur le bout des doigts ? Vous maîtrisez le **Retrieval Augmented Generation** pour aider un LLM à chercher dans vos documents ? Il est temps de plonger dans le monde merveilleux des **agents intelligents** ! 
+
+  Dans cette session, nous commencerons d’abord par définir ce que sont les agents, ou tout du moins ce qui rends un système “agentique”. Nous expliquerons quelles sont les limites des LLMs. Ensuite, au travers d’exemples concrets, nous implémenterons différents **agents en Java**, en utilisant le framework **LangChain4j** et **Agent Development Kit** (ADK)  pour Java, pour illustrer certains patterns typiques des agents et pour comprendre comment aller plus loin qu’un simple appel à un LLM pour obtenir des réponses qui répondront aux besoins de vos utilisateurs, voire même pour déclencher des actions avec le système environnant. Et si vous souhaitez également en apprendre plus sur ces mystérieux acronymes que sont **MCP** (Model Context Protocol) ou **A2A** (Agent to Agent protocol), vous êtes au bon endroit !
+
+  Etes vous prêt pour la prochaine hype des agents ? Venez le découvrir dans cette session !

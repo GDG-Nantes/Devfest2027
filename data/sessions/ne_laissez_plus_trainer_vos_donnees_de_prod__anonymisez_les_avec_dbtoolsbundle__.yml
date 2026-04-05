@@ -1,0 +1,31 @@
+---
+key: ne_laissez_plus_trainer_vos_donnees_de_prod__anonymisez_les_avec_dbtoolsbundle__
+openfeedbackId: nelaissezplustrainervosdonneesdeprodanonymisezlesavecdbtoolsbund
+title: 'Ne laissez-plus traîner vos données de prod: anonymisez-les avec DbToolsBundle !'
+language: French
+talkType: conference
+tags:
+  - web
+complexity: Beginner
+speakers:
+  - pierre
+  - simon_mellerin
+slot: day-1-conference-3
+room: Belem
+abstract: |-
+  Avez-vous déjà injecté des données de prod en local ? Laissé traîner un backup de prod sur votre machine de dev ?
+
+  Vous êtes sans doute au courant des risques mais un workflow d'anonymisation est complexe à mettre en place et à maintenir. Et les performances ne sont pas toujours optimales.
+
+  [DbToolsBundle](https://dbtoolsbundle.readthedocs.io) se propose de répondre à ces problématiques en facilitant la mise en place d'une anonymisation efficace des données sur vos projets PHP ou sur n'importe quelle stack Docker.
+
+  En plus de l’**anonymisation**, ce composant PHP fournit un outillage complet pour gérer votre base de données (sauvegarde, restauration, récupération de statistiques).
+
+  Venez découvrir comment :
+
+     * Intégrer le composant à vos projets.
+     * Mettre en place un workflow compatible avec le RGPD pour cloner votre environnement de production.
+     * Sauvegarder et restaurer une base de donnée.
+     * Étendre DbToolsBundle avec vos propres anonymizers.
+
+  Nous vous montrerons aussi comment DbToolsBundle peut anonymiser 1 million de lignes en moins de 20 secondes à l'aide de requêtes SQL avancées !

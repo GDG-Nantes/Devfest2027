@@ -1,0 +1,19 @@
+---
+key: embellir_des_qr_codes_a_l_ere_de_la_genai
+openfeedbackId: embellirdesqrcodesaleredelagenai
+title: Embellir des QR Codes à l’ère de la GenAI
+language: French
+talkType: quickie
+tags:
+  - bigdata_ai
+complexity: Beginner
+speakers:
+  - raphael_semeteys
+slot: day-2-quickie-2
+room: Belem
+abstract: |-
+  Découvrez comment l'intelligence artificielle générative (GenAI) révolutionne la personnalisation des QR Codes !
+
+  Cette présentation met en lumière les fondements techniques des QR Codes et montre, via des démonstrations pratiques, comment des outils comme **Stable Diffusion** et **ComfyUI** permettent de créer des QR Codes uniques qui allient fonctionnalité et esthétique. 
+
+  Le tout en local sur un PC. Plongez dans un futur où chaque scan devient une expérience visuelle engageante.

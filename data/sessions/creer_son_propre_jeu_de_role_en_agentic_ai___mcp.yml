@@ -1,0 +1,21 @@
+---
+key: creer_son_propre_jeu_de_role_en_agentic_ai___mcp
+openfeedbackId: creersonproprejeuderoleenagenticaimcp
+title: Créer son propre Jeu de Rôle en Agentic AI & MCP avec Strands Agents
+language: French
+talkType: codelab
+tags:
+  - bigdata_ai
+complexity: Intermediate
+speakers:
+  - arnaud_jean
+  - tiffany_souterre
+  - olivier_leplus
+slot: day-1-codelab-1
+room: L'Atelier
+abstract: |-
+  Viens coder un Maître du jeu (MJ) qui sera chargé d'orchestrer plusieurs agents IA, chacun spécialisé dans une tâche particulière. 
+  
+  On y verra des concepts comme les agent tools, le protocole MCP (Model Context Protocol), A2A (Agent to Agent) et RAG (Retrieval-augmented generation) afin de créer des agents et/ou serveurs MCP qui tirent les dés, vérifient les règles de DnD, et génèrent l'histoire au fur et à mesure.
+
+  Que tu sois fan de jeu de rôle ou non, il y aura des choses à apprendre pendant le workshop :)

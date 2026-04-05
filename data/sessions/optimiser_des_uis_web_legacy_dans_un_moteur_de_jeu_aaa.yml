@@ -1,0 +1,33 @@
+---
+key: optimiser_des_uis_web_legacy_dans_un_moteur_de_jeu_aaa
+openfeedbackId: optimiserdesuisweblegacydansunmoteurdejeuaaa
+title: Optimiser des UIs Web legacy dans un moteur de jeu AAA
+language: French
+talkType: conference
+tags:
+  - web
+complexity: Intermediate
+speakers:
+  - cedric_chariere_fiedler
+  - clement_gregoire
+slot: day-2-conference-5
+room: Titan
+abstract: |-
+  Faire tourner une UI Web fluide et responsive, c’est un défi… surtout quand votre navigateur est **embarqué dans un moteur de jeu temps réel**, que vous visez 30 **FPS sur Xbox Series S**, et que votre stack technique commence à prendre de l’âge.
+
+  Bienvenue dans les coulisses de notre dernière année passée sur *Flight Simulator 2024*.
+
+  Au programme :
+
+  - Du **profiling adapté** pour traquer les goulots d’étranglement (dans WebKit et dans le JS),
+  - Des **UI Web qui survivent des heures** en vol, sans fuiter leur mémoire,
+  - Du **CSS trop gourmand**, de **l’asynchronisme en excès** qui prend l’eau,
+  - Des assets trop gros, et des polyfills trop bavards,
+  - Et surtout : **comment faire tout ça sans casser le moteur de jeu** (ni le plaisir des joueurs).
+
+  Ce talk, c’est une immersion technique dans un monde dans lequel **le Web rencontre les contraintes fortes du jeu vidéo**. Vous en sortirez avec des idées concrètes pour :
+
+  - Optimiser vos UIs (même en dehors du jeu),
+  - Mieux comprendre les coûts cachés de vos choix frontend,
+
+  Spoiler : oui, BEM est une bonne idée. Et non, les getter/setters transpilés ne sont pas vos amis.

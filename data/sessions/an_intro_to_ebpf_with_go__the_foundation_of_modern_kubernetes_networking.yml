@@ -1,0 +1,14 @@
+---
+key: an_intro_to_ebpf_with_go__the_foundation_of_modern_kubernetes_networking
+openfeedbackId: anintrotoebpfwithgothefoundationofmodernkubernetesnetworking
+title: 'An Intro to eBPF with Go: The Foundation of Modern Kubernetes Networking'
+language: French
+talkType: quickie
+tags:
+  - cloud_devops
+complexity: Intermediate
+speakers:
+  - donia_chaiehloudj
+slot: day-1-quickie-2
+room: Tour Bretagne
+abstract: eBPF is revolutionizing how we secure, observe, and scale Kubernetes networking, but its complexity can be daunting. This session demystifies eBPF by exploring how Go makes it accessible, focusing on its integration with Kubernetes through the open-source project Cilium. Attendees will learn the basics of eBPF, how Go simplifies working with it, and practical use cases that demonstrate Cilium’s ability to enforce secure, scalable network policies. This talk is perfect for Kubernetes practitioners curious about eBPF and Go but unsure where to begin.

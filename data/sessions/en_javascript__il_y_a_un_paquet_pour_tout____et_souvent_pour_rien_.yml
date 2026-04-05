@@ -1,0 +1,24 @@
+---
+key: en_javascript__il_y_a_un_paquet_pour_tout____et_souvent_pour_rien_
+openfeedbackId: enjavascriptilyaunpaquetpourtoutetsouventpourrien
+title: En JavaScript, il y a un paquet pour tout... et souvent pour rien.
+language: French
+talkType: quickie
+tags:
+  - web
+complexity: Beginner
+speakers:
+  - esteban_s
+slot: day-2-quickie-2
+room: Titan
+abstract: |-
+  Le petit module is-number totalise chaque semaine plus de 70 millions de téléchargements, tandis que des géants comme react plafonnent à seulement 25 millions. Surprenant, non ?
+
+  Mais ce raz-de-marée de dépendances dépassées n’est pas une fatalité. Un groupe de développeurs déterminés, connu sous le nom de **e18e (Ecosystem Performance)**, s'est donné pour mission de rénover l’écosystème JavaScript : **un paquet à la fois**. Leur objectif ? Nettoyer, accélérer et optimiser l'écosystème JavaScript tout en aidant la communauté à réduire les dépendances inutiles.
+
+  Le plus incroyable, c’est que **toi aussi, tu peux contribuer** à ce changement ! Que ce soit au sein de tes bibliothèques ou dans tes applications web, tu peux intégrer ces bonnes pratiques sans effort. Pour t’y aider, l’équipe e18e et la communauté ont conçu une panoplie d’outils :
+  - **Règles ESLint**
+  - **Plugins Vite**
+  - **Outils pour CI/CD**
+
+  Viens découvrir comment améliorer tes pipelines, réduire la taille de tes builds, simplifier la maintenance de tes projets, et même limiter la surface d’attaque de ton application. Rejoins-nous pour explorer comment rendre JavaScript plus propre, plus rapide et plus sûr !

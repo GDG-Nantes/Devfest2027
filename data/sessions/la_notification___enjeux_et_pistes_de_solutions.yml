@@ -1,0 +1,20 @@
+---
+key: la_notification___enjeux_et_pistes_de_solutions
+openfeedbackId: lanotificationenjeuxetpistesdesolutions
+title: 'La notification : enjeux et pistes de solutions'
+language: French
+talkType: quickie
+tags:
+  - ux_ui
+complexity: Beginner
+speakers:
+  - flora_brochier
+slot: day-1-quickie-2
+room: Belem
+abstract: |-
+  La notification est un élément d'interface qui impacte au quotidien notre attention (en se rappelant régulièrement à nous et en nous poussant à rester connectés) et nos usages du numérique (en nous incitant régulièrement à retourner sur certaines applications). 
+
+  Explorons ensemble les usages actuels de la notification et de multiples pistes de solution qui rendraient ce composant d’interface plus respectueux de l’utilisateur et de son attention.
+
+  Comment sont vécus, paramétrés, utilisés les smartphones et les notifications aujourd’hui ? Lorsque l’on conçoit ou développe un service numérique, comment décider s'il y a besoin d'une notification et le type de notifications à utiliser ? À quoi ressembleraient ces notifications ? Quelles sont les bonnes pratiques à respecter ?
+  Voici les types de questions que nous allons voir et répondre ensemble.
