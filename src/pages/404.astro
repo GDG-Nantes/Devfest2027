@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTranslation } from '@/i18n/i18n';
+const locale = 'fr';
+const t = await getTranslation(locale, '404');
+---
+
+<BaseLayout locale={locale} title="404">
+  <div class="section" style="text-align: center;">
+    <h1>{t('main')}</h1>
+    <a href="/fr" class="btn btn-secondary" aria-label={t('button')}>
+      {t('button')}
+    </a>
+  </div>
+</BaseLayout>
+
+<style>
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+  }
+  .btn-secondary {
+    background-color: var(--secondary);
+  }
+  .btn-secondary:hover {
+    opacity: 0.9;
+  }
+</style>

@@ -1,17 +1,14 @@
 runtime: python312
 
+error_handlers:
+  - file: 404.html
+
 handlers:
-  # Serve _next/static assets with aggressive caching
-  - url: /_next/static
-    static_dir: _next/static
+  # Serve _astro/ build assets with aggressive caching (hashed filenames)
+  - url: /_astro
+    static_dir: _astro
     secure: always
     expiration: '365d'
-
-  # Serve other _next build assets
-  - url: /_next
-    static_dir: _next
-    secure: always
-    expiration: '30d'
 
   # Serve static assets at root (favicon, images, robots.txt, sitemap, etc.)
   - url: /(.*\..+)$
@@ -20,14 +17,20 @@ handlers:
     secure: always
     expiration: '1d'
 
-  # Redirect bare root / to default locale /fr
+  # Serve root / -> index.html (meta refresh to /fr)
   - url: /$
-    static_files: fr.html
-    upload: fr\.html
+    static_files: index.html
+    upload: index\.html
     secure: always
 
-  # Serve HTML pages without .html extension (e.g. /fr/team -> fr/team.html)
+  # Serve directory-style HTML pages (e.g. /fr/team -> fr/team/index.html)
+  - url: /(.+)/
+    static_files: \1/index.html
+    upload: (.+)/index\.html$
+    secure: always
+
+  # Serve directory-style HTML pages without trailing slash (e.g. /fr/team -> fr/team/index.html)
   - url: /(.+)
-    static_files: \1.html
-    upload: (.+)\.html$
+    static_files: \1/index.html
+    upload: (.+)/index\.html$
     secure: always

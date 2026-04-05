@@ -1,0 +1,68 @@
+---
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '@fontsource/bebas-neue/400.css';
+import '@/layout/globals.scss';
+import { getTranslation } from '@/i18n/i18n';
+import { jsonLd } from '@/jsonLd';
+import Navbar from '@/components/astro/Navbar.astro';
+import Footer from '@/components/astro/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  locale: string;
+}
+
+const { title = 'Devfest Nantes', description, locale } = Astro.props;
+const t = await getTranslation(locale);
+const siteDescription = description || t('site.description');
+const URLSite = 'https://devfest2027.gdgnantes.com';
+const isProduction = import.meta.env.PROD;
+---
+
+<!doctype html>
+<html lang={locale} class="font-roboto font-heading">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={siteDescription} />
+    <meta name="author" content="GDG Nantes" />
+    <link rel="canonical" href={URLSite} />
+    <link rel="alternate" hreflang="en" href={`${URLSite}/en`} />
+    <link rel="alternate" hreflang="fr" href={`${URLSite}/`} />
+    <meta name="twitter:site" content="@devfestnantes" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {isProduction && (
+      <script
+        async
+        src="https://cloud.umami.is/script.js"
+        data-website-id="3962f1f9-2780-4bb2-ad18-bf194b8a4708"
+      />
+    )}
+  </head>
+  <body>
+    <Navbar locale={locale} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --font-roboto: 'Roboto', sans-serif;
+    --font-heading: 'Bebas Neue', sans-serif;
+    --primary: #0d1b2a;
+    --secondary: #e63946;
+    --primary-dark: #091420;
+    --tertiary: #f4d35e;
+    --tertiary-dark: #e8c547;
+    --md-breakpoint: 900px;
+  }
+</style>

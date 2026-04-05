@@ -1,0 +1,288 @@
+---
+import { getTranslation } from '@/i18n/i18n';
+import '@/layout/footer/footer.scss';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const t = await getTranslation(locale, 'footer');
+const tPages = await getTranslation(locale, 'pages');
+
+type SocialData = { type: string; login: string };
+type FooterLink = { label: string; url: string; disabled?: boolean };
+
+const socials: SocialData[] = [
+  { login: 'gdgnantes', type: 'facebook' },
+  { login: 'devfestnantes', type: 'twitter' },
+  { login: 'gdg-nantes', type: 'linkedin' },
+  { login: 'francegdg', type: 'youtube' },
+  { login: 'GDG-Nantes/Devfest2027', type: 'github' },
+  { login: 'gdgnantes', type: 'instagram' },
+  { login: 'gdgnantes', type: 'bluesky' },
+];
+
+function getSocialUrl(social: SocialData): string {
+  const urls: Record<string, string> = {
+    facebook: `https://facebook.com/${social.login}`,
+    twitter: `https://twitter.com/${social.login}`,
+    linkedin: `https://www.linkedin.com/in/${social.login}`,
+    youtube: `https://youtube.com/user/${social.login}`,
+    github: `https://github.com/${social.login}`,
+    instagram: `https://www.instagram.com/${social.login}`,
+    bluesky: `https://bsky.app/profile/${social.login}${social.login.includes('.') ? '' : '.bsky.social'}`,
+  };
+  return urls[social.type] || '#';
+}
+
+function getSocialIcon(type: string): string {
+  const icons: Record<string, string> = {
+    facebook: 'F',
+    twitter: '𝕏',
+    linkedin: 'in',
+    youtube: '▶',
+    github: '⌨',
+    instagram: '📷',
+    bluesky: '🦋',
+  };
+  return icons[type] || '🔗';
+}
+
+const aboutLinks: FooterLink[] = [
+  { label: 'GDG Nantes', url: 'https://gdgnantes.com' },
+  { label: 'Google Developer Groups', url: 'https://developers.google.com/' },
+  { label: tPages('code-of-conduct.name'), url: `/${locale}/code-of-conduct` },
+  { label: tPages('legal-mentions.name'), url: `/${locale}/legal-mentions` },
+];
+
+const partnersLinks: FooterLink[] = [
+  { label: t('partnership-kit'), url: 'https://drive.google.com/drive/folders/1B2HikY25j7-9XlIWZoPDrhqVC7jvDHbj' },
+  { label: t('media-kit'), url: 'https://drive.google.com/drive/folders/1rGPDdErUhohlJlrCyen_ixHASzkwjtEU' },
+];
+
+const previousEditions: FooterLink[] = [
+  { url: 'https://devfest2025.gdgnantes.com', label: 'Devfest Nantes 2025' },
+  { url: 'https://devfest2024.gdgnantes.com', label: 'Devfest Nantes 2024' },
+  { url: 'https://devfest2023.gdgnantes.com', label: 'Devfest Nantes 2023' },
+  { url: 'https://devfest2022.gdgnantes.com', label: 'Devfest Nantes 2022' },
+  { url: 'https://devfest2021.gdgnantes.com', label: 'Devfest Nantes 2021' },
+];
+---
+
+<footer>
+  <div class="footer-container section">
+    <div class="footer-grid">
+      <div class="footer-item half">
+        <h3 class="footer-title">{t('follow')}</h3>
+        <div class="socials">
+          {socials.map((social) => (
+            <a
+              href={getSocialUrl(social)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.type}
+              class="social-icon"
+            >
+              {getSocialIcon(social.type)}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="footer-item half">
+        <a href="mailto:bureau@gdgnantes.com" class="email-link">
+          ✉ bureau@gdgnantes.com
+        </a>
+      </div>
+
+      <div class="footer-item fourth">
+        <h3 class="footer-title">{t('about')}</h3>
+        <ul class="footer-links">
+          {aboutLinks.map((link) => (
+            <li>
+              <a href={link.url} target={link.url.startsWith('http') ? '_blank' : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-item fourth">
+        <h3 class="footer-title">{t('previous-editions')}</h3>
+        <ul class="footer-links">
+          {previousEditions.map((link) => (
+            <li>
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-item fourth">
+        <h3 class="footer-title">{t('partners')}</h3>
+        <ul class="footer-links">
+          {partnersLinks.map((link) => (
+            <li>
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-item fourth">
+        <h3 class="footer-title">Newsletter</h3>
+        <p>{t('no-spam')}</p>
+        <a href="https://eepurl.com/c7X2V9" target="_blank" rel="noopener noreferrer" class="btn btn-contained">
+          ✉ {t('news-button')}
+        </a>
+      </div>
+
+      <div class="footer-item full">
+        <div>
+          <img src="/images/logo-blanc.png" alt="logo devfest" width="150" height="auto" />
+          <p style="margin-top: 5px;">{t('organizers')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid var(--secondary);
+    padding-top: 20px;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 12px;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-item.half {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 600px) {
+    .footer-item.half {
+      grid-column: span 1;
+    }
+  }
+
+  .footer-item.full {
+    grid-column: 1 / -1;
+  }
+
+  .footer-title {
+    color: #8a8a8a;
+    font-size: 1.17rem;
+    line-height: 1.2;
+    font-weight: normal;
+    margin: 0 0 10px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    padding: 2px 0;
+  }
+
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+    color: white;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: opacity 0.2s;
+  }
+
+  .social-icon:hover {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+
+  .email-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .btn-contained {
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-contained:hover {
+    background-color: #1a2d42;
+    text-decoration: none;
+  }
+</style>

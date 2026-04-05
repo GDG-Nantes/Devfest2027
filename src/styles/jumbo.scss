@@ -1,0 +1,44 @@
+.jumbo {
+  height: calc(100vh - 65px);
+  width: 100%;
+  font-size: 3rem;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .jumbo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+  }
+  .logo-jumbo-home {
+    width: 100%;
+    margin-top: 0;
+    max-height: 50%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo-jumbo-home-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  h1 {
+    margin: 1rem 0 1rem;
+  }
+
+  .disabled {
+    color: gray;
+    background-color: #ff4e5377;
+    cursor: not-allowed;
+  }
+}

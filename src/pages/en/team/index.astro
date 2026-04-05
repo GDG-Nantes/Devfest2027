@@ -1,0 +1,92 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTranslation } from '@/i18n/i18n';
+import '@/components/commun/avatar/avatar.scss';
+import '@/components/team/team-member.scss';
+
+const locale = 'en';
+const t = await getTranslation(locale);
+
+const teamMembers = [
+  { firstName: 'Arthur', lastName: 'Maury', title: 'Software Architect at Bouygues Telecom', image: '/images/team/arthur.jpeg', socials: [{ type: 'twitter', login: 'ArthurMaury1' }, { type: 'linkedin', login: 'arthur-maury' }, { type: 'github', login: 'ArtyMaury' }] },
+  { firstName: 'Aline', lastName: 'Millauriaux-Deschamps', title: 'Business Developer DINNO', image: '/images/team/aline.jpg', socials: [{ type: 'twitter', login: 'alinedeschamps' }, { type: 'linkedin', login: 'alinedeschamps' }] },
+  { firstName: 'Annabelle', lastName: 'Koster', title: 'Tech Community Ambassador Sfeir', image: '/images/team/annabelle.jpeg', socials: [{ type: 'twitter', login: 'AnnabelleKoster' }, { type: 'linkedin', login: 'annabelle-koster-31129383' }] },
+  { firstName: 'Audrey', lastName: 'Le Mercier', title: 'Développeuse UI Senior chez Lucca', image: '/images/team/audrey.jpg', socials: [{ type: 'twitter', login: 'ag_lemercier' }, { type: 'linkedin', login: 'audreylemercier' }] },
+  { firstName: 'Aymeric', lastName: 'Fouchault', title: 'Dean of Studies Epitech Nantes', image: '/images/team/aymeric.jpeg', socials: [{ type: 'twitter', login: 'afouchault' }, { type: 'linkedin', login: 'fouchault' }, { type: 'github', login: 'afouchault' }] },
+  { firstName: 'Benjamin', lastName: 'Petetot', title: 'Senior Software Engineer at Pix', image: '/images/team/benjamin.jpeg', socials: [{ type: 'twitter', login: 'bpetetot' }, { type: 'linkedin', login: 'benjamin-petetot-29b99a54' }, { type: 'github', login: 'bpetetot' }] },
+  { firstName: 'Jean-Francois', lastName: 'Garreau', title: 'CTO Sfeir Nantes', image: '/images/team/jeff.jpg', socials: [{ type: 'twitter', login: 'jefBinomed' }, { type: 'linkedin', login: 'jean-francois-garreau' }, { type: 'github', login: 'jefBinomed' }] },
+  { firstName: 'Julien', lastName: 'Landuré', title: 'Founder & CTO at TechTown', image: '/images/team/julien.jpg', socials: [{ type: 'twitter', login: 'jlandure' }, { type: 'linkedin', login: 'jlandure' }, { type: 'github', login: 'jlandure' }] },
+  { firstName: 'Marie', lastName: 'Cauchy', title: 'Chef de projet Marque Employeur & RSE at RCA', image: '/images/team/marie.jpg', socials: [{ type: 'twitter', login: 'MarieCauchyy' }, { type: 'linkedin', login: 'marie-cauchy-02222776' }] },
+  { firstName: 'Pierrick', lastName: 'Guyard', title: 'Dean of Studies Epitech Nantes', image: '/images/team/pierrick.jpeg', socials: [{ type: 'twitter', login: 'PierrickGuyard' }, { type: 'linkedin', login: 'pierrickguyard' }, { type: 'github', login: 'pguyard' }] },
+  { firstName: 'Brian', lastName: 'Guitteny', title: 'Platform Engineer - Lucca', image: '/images/team/brian.jpeg', socials: [{ type: 'linkedin', login: 'bguitteny' }, { type: 'github', login: 'briangtn' }, { type: 'bluesky', login: 'briangtn' }] },
+  { firstName: 'Jocelyn', lastName: 'Biliec', title: 'Devops - UTech', image: '/images/team/jocelyn.jpg', socials: [{ type: 'linkedin', login: 'jocebi' }] },
+];
+
+function shuffleArray<T>(array: T[]): T[] {
+  return [...array].map(value => ({ value, sort: Math.random() })).sort((a, b) => a.sort - b.sort).map(({ value }) => value);
+}
+const shuffled = shuffleArray(teamMembers);
+
+function getSocialUrl(social: { type: string; login: string }): string {
+  const urls: Record<string, string> = {
+    twitter: `https://twitter.com/${social.login}`,
+    linkedin: `https://www.linkedin.com/in/${social.login}`,
+    github: `https://github.com/${social.login}`,
+    bluesky: `https://bsky.app/profile/${social.login}${social.login.includes('.') ? '' : '.bsky.social'}`,
+  };
+  return urls[social.type] || '#';
+}
+---
+
+<BaseLayout locale={locale} title={t('pages.team.name')}>
+  <div class="section secondary">
+    <h2>DevFest Nantes is supported by GDG Nantes.</h2>
+    <p>The Google Developers Groups (GDGs) are groups of people interested in Google Platforms and Technologies: Android, Chrome, Google Apps, Angular, Cloud... These groups promoting sharing can be found all around the world.</p>
+    <p>The objective of GDG Nantes is to organise events regularly:</p>
+    <ul>
+      <li>Google Technology Conferences and others on the Web, Cloud, Mobile, Big Data.</li>
+      <li>Informal theme-based evening sessions around an Aperitif to facilitate meetings of similar minds and thoughts</li>
+      <li>Codelabs to learn concretely and technically about technologies</li>
+      <li>Competitions (Hackathon, ...)</li>
+      <li>Video retransmissions of major events: US conferences, keynotes</li>
+    </ul>
+    <p>To make all this possible, an awesome team of volunteers is working behind the scenes.</p>
+  </div>
+
+  <div class="section">
+    <h2>{t('pages.team.membersTitle')}</h2>
+    <div class="team-grid">
+      {shuffled.map((member) => (
+        <div class="team-member-card">
+          <div class="avatar-picture-container" style="width: 100px; height: 100px; min-width: 100px; min-height: 100px;">
+            <img class="avatar-picture" src={member.image} alt={`${member.firstName}'s picture`} width="100" height="100" />
+          </div>
+          <div class="member-info">
+            <h3>{member.firstName} {member.lastName.toUpperCase()}</h3>
+            <h4>{member.title}</h4>
+            <div class="member-socials">
+              {member.socials.map((social) => (
+                <a href={getSocialUrl(social)} target="_blank" rel="noopener noreferrer" aria-label={social.type} class="social-btn">
+                  {social.type === 'twitter' ? '𝕏' : social.type === 'linkedin' ? 'in' : social.type === 'github' ? '⌨' : '🦋'}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 24px; justify-items: center; }
+  @media (max-width: 900px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+  .team-member-card { display: flex; width: 100%; max-width: 500px; }
+  .member-info { min-width: 150px; display: flex; flex-direction: column; margin-left: 20px; }
+  .member-info h3 { margin: 0 0 4px; }
+  .member-info h4 { margin: 0; color: #ccc; }
+  .member-socials { display: flex; gap: 4px; margin-top: 8px; }
+  .social-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; color: white; text-decoration: none; font-size: 0.9rem; transition: opacity 0.2s; cursor: pointer; }
+  .social-btn:hover { opacity: 0.7; }
+</style>

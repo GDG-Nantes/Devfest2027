@@ -1,0 +1,176 @@
+---
+import { getTranslation } from '@/i18n/i18n';
+import { MENU } from '@/layout/navbar/menu';
+import MobileMenu from '@/components/react/MobileMenu';
+import '@/layout/navbar/navbar.scss';
+
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const t = await getTranslation(locale, 'pages');
+const currentPath = Astro.url.pathname.replace(/^\/en\/?/, '/');
+const targetLocale = locale === 'en' ? 'fr' : 'en';
+const segments = Astro.url.pathname.split('/');
+segments[1] = targetLocale;
+const targetPath = segments.join('/');
+const flagSrc = targetLocale === 'fr' ? '/images/flags/fr.svg' : '/images/flags/en.svg';
+
+const menuItems = MENU.map((item) => ({
+  label: t(item.label + '.name', { defaultValue: item.label }),
+  link: `/${locale}${item.link === '/' ? '' : item.link}`,
+  isActive: currentPath === item.link || currentPath === item.link + '/',
+}));
+---
+
+<header class="navbar">
+  <nav class="toolbar">
+    <div class="top-bar-left">
+      <a href={`/${locale}`}>
+        <img
+          class="logo-top-bar"
+          src="/images/logo-blanc.png"
+          alt="Logo Devfest"
+          width="100"
+          height="auto"
+        />
+      </a>
+    </div>
+
+    <div class="top-bar-right menu-desktop">
+      <ul class="menu-list">
+        {menuItems.map((item) => (
+          <li>
+            <a
+              href={item.link}
+              class:list={['menu-item', { 'active-link': item.isActive }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a href={targetPath} class="lang-toggle">
+            <img src={flagSrc} alt={targetLocale} width="24" height="18" />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="top-bar-right menu-mobile">
+      <MobileMenu
+        client:load
+        menuItems={menuItems}
+        targetPath={targetPath}
+        targetLocale={targetLocale}
+        flagSrc={flagSrc}
+      />
+    </div>
+  </nav>
+</header>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    background-color: var(--primary);
+    border-bottom: 2px solid #ff6b6b;
+  }
+
+  .toolbar {
+    max-width: 1200px;
+    width: calc(100% - 32px);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    padding: 0 8px;
+  }
+
+  .top-bar-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .top-bar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 0;
+  }
+
+  .menu-desktop {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: block;
+  }
+
+  @media (min-width: 600px) {
+    .menu-desktop {
+      display: flex;
+    }
+    .menu-mobile {
+      display: none;
+    }
+  }
+
+  .menu-list {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+
+  .menu-list li {
+    display: flex;
+  }
+
+  .menu-item {
+    padding: 8px 16px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--font-roboto);
+    font-size: 0.95rem;
+  }
+
+  .menu-item:hover {
+    opacity: 0.8;
+  }
+
+  .active-link {
+    border-bottom: 1px solid white;
+  }
+
+  .lang-toggle {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .lang-toggle img {
+    object-fit: cover;
+    vertical-align: middle;
+  }
+
+  .logo-top-bar {
+    width: 100px;
+    height: auto;
+  }
+
+  .logo-top-bar:hover {
+    filter: drop-shadow(0px 2px 2px rgba(239, 217, 186, 0.5));
+  }
+</style>
