@@ -63,7 +63,7 @@ export const Animations: MyComponent = ({ params }) => {
             <Box mt={2}>
               <Typography variant='subtitle1'>{t('sessions')}</Typography>
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={12}>
                   <Box display='flex' justifyContent='space-between'>
                     <Typography variant='body2'>
                       {siteT('pages.schedule.day1')}

@@ -1,8 +1,6 @@
-import { Config } from 'next-i18n-router/dist/types';
-
-const i18nConfig: Config = {
-  locales: ['en', 'fr'],
-  defaultLocale: 'fr',
-  serverSetCookie: 'if-empty',
+const i18nConfig = {
+  locales: ['en', 'fr'] as const,
+  defaultLocale: 'fr' as const,
 };
+
 export default i18nConfig;

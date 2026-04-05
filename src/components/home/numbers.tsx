@@ -1,4 +1,4 @@
-import { Grid2 as Grid, Stack, Typography } from '@mui/material';
+import { Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { MyComponent } from '@/types';
 import { getTranslation } from '@/i18n/i18n';

@@ -2,7 +2,7 @@ import { Email } from '@mui/icons-material';
 import {
   Button,
   Container,
-  Grid2 as Grid,
+  Grid,
   List,
   ListItem,
   Typography,

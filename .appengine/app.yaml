@@ -1,5 +1,33 @@
-runtime: nodejs22
+runtime: python312
+
 handlers:
-  - url: /.*
+  # Serve _next/static assets with aggressive caching
+  - url: /_next/static
+    static_dir: _next/static
     secure: always
-    script: auto
+    expiration: '365d'
+
+  # Serve other _next build assets
+  - url: /_next
+    static_dir: _next
+    secure: always
+    expiration: '30d'
+
+  # Serve static assets at root (favicon, images, robots.txt, sitemap, etc.)
+  - url: /(.*\..+)$
+    static_files: \1
+    upload: (.+\..+)$
+    secure: always
+    expiration: '1d'
+
+  # Redirect bare root / to default locale /fr
+  - url: /$
+    static_files: fr.html
+    upload: fr\.html
+    secure: always
+
+  # Serve HTML pages without .html extension (e.g. /fr/team -> fr/team.html)
+  - url: /(.+)
+    static_files: \1.html
+    upload: (.+)\.html$
+    secure: always

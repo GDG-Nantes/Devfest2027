@@ -2,8 +2,7 @@ import type { NextConfig } from 'next';
 import createMDX from '@next/mdx';
 
 const nextConfig: NextConfig = {
-  // output: 'export',
-  output: process.env.NODE_ENV === 'development' ? undefined : 'standalone',
+  output: 'export',
   pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
   turbopack: {
     rules: {
@@ -21,7 +20,12 @@ const nextConfig: NextConfig = {
     return config;
   },
   images: {
-    remotePatterns: [new URL('https://www.lecarredesdelices.com/**')],
+    unoptimized: true,
+  },
+  typescript: {
+    // TypeScript checking is done separately via `tsc --noEmit` in the build script.
+    // Next.js's built-in SWC-based checker crashes on Windows WASM fallback.
+    ignoreBuildErrors: true,
   },
 };
 

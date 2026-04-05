@@ -38,7 +38,7 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return i18nConfig.locales.map((locale) => ({ locale }));
+  return i18nConfig.locales.map((locale: string) => ({ locale }));
 }
 
 const RootLayout: MyComponent = async ({ children, params }) => {

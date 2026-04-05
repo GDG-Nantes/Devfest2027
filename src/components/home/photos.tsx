@@ -1,4 +1,4 @@
-import { Button, Grid2, Stack } from '@mui/material';
+import { Button, Grid, Stack } from '@mui/material';
 import React, { CSSProperties } from 'react';
 import { MyLink } from '@/components/commun/link';
 import Image, { StaticImageData } from 'next/image';
@@ -17,7 +17,7 @@ import { getTranslation } from '@/i18n/i18n';
 export const DevfestPhotos: MyComponent = async ({ params }) => {
   const t = await getTranslation(params, 'pages.home.photos');
   return (
-    <Grid2
+    <Grid
       display={'grid'}
       container
       gap={2}
@@ -65,7 +65,7 @@ export const DevfestPhotos: MyComponent = async ({ params }) => {
         gridColumn='span 1'
         noMobile
       />
-    </Grid2>
+    </Grid>
   );
 };
 
@@ -93,7 +93,7 @@ const Picture: React.FC<{
         ? '(max-width: 640px) 100vw, (max-width: 1280px) 75vw, 50vw'
         : '(max-width: 640px) 100vh, (max-width: 1280px) 75vh';
   return (
-    <Grid2
+    <Grid
       gridColumn={gridColumn}
       gridRow={gridRow}
       sx={noMobile ? { display: { xs: 'none', sm: 'block' } } : undefined}
@@ -110,7 +110,7 @@ const Picture: React.FC<{
           objectFit: 'cover',
         }}
       />
-    </Grid2>
+    </Grid>
   );
 };
 

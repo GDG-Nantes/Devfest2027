@@ -1,5 +1,5 @@
 import { shuffleArray } from '@/helpers/array';
-import { Grid2 as Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import '../commun/avatar/avatar.scss';
 import React from 'react';
 import { MyAvatar } from '@/components/commun/avatar/avatar';
@@ -11,21 +11,24 @@ interface SpeakersListProps {
   speakers: Speaker[];
 }
 
-export const SpeakersList: React.FC<SpeakersListProps> = async ({ speakers }) => {
+export const SpeakersList: React.FC<SpeakersListProps> = async ({
+  speakers,
+}) => {
   // Filtrer les speakers pour retirer les anonymes
-  const filteredSpeakers = speakers.filter(speaker => 
-    !speaker.name.toLowerCase().includes('anonymous') && 
-    !speaker.key.toLowerCase().includes('anonymous')
+  const filteredSpeakers = speakers.filter(
+    (speaker) =>
+      !speaker.name.toLowerCase().includes('anonymous') &&
+      !speaker.key.toLowerCase().includes('anonymous')
   );
   const shuffledSpeakers = shuffleArray(filteredSpeakers);
 
   return (
     <Grid container columnSpacing={3} rowSpacing={6} justifyContent='center'>
       {shuffledSpeakers.map(async (speaker) => {
-        const image = speaker.photoUrl 
+        const image = speaker.photoUrl
           ? await import(`@/images/speakers/${speaker.photoUrl}`)
           : null;
-        
+
         return (
           <Grid
             maxWidth={250}
@@ -43,10 +46,12 @@ export const SpeakersList: React.FC<SpeakersListProps> = async ({ speakers }) =>
               <div className='speaker-item'>
                 <div className='speaker-avatar-container'>
                   <MyAvatar
-                    src={image ? image.default.src : '/images/speakers/default.jpg'}
+                    src={
+                      image ? image.default.src : '/images/speakers/default.jpg'
+                    }
                     alt={`${speaker.name}'s picture`}
                     size={120}
-                    className="speaker-avatar"
+                    className='speaker-avatar'
                   />
                 </div>
 
@@ -55,12 +60,20 @@ export const SpeakersList: React.FC<SpeakersListProps> = async ({ speakers }) =>
                     {speaker.name}
                   </Typography>
                   {speaker.company && (
-                    <Typography variant='body1' className='speaker-company' color='default'>
+                    <Typography
+                      variant='body1'
+                      className='speaker-company'
+                      color='default'
+                    >
                       {speaker.company}
                     </Typography>
                   )}
                   {speaker.city && (
-                    <Typography variant='body2' className='speaker-city' color='default'>
+                    <Typography
+                      variant='body2'
+                      className='speaker-city'
+                      color='default'
+                    >
                       {speaker.city}
                     </Typography>
                   )}

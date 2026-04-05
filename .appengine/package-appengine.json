@@ -1,9 +1,0 @@
-{
-  "name": "devfest2027",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "gcp-build": "tar -xzf node_modules.tar.gz && rm -f node_modules.tar.gz && ln -s /tmp .next/cache || true",
-    "start": "node ./server.js"
-  }
-}

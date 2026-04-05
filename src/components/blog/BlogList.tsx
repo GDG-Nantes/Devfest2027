@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid2 as Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { MyLink } from '@/components/commun/link';
 import Image from 'next/image';
 import { BlogPost } from '@/types/blog';

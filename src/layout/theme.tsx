@@ -2,7 +2,7 @@
 import './globals.scss';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Bebas_Neue, Roboto } from 'next/font/google';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],

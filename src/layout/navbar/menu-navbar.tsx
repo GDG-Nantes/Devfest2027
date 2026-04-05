@@ -153,15 +153,16 @@ const DrawerMenu: React.FC<
 
 export const ToggleLanguage: React.FC<{ locale: string }> = ({ locale }) => {
   const targetLocale = locale == 'en' ? 'fr' : 'en';
+  const pathname = usePathname();
+
+  // Build the target URL by swapping the locale prefix
+  const segments = pathname.split('/');
+  // segments[0] is '', segments[1] is the locale ('en' or 'fr')
+  segments[1] = targetLocale;
+  const targetPath = segments.join('/');
+
   return (
-    <Link
-      href='#'
-      onClick={() => {
-        document.cookie = `NEXT_LOCALE=${targetLocale}; path=/`;
-        location.reload();
-      }}
-      style={{ width: '100%', textAlign: 'center' }}
-    >
+    <Link href={targetPath} style={{ width: '100%', textAlign: 'center' }}>
       <Flag lang={targetLocale} />
     </Link>
   );

@@ -1,4 +1,4 @@
-import { Grid2 as Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import React from 'react';
 import { MyLink } from '@/components/commun/link';
 import { MyComponent } from '@/types';
@@ -52,11 +52,13 @@ const Ticket: React.FC<{
         href='https://www.billetweb.fr/billet-devfest-nantes-2027'
         style={{ cursor: 'default' }}
       >
-        <div className="ticket-wrapper">
-          <div className={"ticket " + (disabled ? "disabled" : "active")}>
-            <div className="ticket-header">✨ {label} ✨</div>
-            <div className="ticket-price">{price} € <span className="ht">HT</span></div>
-            <div className="ticket-info">
+        <div className='ticket-wrapper'>
+          <div className={'ticket ' + (disabled ? 'disabled' : 'active')}>
+            <div className='ticket-header'>✨ {label} ✨</div>
+            <div className='ticket-price'>
+              {price} € <span className='ht'>HT</span>
+            </div>
+            <div className='ticket-info'>
               <p>{quantity} places</p>
               <p>{date}</p>
             </div>
