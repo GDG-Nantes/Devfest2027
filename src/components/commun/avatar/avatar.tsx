@@ -8,10 +8,10 @@ interface MyAvatarProps extends ImageProps {
 
 export const MyAvatar: React.FC<MyAvatarProps> = (props) => {
   const size = props.size || props.width || 100;
-  
+
   return (
-    <div 
-      className="avatar-picture-container"
+    <div
+      className='avatar-picture-container'
       style={{
         width: size,
         height: size,
@@ -20,7 +20,7 @@ export const MyAvatar: React.FC<MyAvatarProps> = (props) => {
       }}
     >
       <Image
-        className="avatar-picture"
+        className='avatar-picture'
         src={props.src}
         alt={props.alt}
         width={props.width || size}

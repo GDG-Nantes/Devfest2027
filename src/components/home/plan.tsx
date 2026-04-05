@@ -7,8 +7,7 @@ export const PlanCite = () => {
     <Image
       src={PlanCiteImage}
       alt='Plan H Arena'
-      objectFit='contain'
-      style={{ maxHeight: '600px', width: 'auto' }}
+      style={{ objectFit: 'contain', maxHeight: '600px', width: 'auto' }}
     />
   );
 };

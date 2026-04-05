@@ -65,26 +65,26 @@ export const HomeJumbo: MyComponent = ({ params }) => {
           </Stack>
           <Stack className={'jumbo-buttons'} direction='column' spacing={3}>
             <Stack direction='row' spacing={3} justifyContent={'center'}>
-            <Button
-              color='secondary'
-              variant='contained'
-              href='https://www.billetweb.fr/partenaire-devfest-nantes-2027'
-              target='_blank'
-              aria-label={t('become_sponsor')}
-            >
-              {t('become_sponsor')}
-            </Button>
-            {/*<Button*/}
-            {/*  color="secondary"*/}
-            {/*  variant="contained"*/}
-            {/*  href="https://conference-hall.io/devfest-nantes-2027"*/}
-            {/*  aria-label={t("cfp")}*/}
-            {/*>*/}
-            {/*  {t("cfp")}*/}
-            {/*</Button>*/}
+              <Button
+                color='secondary'
+                variant='contained'
+                href='https://www.billetweb.fr/partenaire-devfest-nantes-2027'
+                target='_blank'
+                aria-label={t('become_sponsor')}
+              >
+                {t('become_sponsor')}
+              </Button>
+              {/*<Button*/}
+              {/*  color="secondary"*/}
+              {/*  variant="contained"*/}
+              {/*  href="https://conference-hall.io/devfest-nantes-2027"*/}
+              {/*  aria-label={t("cfp")}*/}
+              {/*>*/}
+              {/*  {t("cfp")}*/}
+              {/*</Button>*/}
             </Stack>
             {/*<Stack direction='row' spacing={3} justifyContent={'center'}>*/}
-              {/* <Button
+            {/* <Button
                 color='secondary'
                 variant='contained'
                 href='https://devfest2025.gdgnantes.com'
@@ -110,7 +110,7 @@ export const HomeJumbo: MyComponent = ({ params }) => {
               >
                 {t('become-volunteer')}
               </Button> */}
-              {/*<Button
+            {/*<Button
               color="secondary"
               variant="contained"
               aria-label={t('schedule')}
@@ -121,22 +121,22 @@ export const HomeJumbo: MyComponent = ({ params }) => {
             {/*</Stack>*/}
             <Stack direction='row' spacing={3} justifyContent={'center'}>
               <Button
-                color="secondary"
+                color='secondary'
                 startIcon={<PhotoSharp />}
-                variant="contained"
-                href="https://photos.app.goo.gl/H1EqkeCNkjjYMxCCA"
-                aria-label="Photos"
-                target="_blank"
+                variant='contained'
+                href='https://photos.app.goo.gl/H1EqkeCNkjjYMxCCA'
+                aria-label='Photos'
+                target='_blank'
               >
                 Photos 2025
               </Button>
               <Button
-                color="secondary"
+                color='secondary'
                 startIcon={<YouTube />}
-                variant="contained"
-                href="https://www.youtube.com/watch?v=ZhEMS_6m8PI&list=PLuZ_sYdawLiWvkdETEVYDFjV2ibwJ2E-9&index=4"
-                aria-label="Videos"
-                target={"_blank"}
+                variant='contained'
+                href='https://www.youtube.com/watch?v=ZhEMS_6m8PI&list=PLuZ_sYdawLiWvkdETEVYDFjV2ibwJ2E-9&index=4'
+                aria-label='Videos'
+                target={'_blank'}
               >
                 Videos 2025
               </Button>
@@ -186,30 +186,34 @@ export const HomeJumbo: MyComponent = ({ params }) => {
           </Stack>
         </div>
       </div>
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)} className={"modal-apps"}>
-        <Paper className={"modal-content"}>
-          <Box className={"modal-body"}>
+      <Modal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        className={'modal-apps'}
+      >
+        <Paper className={'modal-content'}>
+          <Box className={'modal-body'}>
             <Typography variant='h6' textAlign='center' sx={{ mb: 3 }}>
               {t('thanks-gdg-android')}
             </Typography>
-            <Stack spacing={[5,5]} direction={["column", "row"]}>
+            <Stack spacing={[5, 5]} direction={['column', 'row']}>
               <Button
-                color="secondary"
-                variant="contained"
-                href="https://apps.apple.com/fr/app/devfest-nantes/id6443489706"
-                aria-label="iOS app"
-                target={"_blank"}
-                startIcon={<Apple/>}
+                color='secondary'
+                variant='contained'
+                href='https://apps.apple.com/fr/app/devfest-nantes/id6443489706'
+                aria-label='iOS app'
+                target={'_blank'}
+                startIcon={<Apple />}
               >
                 iOS
               </Button>
               <Button
-                color="secondary"
-                variant="contained"
-                href="https://play.google.com/store/apps/details?id=com.gdgnantes.devfest.mobile.androidapp&pcampaignid=web_share"
-                aria-label="Android app"
-                target={"_blank"}
-                startIcon={<Android/>}
+                color='secondary'
+                variant='contained'
+                href='https://play.google.com/store/apps/details?id=com.gdgnantes.devfest.mobile.androidapp&pcampaignid=web_share'
+                aria-label='Android app'
+                target={'_blank'}
+                startIcon={<Android />}
               >
                 Android
               </Button>

@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     rules: {
       '*.yml': {
         loaders: ['yaml-loader'],
-        as: 'ts',
+        as: '*.ts',
       },
     },
   },

@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap && node generate-redirects.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
