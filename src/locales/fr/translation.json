@@ -132,10 +132,24 @@
     },
     "team": {
       "name": "L'Équipe",
-      "membersTitle": "Core Team"
+      "membersTitle": "Core Team",
+      "intro-title": "Le DevFest Nantes est un événement organisé par le GDG Nantes.",
+      "intro-p1": "Les Google Developers Groups (GDGs) sont des regroupements de personnes intéressées par les technologies et plateformes de Google : Android, Chrome, Google Apps, Angular, Cloud... partout dans le monde.",
+      "intro-p2": "La conférence est communautaire, 100 % à but non lucratif et l'équipe d'organisation n'est pas rémunérée.",
+      "intro-p3": "L'objectif du GDG Nantes, association loi 1901 créée en 2011, est d'organiser des événements de manière régulière :",
+      "intro-li1": "Des conférences sur les technologies Google, Web, Mobile, Cloud, Big Data...",
+      "intro-li2": "Des apéros ;) autour de sujets centraux afin de se rencontrer et boire un verre ensemble",
+      "intro-li3": "Des codelabs pour apprendre concrètement et techniquement sur les technologies",
+      "intro-li4": "Des concours (Hackathon, concours de code ou d'algorithmie...)",
+      "intro-li5": "Des retransmissions vidéo d'événements majeurs : conférences US, keynotes",
+      "intro-p4": "Pour rendre tout cela possible, une équipe de bénévoles sur-vitaminée s'active en coulisse."
     },
     "code-of-conduct": {
       "name": "Code de conduite"
+    },
+    "our-values": {
+      "name": "Nos valeurs",
+      "title": "Nos valeurs"
     },
     "legal-mentions": {
       "name": "Mentions Légales"

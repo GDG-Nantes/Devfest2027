@@ -1,0 +1,136 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTranslation, getLocaleFromParams } from '@/i18n/i18n';
+import i18nConfig from '@/i18n/i18nConfig';
+
+export function getStaticPaths() {
+  return i18nConfig.locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = getLocaleFromParams(Astro.params);
+const t = await getTranslation(locale);
+---
+
+<BaseLayout locale={locale} title={t('pages.our-values.title')}>
+  <div class="section mdx-content">
+    {locale === 'fr' ? (
+      <>
+        <h1>Nos valeurs</h1>
+        <p>Le GDG Nantes (organisateurs du DevFest Nantes) est fier d'être une communauté ouverte, respectueuse des différences et de la diversité. Nous voulons que tous les participants et participantes (visiteurs, conférenciers,...) vivent une expérience agréable et enrichissante. Afin de garantir une expérience enrichie au DevFest Nantes, nous souhaitions vous exposer nos choix et dispositifs vous permettant d'être inclus.</p>
+
+        <h2>Environnement</h2>
+
+        <h3>Goodies</h3>
+        <p><strong>Cette année, aucun Eco-cup et aucun sac ne seront fourni aux participants et participantes.</strong> Cette décision a été prise, car la plupart des participants et participantes ont déjà tout le nécessaire et que bien que l'intention de départ de ces objets soit vertueuse, leur distribution systématique a l'effet inverse et pollue plus que nécessaire.</p>
+        <p><strong>Les participants et participantes doivent donc TOUS emmener un, ou plusieurs, gobelets pour leur consommation durant le Devfest et l'after party.</strong></p>
+        <br />
+        <p>En revanche, un t-shirt sera toujours donné aux participants et participantes, car ils sont largement utilisés et donc ont le même effet que n'importe quel t-shirt que les participants et participantes auraient pu acheter. De même pour les stickers. La quantité produite a tout de même été largement réduite pour correspondre au mieux à la demande.</p>
+        <br />
+        <p>Les sponsors sont aussi incités à ne pas distribuer de goodies aux participants et participantes.</p>
+
+        <h3>Production locale</h3>
+        <p>La plupart de nos prestataires sont locaux, Nantais ou de la région et travaillent, dans la mesure du possible, avec des ressources locales. Il y a des problématiques budgétaires, notamment sur la production des t-shirts qui font qu'ils ne sont pas actuellement produits en France, mais la volonté est de limiter ce genre de cas.</p>
+
+        <h3>Lutte contre le gâchis</h3>
+        <p>Les restes de repas, du mobilier, toutes les ressources qui le peuvent sont données à des associations. De plus, un stand permet aux participants et participantes de <strong>ramener leurs vieux ordinateurs</strong> qui seront réutilisés par l'association <a href="https://aciah-formations-informatiques-pour-tous.fr/">ACIAH</a></p>
+
+        <h2>Inclusion / Accessibilité</h2>
+
+        <h3>Salle d'allaitement</h3>
+        <p>Si vous le souhaitez, nous pouvons mettre à disposition une salle dédiée pour tirer votre lait et le stocker dans un réfrigérateur. Pour ce faire merci de vous faire connaitre à l'accueil du DevFest pour que nous mettions en place un agenda et vous confions la clé de la salle. L'emplacement de cette salle vous sera communiqué à ce moment.</p>
+
+        <h3>PMR</h3>
+        <p>La cité des congrès est un espace accessible pour les personnes à mobilité réduite. Les salles possèdent des espaces dédiés, vous pouvez les demander aux bénévoles de la salle, les ascenseurs sont visibles sur le plan disponible sur votre badge.</p>
+
+        <h3>Sourds et malentendants</h3>
+        <p>Le DevFest est équipé depuis 2022 d'un dispositif de transcription (vélotypie) dans toutes les salles de conférences. Le système en place est assuré par la société "Les messageurs" et est un système de transcription humain et systématiquement disponible dans la langue de la conférence. Nous vous conseillons de vous positionner dans les premiers rangs de la salle de conférence pour en profiter au mieux. Nous ne proposons pas de traduction de la transcription et nous n'assurons pas ce dispositif dans les salles de codelab.</p>
+
+        <h3>Places réservées pour les femmes enceintes</h3>
+        <p>Nous proposons aux femmes enceintes de leur réserver des places assises dans les salles. Pour mettre en place ce dispositif, nous aurons besoin que vous vous signaliez en amont du Festival afin d'identifier le nombre de places à réserver.</p>
+
+        <h2>Code de bonne conduite</h2>
+
+        <h3>Version courte, lisible et explicite du "Code of Conduct policy"</h3>
+        <p>DevFest Nantes s'efforce à vous fournir une expérience de conférence sans harcèlement, indépendamment de votre :</p>
+        <ul>
+          <li>sexe</li>
+          <li>identité et expression de genre</li>
+          <li>orientation sexuelle</li>
+          <li>invalidité</li>
+          <li>apparence physique</li>
+          <li>taille</li>
+          <li>origine</li>
+          <li>âge</li>
+          <li>religion</li>
+          <li>choix technologiques</li>
+          <li>...</li>
+        </ul>
+        <p>Nous ne tolérons aucune forme de harcèlement des participants et participantes à la conférence. Le langage et les images sexuelles ne sont autorisés dans aucun lieu de la conférence, notamment les talks, les codelabs, les animations, les soirées, les réseaux sociaux. Toute personne qui enfreint ces règles peut être sanctionnée et expulsée de la conférence sans remboursement, à la discrétion des organisateurs de la conférence.</p>
+        <br />
+        <p><a href={`/${locale}/code-of-conduct`}>Version complète du Code de bonne conduite</a></p>
+      </>
+    ) : (
+      <>
+        <h1>Our values</h1>
+        <p>The GDG Nantes (Organisers of DevFest Nantes) is proud to be an open community that respects differences and diversity. We want all attendees (visitors, speakers, ...) to have an enjoyable and fulfilling experience. In order to guarantee an enriched experience at DevFest Nantes, we wanted to expose our choices and services allowing you to be included.</p>
+
+        <h2>Environment</h2>
+
+        <h3>Goodies</h3>
+        <p>This year, no Eco-cup or bag will be provided to participants. This decision was made because most of the participants already have everything they need and because even though the original intention of these objects was virtuous, their systematic distribution has the opposite effect and pollutes more than necessary.</p>
+        <br />
+        <p><strong>Therefore, ALL participants must bring one or more cups for their consumption during the Devfest and the after party.</strong></p>
+        <br />
+        <p>However, a T-shirt will still be given to participants, as they are widely used and therefore have the same effect as any T-shirt that participants could have purchased. The same goes for stickers. The quantity produced has nevertheless been greatly reduced to best match demand.</p>
+        <br />
+        <p>Sponsors are also encouraged not to distribute goodies to participants.</p>
+
+        <h3>Local production</h3>
+        <p>Most of our service providers are local, from Nantes or the surrounding area, and work, where possible, with local resources. There are budgetary issues, particularly with the production of T-shirts, which means that they are not currently produced in France, but the aim is to limit this kind of problem.</p>
+
+        <h3>Fighting waste</h3>
+        <p>Leftover meals, furniture, and any resources that can be given are donated to associations. In addition, a stand allows participants to <strong>bring their old computer equipment</strong>, which will be reused by the association <a href="https://aciah-formations-informatiques-pour-tous.fr/">ACIAH</a></p>
+
+        <h2>Inclusivity / Accessibility</h2>
+
+        <h3>Breastfeeding room</h3>
+        <p>If you wish, we can provide a dedicated room to pump your milk and store it in a refrigerator. To do so, please contact the DevFest reception so that we can set up a schedule and give you the key to the room. The location of this room will be communicated to you at that time.</p>
+
+        <h3>People with reduced mobility</h3>
+        <p>The Cité des Congrès is an accessible venue. The rooms have dedicated spaces, the lifts are visible on the map on your badge.</p>
+
+        <h3>Deaf and Hard of Hearing</h3>
+        <p>Since 2022, DevFest is equipped with a transcription system (velotype) in all conference rooms. The system in place is provided by the company "Les messageurs" and is a human transcription system and systematically available in the language of the conference. We advise you to position yourself in the first rows of the conference room to follow this system more comfortably. We do not offer translation of the transcription and we do not provide this service in the workshop rooms.</p>
+
+        <h3>Reserved seats for pregnant women</h3>
+        <p>We offer pregnant women the opportunity to reserve seats in the conference rooms. In order to set up this system, we will need you to notify us before the Festival to identify the number of seats to reserve.</p>
+
+        <h2>Code of conduct</h2>
+
+        <h3>Light version of explicit "Code of Conduct policy"</h3>
+        <p>DevFest Nantes is dedicated to providing a harassment-free conference experience, regardless of anyone's:</p>
+        <ul>
+          <li>gender</li>
+          <li>gender identity and expression</li>
+          <li>sexual orientation</li>
+          <li>disability</li>
+          <li>physical appearance</li>
+          <li>body size</li>
+          <li>race</li>
+          <li>age</li>
+          <li>religion</li>
+          <li>technological choices</li>
+          <li>...</li>
+        </ul>
+        <p>We do not tolerate harassment in any form. Sexual language and imagery is not appropriate anywhere, especially in talks, codelabs, animations, parties, social networks. Anyone violating these rules may be sanctioned and expelled from the conference without a refund at the discretion of the conference organizers.</p>
+        <br />
+        <p><a href={`/${locale}/code-of-conduct`}>Complete version of Code of Conduct</a></p>
+      </>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .mdx-content a { color: var(--secondary); font-weight: 500; }
+  .mdx-content a:hover { text-decoration: underline; }
+</style>

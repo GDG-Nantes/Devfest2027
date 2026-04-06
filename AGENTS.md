@@ -29,15 +29,15 @@ There are **no tests**. No test framework is configured.
 - **Two locales**: `fr` (default), `en`
 - Astro's built-in i18n with `prefixDefaultLocale: true` -- both `/fr/` and `/en/` URLs are prefixed
 - Root `/` redirects to `/fr` via `src/pages/index.astro`
-- Pages are **duplicated per locale**: `src/pages/fr/` and `src/pages/en/` are separate directories with parallel structure. There is no dynamic `[locale]` routing.
+- Pages use **dynamic `[locale]` routing**: `src/pages/[locale]/` contains a single set of page files that generate both `/fr/` and `/en/` URLs via `getStaticPaths()` returning all locales from `i18nConfig`.
 - Translation strings live in `src/locales/{fr,en}/translation.json`, loaded via i18next (`src/i18n/i18n.ts`)
-- When adding a page, you must create it in **both** `src/pages/fr/` and `src/pages/en/`
+- When adding a page, create it once in `src/pages/[locale]/` with a `getStaticPaths()` that returns all locales. Use `getLocaleFromParams(Astro.params)` to get the current locale.
 
 ## Key directories
 
 | Path                           | What                                                                                                                                                                 |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/pages/{fr,en}/`           | Astro page files (one per locale)                                                                                                                                    |
+| `src/pages/[locale]/`          | Astro page files (dynamic locale routing, single source for all locales)                                                                                             |
 | `src/components/astro/`        | Astro components (Navbar, Footer)                                                                                                                                    |
 | `src/components/react/`        | React islands (`client:load` / `client:only`)                                                                                                                        |
 | `src/layouts/BaseLayout.astro` | Single shared layout -- takes `locale` prop                                                                                                                          |

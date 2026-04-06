@@ -1,0 +1,20 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTranslation, getLocaleFromParams } from '@/i18n/i18n';
+import i18nConfig from '@/i18n/i18nConfig';
+import { MenuTraiteur } from '@/components/react/MenuTraiteur';
+import '@/styles/menu.scss';
+
+export function getStaticPaths() {
+  return i18nConfig.locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = getLocaleFromParams(Astro.params);
+const t = await getTranslation(locale);
+---
+
+<BaseLayout locale={locale} title={`${t('pages.menu.name')} - Devfest Nantes`}>
+  <div class="menu-page section">
+    <MenuTraiteur client:load locale={locale} />
+  </div>
+</BaseLayout>

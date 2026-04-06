@@ -132,10 +132,24 @@
     },
     "team": {
       "name": "Team",
-      "membersTitle": "Core Team"
+      "membersTitle": "Core Team",
+      "intro-title": "DevFest Nantes is supported by GDG Nantes.",
+      "intro-p1": "The Google Developers Groups (GDGs) are groups of people interested in Google Platforms and Technologies: Android, Chrome, Google Apps, Angular, Cloud... These groups promoting sharing can be found all around the world.",
+      "intro-p2": "",
+      "intro-p3": "The objective of GDG Nantes is to organise events regularly:",
+      "intro-li1": "Google Technology Conferences and others on the Web, Cloud, Mobile, Big Data.",
+      "intro-li2": "Informal theme-based evening sessions around an Aperitif to facilitate meetings of similar minds and thoughts",
+      "intro-li3": "Codelabs to learn concretely and technically about technologies",
+      "intro-li4": "Competitions (Hackathon, ...)",
+      "intro-li5": "Video retransmissions of major events: US conferences, keynotes",
+      "intro-p4": "To make all this possible, an awesome team of volunteers is working behind the scenes."
     },
     "code-of-conduct": {
       "name": "Code of conduct"
+    },
+    "our-values": {
+      "name": "Our values",
+      "title": "Our values"
     },
     "legal-mentions": {
       "name": "Legal Mentions"

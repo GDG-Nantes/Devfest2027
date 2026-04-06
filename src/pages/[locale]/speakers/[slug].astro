@@ -1,0 +1,106 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTranslation, getLocaleFromParams } from '@/i18n/i18n';
+import i18nConfig from '@/i18n/i18nConfig';
+import { getAllSpeakers, getSpeakerBySlug } from '@/services/speakers';
+import { getSessionsBySpeaker } from '@/services/sessions';
+import { Markdown } from '@/components/react/Markdown';
+import '@/styles/speakers.scss';
+import { getSocialSvgIcon } from '@/components/icons/flat-icons';
+
+export function getStaticPaths() {
+  const speakers = getAllSpeakers();
+  return i18nConfig.locales.flatMap((locale) =>
+    speakers.map((speaker) => ({
+      params: { locale, slug: speaker.key },
+    }))
+  );
+}
+
+const locale = getLocaleFromParams(Astro.params);
+const t = await getTranslation(locale);
+const tSchedule = await getTranslation(locale, 'pages.schedule');
+
+const { slug } = Astro.params;
+const speaker = getSpeakerBySlug(slug!);
+if (!speaker) {
+  return Astro.redirect(`/${locale}/speakers`);
+}
+
+const sessions = getSessionsBySpeaker(slug!);
+
+function getSocialUrl(type: string, login: string): string {
+  switch (type) {
+    case 'linkedin': return `https://www.linkedin.com/in/${login}`;
+    case 'github': return `https://github.com/${login}`;
+    case 'twitter': return `https://twitter.com/${login}`;
+    case 'youtube': return `https://youtube.com/user/${login}`;
+    case 'facebook': return `https://facebook.com/${login}`;
+    case 'instagram': return `https://www.instagram.com/${login}`;
+    case 'bluesky': return `https://bsky.app/profile/${login}${login.includes('.') ? '' : '.bsky.social'}`;
+    case 'website': return login;
+    default: return '#';
+  }
+}
+
+function getSocialIcon(type: string): string {
+  return getSocialSvgIcon(type);
+}
+---
+
+<BaseLayout locale={locale} title={`${speaker.name} - Devfest Nantes`}>
+  <div class="speaker-detail">
+    <div class="speaker-header section-tertiary">
+      <div class="speaker-header-content">
+        <div class="avatar-picture-container" style="width: 150px; height: 150px; min-width: 150px; min-height: 150px;">
+          {speaker.photoUrl ? (
+            <img
+              class="avatar-picture"
+              src={`/images/speakers/${speaker.photoUrl}`}
+              alt={speaker.name}
+              width="150"
+              height="150"
+            />
+          ) : (
+            <div class="avatar-placeholder" style="width: 150px; height: 150px;" />
+          )}
+        </div>
+        <h1>{speaker.name}</h1>
+        {speaker.company && <h3 style="color: white; margin-top: 10px;">{speaker.company}</h3>}
+        <div class="social-links">
+          {Object.entries(speaker.socials || {}).map(([media, login]) => (
+            <a
+              href={getSocialUrl(media, login as string)}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+            >
+              <Fragment set:html={getSocialIcon(media)} />
+            </a>
+          ))}
+        </div>
+
+        {sessions.length > 0 && (
+          <div class="speaker-sessions">
+            {sessions.map((session) => (
+              <a href={`/${locale}/sessions/${session.key}`} class="session-card">
+                <div class="session-card-inner">
+                  <div class="session-tags">
+                    {session.tags?.map((tag) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </div>
+                  <span class="session-card-title">{session.title}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+
+    <div class="speaker-bio section">
+      <Markdown client:load content={speaker.bio} />
+    </div>
+  </div>
+</BaseLayout>
