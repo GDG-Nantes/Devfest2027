@@ -16,6 +16,7 @@ const translations: Record<string, Record<string, string>> = {
     'come-back': 'Nous serons de retour pour une édition sportive',
     date: 'les 11 et 12 Mars 2027',
     become_sponsor: 'Devenir sponsor',
+    exceptional: 'Édition exceptionnelle',
     'thanks-gdg-android':
       "Merci au GDG Nantes Android pour le développement de l'application mobile !",
   },
@@ -23,6 +24,7 @@ const translations: Record<string, Record<string, string>> = {
     'come-back': 'Devfest Nantes will be back for a sporty edition',
     date: 'on March 11th and 12th, 2027',
     become_sponsor: 'Become sponsor',
+    exceptional: 'Exceptional edition',
     'thanks-gdg-android':
       'Thanks to GDG Nantes Android for developing the mobile app!',
   },
@@ -39,7 +41,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
           <div className='logo-jumbo-home'>
             <img
               alt='logo'
-              src='/images/logo-blanc.png'
+              src='/images/logo-blanc.svg'
               className='logo-jumbo-home-img'
             />
           </div>
@@ -64,7 +66,12 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
             }}
           >
             <div
-              style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}
+              style={{
+                display: 'flex',
+                gap: '12px',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+              }}
             >
               <a
                 href='https://www.billetweb.fr/partenaire-devfest-nantes-2027'
@@ -73,6 +80,18 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 className='jumbo-btn'
               >
                 {t('become_sponsor')}
+              </a>
+              <a
+                href='#exceptional-info'
+                className='jumbo-btn'
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById('exceptional-info')
+                    ?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {t('exceptional')}
               </a>
             </div>
             <div

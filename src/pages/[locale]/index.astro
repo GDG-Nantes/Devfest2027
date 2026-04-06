@@ -19,12 +19,6 @@ const tNumbers = await getTranslation(locale, 'pages.home.numbers');
 const tTickets = await getTranslation(locale, 'pages.home.tickets');
 const tPhotos = await getTranslation(locale, 'pages.home.photos');
 const tMap = await getTranslation(locale, 'pages.attending.map');
-const tPartners = await getTranslation(locale, 'pages.partners');
-
-// Import partner data
-import partnersData from '../../../data/partners.json';
-const pxlPartners = (partnersData as any).PXL?.filter((p: any) => !p.hidden) || [];
-const platiniumPartners = (partnersData as any).Platinium?.filter((p: any) => !p.hidden) || [];
 
 // Photo album
 const photos = [
@@ -50,6 +44,7 @@ const photos = [
     <p>{t('site.theme')}</p>
 
     <!-- Numbers -->
+    <h2>{tNumbers('title')}</h2>
     <div class="numbers-grid">
       <div class="number-item">
         <h2 class="no-leaf">{3500}</h2>
@@ -73,9 +68,10 @@ const photos = [
       </div>
     </div>
 
-    <!-- Poster -->
-    <div style="text-align: center;">
-      <img src="/images/affiche.jpg" style="width: 50%; height: auto;" alt="Poster" />
+    <!-- Exceptional Info -->
+    <div id="exceptional-info" class="exceptional-info">
+      <h2>{t('pages.home.exceptional.title')}</h2>
+      <p>{t('pages.home.exceptional.description')}</p>
     </div>
 
     <!-- Our Values Link -->
@@ -102,12 +98,6 @@ const photos = [
     </div>
   </div>
 
-  <!-- Plan -->
-  <div class="section full-width" style="background: var(--tertiary);">
-    <div style="display: flex; justify-content: center;">
-      <img src="/images/plan-cite-transparent.png" alt="Plan H Arena" style="object-fit: contain; max-height: 600px; width: auto; max-width: 100%;" />
-    </div>
-  </div>
 
   <!-- Map -->
   <InteractiveMap
@@ -118,59 +108,33 @@ const photos = [
   />
 
   <!-- Tickets -->
-  <div class="section full-width">
-    <h2>{tTickets('name')}</h2>
-    <div class="tickets-grid">
-      <div class="ticket-wrapper">
-        <div class="ticket active">
-          <div class="ticket-header">✨ {tTickets('2days-2nd')} ✨</div>
-          <div class="ticket-price">110 € <span class="ht">HT</span></div>
-          <div class="ticket-info">
-            <p>2400 places</p>
-            <p>11/09/2027 23h55</p>
-          </div>
-        </div>
-      </div>
-      <div class="ticket-wrapper">
-        <div class="ticket active">
-          <div class="ticket-header">✨ {tTickets('1day')} ✨</div>
-          <div class="ticket-price">70 € <span class="ht">HT</span></div>
-          <div class="ticket-info">
-            <p>700 places</p>
-            <p>11/09/2027 23h55</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!--<div class="section full-width">-->
+  <!--  <h2>{tTickets('name')}</h2>-->
+  <!--  <div class="tickets-grid">-->
+  <!--    <div class="ticket-wrapper">-->
+  <!--      <div class="ticket active">-->
+  <!--        <div class="ticket-header">✨ {tTickets('2days-2nd')} ✨</div>-->
+  <!--        <div class="ticket-price">110 € <span class="ht">HT</span></div>-->
+  <!--        <div class="ticket-info">-->
+  <!--          <p>2400 places</p>-->
+  <!--          <p>11/09/2027 23h55</p>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--    <div class="ticket-wrapper">-->
+  <!--      <div class="ticket active">-->
+  <!--        <div class="ticket-header">✨ {tTickets('1day')} ✨</div>-->
+  <!--        <div class="ticket-price">70 € <span class="ht">HT</span></div>-->
+  <!--        <div class="ticket-info">-->
+  <!--          <p>700 places</p>-->
+  <!--          <p>11/09/2027 23h55</p>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
 
-  <!-- PXL Partners -->
-  <div class="section full-width">
-    <h2>{tPartners('pxl')}</h2>
-    <div class="partners-grid pxl">
-      {pxlPartners.map((partner: any) => (
-        <a href={partner.website} target="_blank" rel="noopener noreferrer" class="partner-link">
-          <div class="image-container">
-            <img class="partner-logo" alt={partner.title} src={`/images/partners/${partner.image}`} />
-          </div>
-        </a>
-      ))}
-    </div>
-  </div>
 
-  <!-- Platinium Partners -->
-  <div class="section full-width">
-    <h2>{tPartners('platinium-partners')}</h2>
-    <div class="partners-grid platinium">
-      {platiniumPartners.map((partner: any) => (
-        <a href={partner.website} target="_blank" rel="noopener noreferrer" class="partner-link">
-          <div class="image-container">
-            <img class="partner-logo" alt={partner.title} src={`/images/partners/${partner.image}`} />
-          </div>
-        </a>
-      ))}
-    </div>
-  </div>
 
   <!-- Photos -->
   <div class="section full-width">
@@ -285,40 +249,25 @@ const photos = [
     margin: 20px 0;
   }
 
-  .partners-grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+  .exceptional-info {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 12px;
+    padding: 32px;
+    margin: 40px 0;
+    text-align: center;
+    scroll-margin-top: 80px;
+    border: 3px solid var(--secondary);
   }
-  .partners-grid.pxl .partner-link { max-width: 475px; max-height: 275px; }
-  .partners-grid.platinium .partner-link { max-width: 300px; max-height: 175px; }
-
-  .partner-link {
-    display: block;
-    width: 100%;
-    max-width: 300px;
+  .exceptional-info h2 {
+    margin-top: 0;
+    color: white;
   }
-
-  .image-container {
-    position: relative;
-    padding-top: 56.25%;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .image-container:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  }
-  .partner-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  .exceptional-info p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .photos-grid {

@@ -25,6 +25,7 @@
       },
       "newsletter": "Get notified about conference updates",
       "numbers": {
+        "title": "2025 in Numbers",
         "attendees": "Attendees",
         "days": "Days",
         "sessions": "Sessions",
@@ -44,6 +45,10 @@
       "speakers": {
         "title": "Speakers",
         "seeAll": "See all speakers"
+      },
+      "exceptional": {
+        "title": "Exceptional edition",
+        "description": "Exceptionally, DevFest Nantes will only take place once over the 2026-2027 period. Due to renovation works at the Cit\u00e9 des Congr\u00e8s, the event will be held at the H Arena. See you on March 11th and 12th, 2027!"
       },
       "photos": {
         "p1": "Some pictures of the 2025 DevFest Nantes",
