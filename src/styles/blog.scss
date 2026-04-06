@@ -38,6 +38,21 @@
     }
   }
 
+  &.no-image {
+    grid-template-columns: 1fr;
+    border-left: 4px solid var(--secondary);
+    padding-left: 24px;
+
+    .blog-content {
+      order: unset;
+      padding: 16px 0;
+    }
+
+    @media (max-width: 768px) {
+      padding-left: 16px;
+    }
+  }
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr !important;
 

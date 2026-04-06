@@ -56,7 +56,7 @@ function stripMarkdown(text: string): string {
         const isEven = index % 2 === 0;
         return (
           <a href={`/${locale}/blog/${post.slug}`} class="blog-post-link">
-            <div class:list={['blog-post', isEven ? 'image-left' : 'image-right']}>
+            <div class:list={['blog-post', isEven ? 'image-left' : 'image-right', !post.image && 'no-image']}>
               {post.image && (
                 <div class="blog-image">
                   <img src={post.image} alt={post.title} loading="lazy" />
@@ -67,7 +67,6 @@ function stripMarkdown(text: string): string {
                 <p class="blog-excerpt">{stripMarkdown(post.content)}</p>
                 <div class="blog-meta">
                   <span class="blog-date">{formatDate(post.date)}</span>
-                  {post.key && <span class="blog-key">{post.key}</span>}
                 </div>
               </div>
             </div>
