@@ -113,3 +113,11 @@ resource "google_service_account_iam_member" "github_actions_act_as_runtime" {
   role               = "roles/iam.serviceAccountUser"
   member             = "serviceAccount:${google_service_account.github_actions.email}"
 }
+
+# Cloud Build (used by gcloud app deploy) needs to act as the default App Engine
+# service account. Grant the CI service account permission to impersonate it.
+resource "google_service_account_iam_member" "github_actions_act_as_appengine_default" {
+  service_account_id = "projects/${var.project_id}/serviceAccounts/${var.project_id}@appspot.gserviceaccount.com"
+  role               = "roles/iam.serviceAccountUser"
+  member             = "serviceAccount:${google_service_account.github_actions.email}"
+}
