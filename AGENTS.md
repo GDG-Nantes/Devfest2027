@@ -83,6 +83,30 @@ Files matching `**/*.off.tsx` and `**/*.off.astro` are excluded from TypeScript 
   - **Context7** -- query up-to-date library/framework documentation and code examples. Use it to look up Astro, React, MUI, i18next APIs instead of guessing.
   - **Chrome DevTools** -- interact with the browser: take snapshots/screenshots, inspect the DOM, run Lighthouse audits, trace performance, click/fill elements. Use it to visually verify changes or debug rendering issues.
 
+## Visual verification -- mandatory after any UI change
+
+After modifying any page, component, or style, **always verify the result visually** using the Chrome DevTools MCP server:
+
+1. **Start the dev server** (`npm run dev`) if not already running.
+2. **Desktop check**: navigate to the changed page at default viewport width (1280px+). Take a snapshot or screenshot. Verify:
+   - No horizontal scrollbar (`overflow-x` must never appear on any page).
+   - Layout looks correct, no broken alignments.
+3. **Mobile check**: use `emulate` to set a mobile viewport (e.g. `390x844,mobile,touch`), then navigate and verify:
+   - No horizontal scrollbar.
+   - Content fits within the viewport, no elements overflowing.
+   - Responsive breakpoints work correctly (grids collapse, nav switches to mobile menu).
+4. If horizontal scroll is detected, **fix it before considering the task done**. Common causes:
+   - Images without `max-width: 100%`
+   - Grid/flex containers without `box-sizing: border-box` or `overflow-x: hidden/auto`
+   - Fixed-width elements wider than the viewport
+   - `width: 100vw` without accounting for scrollbar width
+
+## Icons
+
+- All icons on the site use **flat monochrome SVGs** defined in `src/components/icons/flat-icons.ts` (for Astro) and `src/components/icons/FlatIcons.tsx` (for React islands).
+- **Do not use emoji** as icons. Do not use `@mui/icons-material` -- use the flat icon components instead.
+- When adding a new icon, add it to the centralized icon files.
+
 ## Gotchas
 
 - The `out/` directory is gitignored but is the Astro build output (configured via `outDir` in `astro.config.mjs`), not Next.js output

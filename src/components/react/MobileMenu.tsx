@@ -8,7 +8,7 @@ import {
   Divider,
   IconButton,
 } from '@mui/material';
-import { CloseRounded, MenuRounded } from '@mui/icons-material';
+import { MenuIcon, CloseIcon } from '@/components/icons/FlatIcons';
 
 interface MenuItem {
   label: string;
@@ -51,7 +51,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         onClick={toggleDrawer(true)}
         sx={{ color: 'white' }}
       >
-        <MenuRounded />
+        <MenuIcon />
       </IconButton>
 
       <Drawer
@@ -98,7 +98,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                 </a>
               </Box>
               <IconButton aria-label='close menu' sx={{ color: 'white' }}>
-                <CloseRounded />
+                <CloseIcon />
               </IconButton>
             </ListItemButton>
             <Divider sx={{ borderColor: 'rgba(255,255,255,0.2)' }} />

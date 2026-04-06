@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import {
+  CameraIcon,
+  PlayIcon,
+  AppleIcon,
+  AndroidIcon,
+} from '@/components/icons/FlatIcons';
 
 interface HomeJumboProps {
   locale: string;
@@ -78,7 +84,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 rel='noopener noreferrer'
                 className='jumbo-btn'
               >
-                📷 Photos 2025
+                <CameraIcon size={16} /> Photos 2025
               </a>
               <a
                 href='https://www.youtube.com/watch?v=ZhEMS_6m8PI&list=PLuZ_sYdawLiWvkdETEVYDFjV2ibwJ2E-9&index=4'
@@ -86,7 +92,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 rel='noopener noreferrer'
                 className='jumbo-btn'
               >
-                ▶ Videos 2025
+                <PlayIcon size={16} /> Videos 2025
               </a>
             </div>
           </div>
@@ -114,7 +120,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                   rel='noopener noreferrer'
                   className='jumbo-btn'
                 >
-                  🍎 iOS
+                  <AppleIcon size={16} /> iOS
                 </a>
                 <a
                   href='https://play.google.com/store/apps/details?id=com.gdgnantes.devfest.mobile.androidapp&pcampaignid=web_share'
@@ -122,7 +128,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                   rel='noopener noreferrer'
                   className='jumbo-btn'
                 >
-                  🤖 Android
+                  <AndroidIcon size={16} /> Android
                 </a>
               </div>
             </div>
@@ -132,7 +138,9 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
 
       <style>{`
         .jumbo-btn {
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
           padding: 8px 20px;
           background-color: var(--secondary, #e63946);
           color: white;

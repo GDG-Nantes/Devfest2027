@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getTranslation } from '@/i18n/i18n';
 import '@/components/commun/avatar/avatar.scss';
 import '@/components/team/team-member.scss';
+import { getSocialSvgIcon } from '@/components/icons/flat-icons';
 
 const locale = 'fr';
 const t = await getTranslation(locale);
@@ -73,7 +74,7 @@ function getSocialUrl(social: { type: string; login: string }): string {
             <div class="member-socials">
               {member.socials.map((social) => (
                 <a href={getSocialUrl(social)} target="_blank" rel="noopener noreferrer" aria-label={social.type} class="social-btn">
-                  {social.type === 'twitter' ? '𝕏' : social.type === 'linkedin' ? 'in' : social.type === 'github' ? '⌨' : '🦋'}
+                  <Fragment set:html={getSocialSvgIcon(social.type)} />
                 </a>
               ))}
             </div>

@@ -5,6 +5,7 @@ import { getAllSpeakers, getSpeakerBySlug } from '@/services/speakers';
 import { getSessionsBySpeaker } from '@/services/sessions';
 import { Markdown } from '@/components/react/Markdown';
 import '@/styles/speakers.scss';
+import { getSocialSvgIcon } from '@/components/icons/flat-icons';
 
 const locale = 'fr';
 const t = await getTranslation(locale);
@@ -40,17 +41,7 @@ function getSocialUrl(type: string, login: string): string {
 }
 
 function getSocialIcon(type: string): string {
-  const icons: Record<string, string> = {
-    linkedin: 'LinkedIn',
-    github: 'GitHub',
-    twitter: '𝕏',
-    youtube: 'YouTube',
-    facebook: 'Facebook',
-    instagram: 'Instagram',
-    bluesky: 'Bluesky',
-    website: 'Website',
-  };
-  return icons[type] || type;
+  return getSocialSvgIcon(type);
 }
 ---
 
@@ -81,7 +72,7 @@ function getSocialIcon(type: string): string {
               rel="noopener noreferrer"
               class="social-link"
             >
-              {getSocialIcon(media)}
+              <Fragment set:html={getSocialIcon(media)} />
             </a>
           ))}
         </div>

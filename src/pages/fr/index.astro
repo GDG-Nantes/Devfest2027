@@ -5,6 +5,7 @@ import HomeJumbo from '@/components/react/HomeJumbo';
 import InteractiveMap from '@/components/react/InteractiveMap';
 import '@/styles/jumbo.scss';
 import '@/styles/home.scss';
+import { getUiSvgIcon } from '@/components/icons/flat-icons';
 
 const locale = 'fr';
 const t = await getTranslation(locale);
@@ -74,7 +75,7 @@ const photos = [
     <!-- Our Values Link -->
     <div class="our-values-link">
       <a href={`/${locale}/our-values`}>
-        <span style="font-size: 60px;">♿</span>
+        <Fragment set:html={getUiSvgIcon('accessibility')} />
         <p>{tNumbers('our-values')}</p>
       </a>
     </div>
@@ -98,7 +99,7 @@ const photos = [
   <!-- Plan -->
   <div class="section full-width" style="background: var(--tertiary);">
     <div style="display: flex; justify-content: center;">
-      <img src="/images/plan-cite-transparent.png" alt="Plan H Arena" style="object-fit: contain; max-height: 600px; width: auto;" />
+      <img src="/images/plan-cite-transparent.png" alt="Plan H Arena" style="object-fit: contain; max-height: 600px; width: auto; max-width: 100%;" />
     </div>
   </div>
 

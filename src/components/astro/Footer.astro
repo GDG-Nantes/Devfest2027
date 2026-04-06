@@ -1,6 +1,7 @@
 ---
 import { getTranslation } from '@/i18n/i18n';
 import '@/layout/footer/footer.scss';
+import { getSocialSvgIcon, getUiSvgIcon } from '@/components/icons/flat-icons';
 
 interface Props {
   locale: string;
@@ -37,16 +38,7 @@ function getSocialUrl(social: SocialData): string {
 }
 
 function getSocialIcon(type: string): string {
-  const icons: Record<string, string> = {
-    facebook: 'F',
-    twitter: '𝕏',
-    linkedin: 'in',
-    youtube: '▶',
-    github: '⌨',
-    instagram: '📷',
-    bluesky: '🦋',
-  };
-  return icons[type] || '🔗';
+  return getSocialSvgIcon(type);
 }
 
 const aboutLinks: FooterLink[] = [
@@ -84,7 +76,7 @@ const previousEditions: FooterLink[] = [
               aria-label={social.type}
               class="social-icon"
             >
-              {getSocialIcon(social.type)}
+              <Fragment set:html={getSocialIcon(social.type)} />
             </a>
           ))}
         </div>
@@ -92,7 +84,7 @@ const previousEditions: FooterLink[] = [
 
       <div class="footer-item half">
         <a href="mailto:bureau@gdgnantes.com" class="email-link">
-          ✉ bureau@gdgnantes.com
+          <Fragment set:html={getUiSvgIcon('email')} /> bureau@gdgnantes.com
         </a>
       </div>
 
@@ -139,7 +131,7 @@ const previousEditions: FooterLink[] = [
         <h3 class="footer-title">Newsletter</h3>
         <p>{t('no-spam')}</p>
         <a href="https://eepurl.com/c7X2V9" target="_blank" rel="noopener noreferrer" class="btn btn-contained">
-          ✉ {t('news-button')}
+          <Fragment set:html={getUiSvgIcon('email')} /> {t('news-button')}
         </a>
       </div>
 
@@ -264,6 +256,9 @@ const previousEditions: FooterLink[] = [
     text-decoration: none;
     font-size: 0.95rem;
     padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .btn {
@@ -279,6 +274,9 @@ const previousEditions: FooterLink[] = [
     background-color: var(--primary);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .btn-contained:hover {

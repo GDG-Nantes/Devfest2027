@@ -1,5 +1,9 @@
 import React from 'react';
-import { Check, Close, ExpandMore } from '@mui/icons-material';
+import {
+  CheckIcon,
+  CloseIcon,
+  ExpandMoreIcon,
+} from '@/components/icons/FlatIcons';
 import {
   Accordion,
   AccordionDetails,
@@ -112,7 +116,7 @@ const SectionMenu: React.FC<{ section: TypeSectionMenu; locale: string }> = ({
       {section.plats.map((plat) => (
         <Accordion key={plat.titreFR}>
           <AccordionSummary
-            expandIcon={<ExpandMore sx={{ color: 'white' }} />}
+            expandIcon={<ExpandMoreIcon color='white' />}
             aria-controls='voir les allergenes'
             style={{
               backgroundColor: 'var(--secondary)',
@@ -234,7 +238,7 @@ const IndicateurAllergenes: React.FC<{
         >
           {allergeneName}
         </Typography>
-        {isKO ? <Close /> : <Check />}
+        {isKO ? <CloseIcon /> : <CheckIcon />}
       </Stack>
     </Box>
   );
