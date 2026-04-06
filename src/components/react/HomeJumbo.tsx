@@ -74,9 +74,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
               }}
             >
               <a
-                href='https://www.billetweb.fr/partenaire-devfest-nantes-2027'
-                target='_blank'
-                rel='noopener noreferrer'
+                href='#exceptional-info'
                 className='jumbo-btn'
               >
                 {t('become_sponsor')}

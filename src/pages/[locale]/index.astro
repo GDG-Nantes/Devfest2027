@@ -43,6 +43,14 @@ const photos = [
     <p>{t('site.description')}</p>
     <p>{t('site.theme')}</p>
 
+    <!-- Our Values Link -->
+    <div class="our-values-link">
+      <a href={`/${locale}/our-values`}>
+        <Fragment set:html={getUiSvgIcon('accessibility')} />
+        <p>{tNumbers('our-values')}</p>
+      </a>
+    </div>
+
     <!-- Numbers -->
     <h2>{tNumbers('title')}</h2>
     <div class="numbers-grid">
@@ -72,28 +80,15 @@ const photos = [
     <div id="exceptional-info" class="exceptional-info">
       <h2>{t('pages.home.exceptional.title')}</h2>
       <p>{t('pages.home.exceptional.description')}</p>
-    </div>
-
-    <!-- Our Values Link -->
-    <div class="our-values-link">
-      <a href={`/${locale}/our-values`}>
-        <Fragment set:html={getUiSvgIcon('accessibility')} />
-        <p>{tNumbers('our-values')}</p>
-      </a>
+      <p>{t('pages.home.exceptional.details')}</p>
     </div>
 
     <!-- YouTube embed -->
     <div style="text-align: center;">
-      <h2>Teaser 2027</h2>
+      <h2>AfterMovie 2025</h2>
       <div class="youtube-container">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/t_1-8ajyO6c"
-          title="Teaser 2027"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-          frameborder="0"
-        ></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LUsRAtZqeJk?si=7HljdJbJ40X0Sxhk"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
   </div>
