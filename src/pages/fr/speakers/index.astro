@@ -1,0 +1,57 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTranslation } from '@/i18n/i18n';
+import { getAllSpeakers } from '@/services/speakers';
+import { shuffleArray } from '@/helpers/array';
+import '@/styles/speakers.scss';
+
+const locale = 'fr';
+const t = await getTranslation(locale);
+const speakers = getAllSpeakers();
+const filteredSpeakers = speakers.filter(
+  (speaker) =>
+    !speaker.name.toLowerCase().includes('anonymous') &&
+    !speaker.key.toLowerCase().includes('anonymous')
+);
+const shuffledSpeakers = shuffleArray(filteredSpeakers);
+---
+
+<BaseLayout locale={locale} title={`${t('pages.speakers.name')} - Devfest Nantes`}>
+  <div class="section">
+    <h1>{t('pages.speakers.name')}</h1>
+    <div class="speakers-grid">
+      {shuffledSpeakers.map((speaker) => (
+        <a href={`/${locale}/speakers/${speaker.key}`} class="speaker-item">
+          <div class="speaker-avatar-container">
+            <div
+              class="avatar-picture-container"
+              style={`width: 120px; height: 120px; min-width: 120px; min-height: 120px;`}
+            >
+              {speaker.photoUrl ? (
+                <img
+                  class="avatar-picture"
+                  src={`/images/speakers/${speaker.photoUrl}`}
+                  alt={`${speaker.name}`}
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="avatar-placeholder" style="width: 120px; height: 120px;" />
+              )}
+            </div>
+          </div>
+          <div class="speaker-info">
+            <span class="speaker-name">{speaker.name}</span>
+            {speaker.company && (
+              <span class="speaker-company">{speaker.company}</span>
+            )}
+            {speaker.city && (
+              <span class="speaker-city">{speaker.city}</span>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

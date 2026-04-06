@@ -1,0 +1,23 @@
+.menu-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.allergene {
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  height: 70px;
+  padding: 5px 2px;
+  margin: 5px 2px;
+
+  &.allergeneKO {
+    border: 2px solid var(--secondary);
+  }
+  &.allergeneVege {
+    border: 2px solid #36ae5c;
+  }
+}
+
+:global(.MuiAccordionDetails-root) {
+  padding: 8px 8px 16px;
+}

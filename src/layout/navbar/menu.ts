@@ -5,30 +5,30 @@ export const MENU: Array<MenuItem> = [
     label: 'home',
     link: '/',
   },
-  // {
-  //   label: 'schedule',
-  //   link: '/schedule',
-  // },
-  // {
-  //   label: 'speakers',
-  //   link: '/speakers',
-  // },
+  {
+    label: 'schedule',
+    link: '/schedule',
+  },
+  {
+    label: 'speakers',
+    link: '/speakers',
+  },
   {
     label: 'team',
     link: '/team',
   },
-  // {
-  //   label: 'partners',
-  //   link: '/partners',
-  // },
-  // {
-  //   label: 'blog',
-  //   link: '/blog',
-  // },
-  // {
-  //   label: 'menu',
-  //   link: '/menu',
-  // },
+  {
+    label: 'partners',
+    link: '/partners',
+  },
+  {
+    label: 'blog',
+    link: '/blog',
+  },
+  {
+    label: 'menu',
+    link: '/menu',
+  },
   // {
   //   label: 'jobs',
   //   link: 'https://jobboard.gdgnantes.com',
@@ -38,7 +38,7 @@ export const MENU: Array<MenuItem> = [
   //   link: 'https://www.billetweb.fr/billet-devfest-nantes-2027',
   // },
   // {
-  //   label: "📣 CFP",
+  //   label: "📣 CFP",
   //   link: "https://conference-hall.io/devfest-nantes-2027",
   // },
 ];

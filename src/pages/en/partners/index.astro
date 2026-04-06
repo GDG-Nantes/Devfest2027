@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTranslation } from '@/i18n/i18n';
+import { partnersByTypes, type PartnerType } from '@/types/partner';
+import { shuffleArray } from '@/helpers/array';
+import '@/styles/partners.scss';
+
+const locale = 'en';
+const t = await getTranslation(locale, 'pages.partners');
+
+const types = (Object.keys(partnersByTypes) as PartnerType[]).filter(
+  (type) => partnersByTypes[type].some((partner) => !partner.hidden)
+);
+
+const sizes: Record<PartnerType, { width: number; height: number }> = {
+  PXL: { height: 275, width: 475 },
+  Platinium: { height: 175, width: 300 },
+  Gold: { height: 140, width: 200 },
+  Virtual: { height: 140, width: 200 },
+  Velotypie: { height: 140, width: 200 },
+};
+---
+
+<BaseLayout locale={locale} title={`${t('partners')} - Devfest Nantes`}>
+  <div class="partners-page">
+    <h1>{t('partners')}</h1>
+    {types.map((type) => {
+      const partners = shuffleArray(partnersByTypes[type].filter((p) => !p.hidden));
+      return (
+        <div class="partner-section">
+          <h2>{t(type.toLowerCase())}</h2>
+          <div class="partners-grid">
+            {partners.map((partner) => (
+              <a
+                href={partner.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="partner-link"
+                style={`max-width: ${sizes[type].width}px; max-height: ${sizes[type].height}px;`}
+              >
+                <div class="image-container">
+                  <img
+                    class="partner-logo"
+                    alt={partner.title}
+                    src={`/images/partners/${partner.image}`}
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</BaseLayout>

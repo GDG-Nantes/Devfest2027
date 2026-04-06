@@ -1,0 +1,120 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTranslation } from '@/i18n/i18n';
+import { getAllSessions, getSessionBySlug } from '@/services/sessions';
+import { getSpeakerBySlug } from '@/services/speakers';
+import { Markdown } from '@/components/react/Markdown';
+import Slots from '../../../../data/slots.json';
+import '@/styles/sessions.scss';
+
+const locale = 'fr';
+const t = await getTranslation(locale, 'pages.sessions');
+const tSchedule = await getTranslation(locale, 'pages.schedule');
+const tSessions = await getTranslation(locale, 'sessions');
+
+export function getStaticPaths() {
+  const sessions = getAllSessions();
+  return sessions.map((session) => ({
+    params: { slug: session.key },
+  }));
+}
+
+const { slug } = Astro.params;
+const session = getSessionBySlug(slug!);
+if (!session) {
+  return Astro.redirect(`/${locale}/schedule`);
+}
+
+const slotObj = Slots.slots.find((s: any) => s.key === session.slot.key);
+const slotDay = session.slot.key.startsWith('day-1') ? tSchedule('day1') : tSchedule('day2');
+const slotLabel = `${slotDay} ${slotObj?.start || ''}`;
+
+const speakerData = (session.speakers || []).map((speakerKey: string) => {
+  const speaker = getSpeakerBySlug(speakerKey);
+  return speaker;
+}).filter(Boolean);
+
+const dateSession = session.slot.key.startsWith('day-1') ? '2027-03-11' : '2027-03-12';
+const urlOpenfeedback = session.openfeedbackId
+  ? `https://openfeedback.io/devfestnantes2027/${dateSession}/${session.openfeedbackId}?hideHeader=true&forceColorScheme=dark`
+  : null;
+
+function getFlagSrc(lang: string): string {
+  return lang.toLowerCase().startsWith('f') ? '/images/flags/fr.svg' : '/images/flags/en.svg';
+}
+---
+
+<BaseLayout locale={locale} title={`${session.title} - Devfest Nantes`}>
+  <div class="session-detail">
+    <div class="session-header section-tertiary">
+      <h1 class:list={[session.cancelled && 'cancelled-title']}>{session.title}</h1>
+      {session.cancelled && <h2 class="cancelled-label">{tSessions('cancelled')}</h2>}
+      <div class="session-meta">
+        <span class="talk-type">{session.talkType}</span>
+        <div class="session-tags">
+          {session.tags?.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+        {session.complexity && <span class="complexity">{session.complexity}</span>}
+        <img src={getFlagSrc(session.language)} alt={session.language} width="24" height="18" style="vertical-align: middle;" />
+      </div>
+      <div class="session-time">
+        <span>{slotLabel} - {session.room}</span>
+      </div>
+      {speakerData.length > 0 && (
+        <div class="session-speakers">
+          {speakerData.map((speaker: any) => (
+            <a href={`/${locale}/speakers/${speaker.key}`} class="speaker-card-link">
+              <div class="speaker-card">
+                <div class="avatar-picture-container" style="width: 50px; height: 50px; min-width: 50px; min-height: 50px;">
+                  {speaker.photoUrl ? (
+                    <img
+                      class="avatar-picture"
+                      src={`/images/speakers/${speaker.photoUrl}`}
+                      alt={speaker.name}
+                      width="50"
+                      height="50"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="avatar-placeholder" style="width: 50px; height: 50px;" />
+                  )}
+                </div>
+                <div class="speaker-card-info">
+                  <span class="speaker-card-name">{speaker.name}</span>
+                  {speaker.company && <span class="speaker-card-company">{speaker.company}</span>}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+      {(session.youtube || session.slides) && (
+        <div class="session-links">
+          {session.youtube && (
+            <a href={`https://www.youtube.com/watch?v=${session.youtube}&list=PLuZ_sYdawLiUHU4E1i5RrFsRN_lQcgPwT`} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Youtube
+            </a>
+          )}
+          {session.slides && (
+            <a href={session.slides} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Slides
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+    <div class="session-abstract section">
+      <Markdown client:load content={session.abstract} />
+    </div>
+    {urlOpenfeedback && (
+      <iframe
+        id="iframe-openfeedback"
+        title="Openfeedback"
+        src={urlOpenfeedback}
+        style="width: 100%; min-height: 500px; border: none; margin-top: 20px;"
+      />
+    )}
+  </div>
+</BaseLayout>

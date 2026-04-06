@@ -1,0 +1,45 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getAllBlogPosts, getBlogPostBySlug } from '@/services/blog';
+import { Markdown } from '@/components/react/Markdown';
+import '@/styles/blog.scss';
+
+const locale = 'en';
+
+export function getStaticPaths() {
+  const posts = getAllBlogPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = getBlogPostBySlug(slug!, locale);
+if (!post) {
+  return Astro.redirect(`/${locale}/blog`);
+}
+---
+
+<BaseLayout locale={locale} title={`${post.title} - Devfest Nantes`}>
+  <div class="blog-detail">
+    {post.image && (
+      <div class="blog-hero">
+        <img src={post.image} alt={post.title} class="blog-hero-image" />
+        <div class="blog-hero-overlay" />
+        {!post.hideTitle && (
+          <div class="blog-hero-content">
+            <h1 class="no-leaf">{post.title}</h1>
+          </div>
+        )}
+      </div>
+    )}
+    {!post.image && !post.hideTitle && (
+      <div class="section">
+        <h1 class="no-leaf">{post.title}</h1>
+      </div>
+    )}
+    <div class="blog-body section">
+      <Markdown client:load content={post.content} />
+    </div>
+  </div>
+</BaseLayout>
