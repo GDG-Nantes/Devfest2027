@@ -74,8 +74,9 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
               }}
             >
               <a
-                href='#exceptional-info'
+                href='https://docs.google.com/forms/d/e/1FAIpQLSdeMoX53H07QVifqAxCoLY6stM7q7d72IYUwx5-RrcErFTAAQ/viewform?usp=dialog'
                 className='jumbo-btn'
+                target='blank'
               >
                 {t('become_sponsor')}
               </a>
