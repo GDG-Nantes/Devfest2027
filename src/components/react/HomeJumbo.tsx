@@ -15,7 +15,7 @@ const translations: Record<string, Record<string, string>> = {
   fr: {
     'come-back': 'Nous serons de retour pour une édition sportive',
     date: 'les 11 et 12 Mars 2027',
-    become_sponsor: 'Devenir sponsor',
+    become_partner: 'Devenir partenaire',
     exceptional: 'Édition exceptionnelle',
     'thanks-gdg-android':
       "Merci au GDG Nantes Android pour le développement de l'application mobile !",
@@ -23,7 +23,7 @@ const translations: Record<string, Record<string, string>> = {
   en: {
     'come-back': 'Devfest Nantes will be back for a sporty edition',
     date: 'on March 11th and 12th, 2027',
-    become_sponsor: 'Become sponsor',
+    become_partner: 'Become a partner',
     exceptional: 'Exceptional edition',
     'thanks-gdg-android':
       'Thanks to GDG Nantes Android for developing the mobile app!',
@@ -73,12 +73,8 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 flexWrap: 'wrap',
               }}
             >
-              <a
-                href='https://docs.google.com/forms/d/e/1FAIpQLSdeMoX53H07QVifqAxCoLY6stM7q7d72IYUwx5-RrcErFTAAQ/viewform?usp=dialog'
-                className='jumbo-btn'
-                target='blank'
-              >
-                {t('become_sponsor')}
+              <a href={`/${locale}/be-a-partner`} className='jumbo-btn'>
+                {t('become_partner')}
               </a>
               <a
                 href='#exceptional-info'
