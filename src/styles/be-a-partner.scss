@@ -1,0 +1,671 @@
+/* Be a partner / "Devenir partenaire" page */
+
+.be-a-partner {
+  --plat: #f0a830;
+  --plat-soft: #fbe7c2;
+  --gold: #34a853;
+  --gold-soft: #cdeed6;
+  --silver: #e85d4e;
+  --silver-soft: #f8d4cf;
+  --virtual: #ec6f9e;
+  --virtual-soft: #f9d8e5;
+  --velo: #f0b429;
+  --velo-soft: #fbe9bf;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sp-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---------- Hero ---------- */
+.sp-hero {
+  text-align: center;
+  padding: 3.5rem 16px 2rem;
+}
+
+.sp-hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+}
+
+.sp-hero .sp-lead {
+  max-width: 720px;
+  margin: 0 auto 1.8rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sp-cta-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.sp-btn:hover {
+  transform: translateY(-2px);
+}
+
+.sp-btn-primary {
+  background-color: var(--secondary);
+  color: #fff;
+}
+
+.sp-btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.sp-btn-ghost:hover {
+  border-color: #fff;
+}
+
+/* ---------- Section headers ---------- */
+.sp-section {
+  padding: 2.5rem 0;
+}
+
+.sp-section > .sp-wrap > h2 {
+  text-align: center;
+  margin: 0 0 0.4rem;
+  font-size: 2.2rem;
+}
+
+.sp-section-sub {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 auto 2rem;
+  max-width: 640px;
+}
+
+/* ---------- Key numbers ---------- */
+.sp-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.sp-stat {
+  background: var(--primary-dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.6rem 1rem;
+  text-align: center;
+}
+
+.sp-stat .sp-stat-num {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--tertiary);
+}
+
+.sp-stat .sp-stat-label {
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sp-audience {
+  background: var(--primary-dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.6rem;
+}
+
+.sp-audience h3 {
+  margin: 0 0 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sp-bar {
+  display: flex;
+  height: 26px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.sp-bar span {
+  display: block;
+  height: 100%;
+}
+
+.sp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  justify-content: center;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sp-legend .dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ---------- Why partner ---------- */
+.sp-why {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.sp-why-card {
+  border-radius: 16px;
+  padding: 1.5rem 1.6rem;
+  color: #16202b;
+}
+
+.sp-why-card.blue {
+  background: #5b8def;
+  color: #fff;
+}
+.sp-why-card.green {
+  background: #34a853;
+  color: #fff;
+}
+.sp-why-card.amber {
+  background: #f0b429;
+}
+.sp-why-card.red {
+  background: #e85d4e;
+  color: #fff;
+}
+
+.sp-why-card .sp-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.85);
+  color: #16202b;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.sp-why-card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ---------- Pack cards ---------- */
+.sp-packs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.sp-pack {
+  position: relative;
+  background: var(--primary-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 5px solid var(--accent, var(--secondary));
+  border-radius: 14px;
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-pack.featured {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.sp-pack-flag {
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  background: var(--accent);
+  color: #16202b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.sp-pack h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  font-size: 1.7rem;
+  margin: 0;
+  color: var(--accent);
+}
+
+.sp-pack .sp-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0.2rem 0 0.1rem;
+}
+
+.sp-pack .sp-price small {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sp-pack ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  flex: 1;
+}
+
+.sp-pack li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 6px 0;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sp-pack li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--accent);
+}
+
+.sp-note {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.88rem;
+  margin-top: 1.4rem;
+}
+
+/* ---------- Comparison table ---------- */
+.sp-table-wrap {
+  overflow-x: auto;
+  margin-top: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table.sp-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  font-size: 0.92rem;
+}
+
+.sp-table th,
+.sp-table td {
+  padding: 12px 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sp-table thead th {
+  background: #5b8def;
+  color: #fff;
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  font-size: 1.05rem;
+}
+
+.sp-table thead th:first-child {
+  background: var(--primary-dark);
+  text-align: left;
+}
+
+.sp-table tbody th {
+  text-align: left;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.sp-table .yes {
+  color: #34a853;
+  font-weight: 700;
+}
+
+.sp-table .no {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.sp-table tr.sp-price-row td,
+.sp-table tr.sp-price-row th {
+  font-weight: 700;
+  color: #fff;
+  background: rgba(91, 141, 239, 0.12);
+}
+
+/* ---------- Options ---------- */
+.sp-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.sp-option {
+  background: var(--primary-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.4rem;
+}
+
+.sp-option .sp-opt-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.sp-option h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.sp-option .sp-opt-price {
+  white-space: nowrap;
+  background: var(--tertiary);
+  color: var(--primary);
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.sp-option ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sp-option li {
+  padding: 5px 0;
+  padding-left: 18px;
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.92rem;
+}
+
+.sp-option li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--secondary);
+}
+
+/* ---------- Highlight banner (3ème mi-temps) ---------- */
+.sp-banner {
+  background: linear-gradient(135deg, #5b8def, #7a5bef);
+  border-radius: 18px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.sp-banner .sp-banner-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+}
+
+.sp-banner h2 {
+  margin: 0 0 1rem;
+  text-align: left !important;
+  font-size: 2rem;
+}
+
+.sp-banner h2::before,
+.sp-banner h2::after {
+  display: none !important;
+}
+
+.sp-banner ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sp-banner li {
+  background: rgba(255, 255, 255, 0.9);
+  color: #16202b;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+/* ---------- Process steps ---------- */
+.sp-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  counter-reset: step;
+}
+
+.sp-step {
+  position: relative;
+  background: var(--primary-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.6rem 1.2rem 1.2rem;
+  text-align: center;
+}
+
+.sp-step .sp-step-num {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 0.8rem;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.sp-step p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ---------- Timeline ---------- */
+.sp-timeline {
+  --date-col: clamp(6rem, 28vw, 14rem);
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Ligne verticale continue, centrée sur les pastilles */
+.sp-timeline::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--date-col) + 13px);
+  top: 0.7em;
+  bottom: 0.7em;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sp-tl-item {
+  display: grid;
+  grid-template-columns: var(--date-col) 28px 1fr;
+  align-items: center;
+  padding-bottom: 1.6rem;
+}
+
+.sp-tl-item:last-child {
+  padding-bottom: 0;
+}
+
+.sp-tl-date {
+  text-align: right;
+  padding-right: 14px;
+  font-weight: 700;
+  color: var(--tertiary);
+}
+
+.sp-tl-dot {
+  justify-self: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--tertiary);
+  border: 3px solid var(--primary);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.sp-tl-item.final .sp-tl-dot {
+  background: var(--secondary);
+}
+
+.sp-tl-item.final .sp-tl-date {
+  color: var(--secondary);
+}
+
+.sp-tl-label {
+  padding-left: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- Venue / spaces ---------- */
+.sp-spaces {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.sp-space {
+  background: var(--gold);
+  border-radius: 14px;
+  padding: 1.4rem;
+  color: #fff;
+}
+
+.sp-space .sp-space-name {
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  font-size: 1.5rem;
+}
+
+.sp-space .sp-space-cap {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ---------- Final CTA ---------- */
+.sp-final {
+  text-align: center;
+  background: var(--primary-dark);
+  border-radius: 18px;
+  padding: 2.6rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.sp-final h2 {
+  margin: 0 0 0.8rem;
+}
+
+.sp-final h2::before,
+.sp-final h2::after {
+  display: none !important;
+}
+
+.sp-final p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 560px;
+  margin: 0 auto 1.6rem;
+}
+
+.sp-final-contact {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sp-final-contact a {
+  color: var(--tertiary);
+  text-decoration: none;
+}
+
+.sp-final-contact a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .sp-banner {
+    grid-template-columns: 1fr;
+  }
+  .sp-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .sp-numbers {
+    grid-template-columns: 1fr;
+  }
+  .sp-why {
+    grid-template-columns: 1fr;
+  }
+  .sp-spaces {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-steps {
+    grid-template-columns: 1fr;
+  }
+}

@@ -11,6 +11,7 @@ jobs:
     permissions:
       contents: 'read'
       id-token: 'write'
+      pull-requests: 'read'
     steps:
       # Setup
 
@@ -20,10 +21,15 @@ jobs:
         id: get_version
         run: |
           if [[ $GITHUB_REF == refs/tags/* ]]; then
+            # Tag => déploiement en production (promotion du trafic)
             echo "VERSION=$(echo $GITHUB_REF | cut -d / -f 3)" >> $GITHUB_OUTPUT
             echo "PROMOTE=true" >> $GITHUB_OUTPUT
           else
-            echo "VERSION=vdev" >> $GITHUB_OUTPUT
+            # Push hors tag => version temporaire par branche, sans promotion du trafic.
+            # Une seule version (URL stable) par branche, écrasée à chaque push.
+            # Nom de version App Engine: [a-z0-9-], <= 63 car. On dérive du nom de branche.
+            BRANCH=$(echo "${GITHUB_REF#refs/heads/}" | tr '[:upper:]/_.' '[:lower:]----' | tr -cd 'a-z0-9-' | cut -c1-50)
+            echo "VERSION=tmp-${BRANCH}" >> $GITHUB_OUTPUT
             echo "PROMOTE=false" >> $GITHUB_OUTPUT
           fi
 
@@ -53,3 +59,24 @@ jobs:
           promote: ${{ steps.get_version.outputs.PROMOTE }}
           version: ${{ steps.get_version.outputs.VERSION }}
           project_id: 'devfest2027'
+
+      # Lien vers la version temporaire dans le résumé du job, si la branche a une PR ouverte
+      - name: 'PR preview link'
+        if: steps.get_version.outputs.PROMOTE == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION_URL: ${{ steps.deploy.outputs.version_url }}
+          VERSION: ${{ steps.get_version.outputs.VERSION }}
+        run: |
+          PR_URL=$(gh pr list --head "$GITHUB_REF_NAME" --state open --json url --jq '.[0].url')
+          if [ -n "$PR_URL" ]; then
+            {
+              echo "## 🚀 Déploiement temporaire"
+              echo ""
+              echo "Version \`$VERSION\` déployée sans promotion du trafic."
+              echo ""
+              echo "🔗 **Aperçu :** $VERSION_URL"
+              echo ""
+              echo "PR associée : $PR_URL"
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi

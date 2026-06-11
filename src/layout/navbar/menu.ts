@@ -14,6 +14,10 @@ export const MENU: Array<MenuItem> = [
   //   link: '/speakers',
   // },
   {
+    label: 'be-a-partner',
+    link: '/be-a-partner',
+  },
+  {
     label: 'team',
     link: '/team',
   },

@@ -11,7 +11,7 @@
         "come-back": "Devfest Nantes will be back for a sporty edition",
         "date": "on March 11th and 12th, 2027",
         "cfp": "Become speaker",
-        "become_sponsor": "Become sponsor",
+        "become_partner": "Become a partner",
         "previous": "2025 Edition",
         "buy-tickets": "Tickets",
         "become-volunteer": "Become a volunteer",
@@ -49,7 +49,7 @@
       "exceptional": {
         "title": "Exceptional edition",
         "description": "Exceptionally, DevFest Nantes will only take place once over the 2026-2027 period. Due to renovation works at the Cit\u00e9 des Congr\u00e8s, the event will be held at the H Arena. See you on March 11th and 12th, 2027!",
-        "details": "Sponsorship packages will be available for purchase on June 3rd. CFP and ticket sale dates have not been announced yet."
+        "details": "Partnership packages will be available for purchase on June 3rd. CFP and ticket sale dates have not been announced yet."
       },
       "photos": {
         "p1": "Some pictures of the 2025 DevFest Nantes",
@@ -156,6 +156,9 @@
     "our-values": {
       "name": "Our values",
       "title": "Our values"
+    },
+    "be-a-partner": {
+      "name": "Become a partner"
     },
     "legal-mentions": {
       "name": "Legal Mentions"

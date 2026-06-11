@@ -1,0 +1,486 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getLocaleFromParams } from '@/i18n/i18n';
+import i18nConfig from '@/i18n/i18nConfig';
+import { getUiSvgIcon } from '@/components/icons/flat-icons';
+import '@/styles/be-a-partner.scss';
+
+export function getStaticPaths() {
+  return i18nConfig.locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = getLocaleFromParams(Astro.params);
+const isFr = locale === 'fr';
+
+const FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSdeMoX53H07QVifqAxCoLY6stM7q7d72IYUwx5-RrcErFTAAQ/viewform?usp=dialog';
+const KIT_URL =
+  'https://drive.google.com/drive/folders/1V-u8qM_ieiaj-Ee3uz5ZybOCs1K1n2v6';
+const CONTACT_EMAIL = 'bureau@gdgnantes.com';
+
+const check = getUiSvgIcon('check');
+
+// Simple bilingual helper
+const tr = (fr: string, en: string) => (isFr ? fr : en);
+
+const stats = [
+  { num: '+1200', label: tr('Participants par jour', 'Attendees per day') },
+  { num: '~50', label: tr('Partenaires', 'Partners') },
+  { num: '+50', label: tr('Speakers', 'Speakers') },
+];
+
+const audience = [
+  {
+    pct: 76,
+    color: '#7cc6f7',
+    label: tr(
+      'Développeurs, Consultants, Tech Leads, Architectes, UX…',
+      'Developers, Consultants, Tech Leads, Architects, UX…'
+    ),
+  },
+  { pct: 13, color: '#ef94c0', label: tr('CEO, CTO, Managers', 'CEO, CTO, Managers') },
+  { pct: 11, color: '#f5d34e', label: tr('Autres', 'Others') },
+];
+
+const why = [
+  {
+    cls: 'blue',
+    chip: tr('Notoriété', 'Visibility'),
+    text: tr(
+      "Boostez votre visibilité et votre expertise en devenant partenaire de l'événement et en proposant vos speakeuses et speakers.",
+      'Boost your visibility and expertise by partnering with the event and putting forward your speakers.'
+    ),
+  },
+  {
+    cls: 'green',
+    chip: tr('Économies', 'Savings'),
+    text: tr(
+      "Profitez d'une visibilité ciblée à moindre coût sur nos réseaux et notre site, tout en offrant à vos collaborateurs des formations de qualité à prix réduit.",
+      'Enjoy targeted visibility at a lower cost on our networks and website, while offering your teams quality training at a reduced price.'
+    ),
+  },
+  {
+    cls: 'amber',
+    chip: tr('Se différencier', 'Stand out'),
+    text: tr(
+      "Bénéficiez d'une visibilité terrain exclusive et sur mesure, idéale pour recevoir vos clients et collaborateurs. Co-créons ensemble des animations spécifiques pour maximiser votre impact.",
+      'Benefit from exclusive, tailor-made on-site visibility, ideal to welcome your clients and teams. Let us co-create custom activities to maximise your impact.'
+    ),
+  },
+  {
+    cls: 'red',
+    chip: tr('Rencontrer', 'Connect'),
+    text: tr(
+      "Rencontrez l'écosystème tech nantais tout en soutenant activement les associations et communautés locales. Vivez un vrai moment de partage et de cohésion avec vos équipes !",
+      'Meet the Nantes tech ecosystem while actively supporting local associations and communities. Share a genuine moment of cohesion with your teams!'
+    ),
+  },
+];
+
+type Pack = {
+  name: string;
+  accent: string;
+  price: string;
+  featured?: boolean;
+  flag?: string;
+  features: string[];
+};
+
+const packs: Pack[] = [
+  {
+    name: 'Platinium',
+    accent: 'var(--plat)',
+    price: '11 000 €',
+    featured: true,
+    flag: tr('Le plus complet', 'Most complete'),
+    features: [
+      tr('Stand XL : 18 m²', 'XL booth: 18 m²'),
+      tr('Moquette + prise électrique', 'Carpet + power socket'),
+      tr('8 pass 2 jours', '8 two-day passes'),
+      tr('2 communications réseaux sociaux', '2 social media posts'),
+      tr("4 offres d'emploi (ND)", '4 job offers (ND)'),
+      tr('Logo sur le site web et les vidéos', 'Logo on website and videos'),
+      tr('Mot du partenaire sur le blog & la newsletter', 'Partner word on blog & newsletter'),
+    ],
+  },
+  {
+    name: 'Gold',
+    accent: 'var(--gold)',
+    price: '7 000 €',
+    features: [
+      tr('Stand L : 12 m²', 'L booth: 12 m²'),
+      tr('Moquette + prise électrique', 'Carpet + power socket'),
+      tr('5 pass 2 jours', '5 two-day passes'),
+      tr('1 communication réseaux sociaux', '1 social media post'),
+      tr("3 offres d'emploi (ND)", '3 job offers (ND)'),
+      tr('Logo sur le site web', 'Logo on website'),
+    ],
+  },
+  {
+    name: 'Silver',
+    accent: 'var(--silver)',
+    price: '4 000 €',
+    features: [
+      tr('Stand M : 9 m²', 'M booth: 9 m²'),
+      tr('Moquette + prise électrique', 'Carpet + power socket'),
+      tr('3 pass 2 jours', '3 two-day passes'),
+      tr('1 communication réseaux sociaux', '1 social media post'),
+      tr("2 offres d'emploi (ND)", '2 job offers (ND)'),
+    ],
+  },
+  {
+    name: 'Virtuel',
+    accent: 'var(--virtual)',
+    price: '1 500 €',
+    features: [
+      tr('Sans stand', 'No booth'),
+      tr('2 pass 2 jours', '2 two-day passes'),
+      tr('1 communication réseaux sociaux', '1 social media post'),
+      tr("2 offres d'emploi (ND)", '2 job offers (ND)'),
+      tr('Logo sur le site web', 'Logo on website'),
+    ],
+  },
+  {
+    name: 'Vélotypie',
+    accent: 'var(--velo)',
+    price: '2 500 €',
+    flag: tr('En option', 'Add-on'),
+    features: [
+      tr('Sans stand', 'No booth'),
+      tr('2 pass 2 jours', '2 two-day passes'),
+      tr('Logo sur le badge et le site web', 'Logo on badge and website'),
+      tr('« Transcription offerte par… » sur les écrans', '"Transcription offered by…" on screens'),
+      tr('Logo à la fin des vidéos', 'Logo at the end of videos'),
+      tr("2 offres d'emploi (ND)", '2 job offers (ND)'),
+    ],
+  },
+];
+
+const comparisonRows = [
+  { label: tr('Stand', 'Booth'), values: ['18 m²', '12 m²', '9 m²', tr('Non', 'No'), tr('Non', 'No')] },
+  { label: tr('Pass DevFest 2 jours', '2-day DevFest passes'), values: ['8', '5', '3', '2', '2'] },
+  { label: tr('Communications réseaux sociaux', 'Social media posts'), values: ['2', '1', '1', '1', '1'] },
+  { label: tr("Offres d'emploi diffusées", 'Job offers shared'), values: ['4 (ND)', '3 (ND)', '2 (ND)', '2 (ND)', '2 (ND)'] },
+  { label: tr('Logo sur le site web', 'Logo on website'), values: [true, true, false, true, true] },
+  { label: tr('Logo sur les vidéos', 'Logo on videos'), values: [true, false, false, false, true] },
+  { label: tr('Mot du partenaire blog & newsletter', 'Partner word blog & newsletter'), values: [true, false, false, false, false] },
+];
+
+const options = [
+  {
+    name: tr('Partenaire 3ème mi-temps', 'After-party partner'),
+    price: '3 000 €',
+    items: [
+      tr('3 partenaires maximum sur l’espace soirée', 'Max. 3 partners on the party area'),
+      tr('Espace dédié pour vos animations', 'Dedicated space for your activities'),
+      tr('Logos sur les écrans (journée + soirée)', 'Logos on screens (day + evening)'),
+      tr('1 communication réseaux sociaux + 1 le jour J', '1 social post + 1 on the day'),
+    ],
+  },
+  {
+    name: tr('Naming stand accueil café', 'Welcome coffee booth naming'),
+    price: '3 000 €',
+    items: [
+      tr('Le bar d’accueil habillé à votre image', 'Welcome bar branded with your identity'),
+      tr('Animation du stand assurée par le GDG Nantes', 'Booth staffed by GDG Nantes'),
+      tr('1 post sur les réseaux sociaux', '1 social media post'),
+    ],
+  },
+  {
+    name: tr('Option Parking', 'Parking option'),
+    price: '100 € HT',
+    items: [
+      tr('1 place à la H Arena pour les 3 jours', '1 spot at H Arena for 3 days'),
+      tr('Installation + 2 jours de salon', 'Set-up + 2 event days'),
+      tr('1 place maximum par partenaire', 'Max. 1 spot per partner'),
+    ],
+  },
+];
+
+const timeline = [
+  { date: tr('Juin 2026', 'June 2026'), label: tr('Ouverture des partenariats', 'Partnerships open') },
+  { date: tr('Août 2026', 'August 2026'), label: tr('Ouverture du CFP', 'CFP opens') },
+  { date: tr('Oct. 2026 + Janv. 2027', 'Oct. 2026 + Jan. 2027'), label: tr('Ventes des places', 'Ticket sales') },
+  { date: tr('Janvier 2027', 'January 2027'), label: tr('Annonce du programme', 'Programme announcement') },
+  { date: tr('Mars 2027', 'March 2027'), label: tr('DevFest Nantes 🎉', 'DevFest Nantes 🎉'), final: true },
+];
+
+const spaces = [
+  { name: 'Geofit', cap: tr('470 places', '470 seats') },
+  { name: 'Neodif', cap: tr('410 places', '410 seats') },
+  { name: tr('Salon Prestige', 'Prestige lounge'), cap: tr('170 places', '170 seats') },
+];
+
+const steps = [
+  tr('Compléter le formulaire de commande Pack Partenaire 2027', 'Fill in the 2027 Partner Pack order form'),
+  tr("Validation par l'équipe organisatrice", 'Validation by the organising team'),
+  tr('Envoi du devis puis de la facture', 'Quote sent, then the invoice'),
+  tr('Paiement sous 30 jours', 'Payment within 30 days'),
+];
+
+const title = tr('Devenir partenaire', 'Become a partner');
+---
+
+<BaseLayout locale={locale} title={`${title} — DevFest Nantes 2027`}>
+  <div class="be-a-partner">
+    <!-- HERO -->
+    <section class="sp-hero">
+      <h1>{title}</h1>
+      <p class="sp-lead">
+        {tr(
+          'Le DevFest Nantes revient les 11 et 12 mars 2027 à la H Arena pour une édition sportive. Rejoignez ~50 partenaires et rencontrez plus de 1200 développeurs et décideurs tech chaque jour.',
+          'DevFest Nantes is back on March 11–12, 2027 at the H Arena for a sporty edition. Join ~50 partners and meet 1200+ developers and tech decision-makers each day.'
+        )}
+      </p>
+      <div class="sp-cta-row">
+        <a class="sp-btn sp-btn-primary" href={FORM_URL} target="_blank" rel="noopener noreferrer">
+          {tr('Réserver un pack', 'Book a pack')}
+        </a>
+        <a class="sp-btn sp-btn-ghost" href="#packs">
+          {tr('Voir les offres', 'See the packs')}
+        </a>
+      </div>
+    </section>
+
+    <!-- KEY NUMBERS -->
+    <section class="sp-section">
+      <div class="sp-wrap">
+        <h2>{tr('Le DevFest en chiffres', 'DevFest in numbers')}</h2>
+        <p class="sp-section-sub">{tr('Le DevFest Nantes 2027, c’est…', 'DevFest Nantes 2027 is…')}</p>
+        <div class="sp-numbers">
+          {stats.map((s) => (
+            <div class="sp-stat">
+              <div class="sp-stat-num">{s.num}</div>
+              <div class="sp-stat-label">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div class="sp-audience">
+          <h3>{tr('Profil des participants (stats 2025)', 'Attendee profile (2025 stats)')}</h3>
+          <div class="sp-bar">
+            {audience.map((a) => (
+              <span style={`width:${a.pct}%;background:${a.color}`}></span>
+            ))}
+          </div>
+          <div class="sp-legend">
+            {audience.map((a) => (
+              <span>
+                <span class="dot" style={`background:${a.color}`}></span>
+                {a.pct}% — {a.label}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY PARTNER -->
+    <section class="sp-section">
+      <div class="sp-wrap">
+        <h2>{tr('Pourquoi devenir partenaire du DevFest ?', 'Why become a DevFest partner?')}</h2>
+        <div class="sp-section-sub"></div>
+        <div class="sp-why">
+          {why.map((w) => (
+            <div class:list={['sp-why-card', w.cls]}>
+              <span class="sp-chip">{w.chip}</span>
+              <p>{w.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKS -->
+    <section class="sp-section" id="packs">
+      <div class="sp-wrap">
+        <h2>{tr('Les packs de partenariat', 'Partnership packs')}</h2>
+        <p class="sp-section-sub">
+          {tr('Choisissez le pack qui vous correspond.', 'Pick the pack that fits you best.')}
+        </p>
+        <div class="sp-packs">
+          {packs.map((p) => (
+            <div class:list={['sp-pack', { featured: p.featured }]} style={`--accent:${p.accent}`}>
+              {p.flag && <span class="sp-pack-flag">{p.flag}</span>}
+              <h3>{p.name}</h3>
+              <div class="sp-price">
+                {p.price}
+                <small>{tr('HT', 'excl. tax')}</small>
+              </div>
+              <ul>
+                {p.features.map((f) => (
+                  <li>
+                    <Fragment set:html={check.replace('width="24"', 'width="18"').replace('height="24"', 'height="18"')} />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <p class="sp-note">
+          {tr(
+            '(ND) : offres d’emploi diffusées sur le jobboard. Supplément adhésion annuelle GDG Nantes : +750 € HT par pack.',
+            '(ND): job offers shared on the jobboard. GDG Nantes annual membership add-on: +€750 excl. tax per pack.'
+          )}
+        </p>
+
+        <!-- COMPARISON TABLE -->
+        <div class="sp-table-wrap">
+          <table class="sp-table">
+            <thead>
+              <tr>
+                <th>{tr('Détail des packs', 'Pack details')}</th>
+                {packs.map((p) => <th>{p.name}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row) => (
+                <tr>
+                  <th>{row.label}</th>
+                  {row.values.map((v) =>
+                    typeof v === 'boolean' ? (
+                      <td>{v ? <span class="yes">✓</span> : <span class="no">—</span>}</td>
+                    ) : (
+                      <td>{v}</td>
+                    )
+                  )}
+                </tr>
+              ))}
+              <tr class="sp-price-row">
+                <th>{tr('Prix du pack (HT)', 'Pack price (excl. tax)')}</th>
+                {packs.map((p) => <td>{p.price}</td>)}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- AFTER-PARTY BANNER -->
+    <section class="sp-section">
+      <div class="sp-wrap">
+        <div class="sp-banner">
+          <div>
+            <span class="sp-banner-tag">{tr('Nouveauté', 'New')}</span>
+            <h2>{tr('La 3ème mi-temps', 'The after-party')}</h2>
+            <ul>
+              <li>{tr('Espace stand ouvert pendant la soirée', 'Booth area open during the evening')}</li>
+              <li>{tr('Animations possibles sur votre stand', 'Activities possible on your booth')}</li>
+              <li>{tr('Espace bar dédié + soirée dansante', 'Dedicated bar area + dance party')}</li>
+            </ul>
+          </div>
+          <div>
+            <p style="margin:0;font-size:1.05rem;line-height:1.6;">
+              {tr(
+                'Le jeudi soir, prolongez l’expérience avec les participants dans une ambiance conviviale. Une occasion unique de créer du lien avec la communauté tech nantaise.',
+                'On Thursday evening, extend the experience with attendees in a friendly atmosphere — a unique chance to connect with the Nantes tech community.'
+              )}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONS -->
+    <section class="sp-section">
+      <div class="sp-wrap">
+        <h2>{tr('Options complémentaires', 'Additional options')}</h2>
+        <p class="sp-section-sub">
+          {tr('À combiner avec votre pack pour aller plus loin.', 'Combine these with your pack to go further.')}
+        </p>
+        <div class="sp-options">
+          {options.map((o) => (
+            <div class="sp-option">
+              <div class="sp-opt-head">
+                <h3>{o.name}</h3>
+                <span class="sp-opt-price">{o.price}</span>
+              </div>
+              <ul>
+                {o.items.map((it) => <li>{it}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="sp-section">
+      <div class="sp-wrap">
+        <h2>{tr('Process de réservation', 'Booking process')}</h2>
+        <p class="sp-section-sub">
+          {tr('Nouveauté cette année — pour mieux répondre à vos attentes.', 'New this year — to better meet your expectations.')}
+        </p>
+        <div class="sp-steps">
+          {steps.map((s, i) => (
+            <div class="sp-step">
+              <div class="sp-step-num">{i + 1}</div>
+              <p>{s}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE + SPACES -->
+    <section class="sp-section">
+      <div class="sp-wrap">
+        <h2>{tr('Les dates clés', 'Key dates')}</h2>
+        <div class="sp-section-sub"></div>
+        <div class="sp-timeline">
+          {timeline.map((t) => (
+            <div class:list={['sp-tl-item', { final: t.final }]}>
+              <span class="sp-tl-date">{t.date}</span>
+              <span class="sp-tl-dot" aria-hidden="true"></span>
+              <span class="sp-tl-label">{t.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-section">
+      <div class="sp-wrap">
+        <h2>{tr('Les espaces — H Arena', 'The venue — H Arena')}</h2>
+        <p class="sp-section-sub">
+          {tr('Plus de 3000 m² de salles de conférences, codelabs et espaces de rencontre.', 'Over 3000 m² of conference rooms, codelabs and meeting spaces.')}
+        </p>
+        <div class="sp-spaces">
+          {spaces.map((s) => (
+            <div class="sp-space">
+              <div class="sp-space-name">{s.name}</div>
+              <div class="sp-space-cap">{s.cap}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="sp-section">
+      <div class="sp-wrap">
+        <div class="sp-final">
+          <h2>{tr('Prêt·e à nous rejoindre ?', 'Ready to join us?')}</h2>
+          <p>
+            {tr(
+              'Réservez votre pack via le formulaire de commande. Notre équipe revient vers vous avec un devis personnalisé.',
+              'Book your pack through the order form. Our team will get back to you with a tailored quote.'
+            )}
+          </p>
+          <div class="sp-cta-row">
+            <a class="sp-btn sp-btn-primary" href={FORM_URL} target="_blank" rel="noopener noreferrer">
+              {tr('Réserver un pack', 'Book a pack')}
+            </a>
+            <a class="sp-btn sp-btn-ghost" href={KIT_URL} target="_blank" rel="noopener noreferrer">
+              {tr('Kit partenaires', 'Partner kit')}
+            </a>
+          </div>
+          <p class="sp-final-contact">
+            {tr('Une question ? Écrivez-nous à ', 'Any questions? Email us at ')}
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
