@@ -263,6 +263,20 @@
   color: var(--accent);
 }
 
+.sp-pack-stock {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  background: rgba(232, 93, 78, 0.18);
+  color: #ff8a7a;
+  border: 1px solid rgba(232, 93, 78, 0.5);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
 .sp-pack .sp-price {
   font-size: 1.6rem;
   font-weight: 700;
@@ -373,10 +387,43 @@ table.sp-table {
 }
 
 .sp-option {
+  position: relative;
   background: var(--primary-dark);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
   padding: 1.4rem;
+  overflow: hidden;
+}
+
+/* Option "victime de son succès" : grisée + bandeau en travers */
+.sp-option-soldout {
+  border-color: rgba(232, 93, 78, 0.4);
+}
+
+.sp-option-soldout .sp-opt-head,
+.sp-option-soldout ul {
+  opacity: 0.45;
+  filter: grayscale(0.6);
+}
+
+.sp-soldout-ribbon {
+  position: absolute;
+  top: 1.8rem;
+  right: -2.5rem;
+  transform: rotate(35deg);
+  width: 12rem;
+  text-align: center;
+  background: var(--silver);
+  color: #fff;
+  font-weight: 800;
+  /* Taille calculée au build selon la longueur du texte (fallback 0.82rem) */
+  font-size: var(--ribbon-fs, 0.82rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 6px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .sp-option .sp-opt-head {
