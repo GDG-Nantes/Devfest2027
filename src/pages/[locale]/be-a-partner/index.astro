@@ -83,6 +83,7 @@ type Pack = {
   price: string;
   featured?: boolean;
   flag?: string;
+  stock?: string;
   features: string[];
 };
 
@@ -93,6 +94,7 @@ const packs: Pack[] = [
     price: '11 000 €',
     featured: true,
     flag: tr('Le plus complet', 'Most complete'),
+    stock: tr('Plus que 2 restants', 'Only 2 left'),
     features: [
       tr('Stand XL : 18 m²', 'XL booth: 18 m²'),
       tr('Moquette + prise électrique', 'Carpet + power socket'),
@@ -166,7 +168,14 @@ const comparisonRows = [
   { label: tr('Mot du partenaire blog & newsletter', 'Partner word blog & newsletter'), values: [true, false, false, false, false] },
 ];
 
-const options = [
+type Option = {
+  name: string;
+  price: string;
+  soldOut?: string;
+  items: string[];
+};
+
+const options: Option[] = [
   {
     name: tr('Partenaire 3ème mi-temps', 'After-party partner'),
     price: '3 000 €',
@@ -180,6 +189,7 @@ const options = [
   {
     name: tr('Naming stand accueil café', 'Welcome coffee booth naming'),
     price: '3 000 €',
+    soldOut: tr('Match terminé', 'Sold out'),
     items: [
       tr('Le bar d’accueil habillé à votre image', 'Welcome bar branded with your identity'),
       tr('Animation du stand assurée par le GDG Nantes', 'Booth staffed by GDG Nantes'),
@@ -302,6 +312,7 @@ const title = tr('Devenir partenaire', 'Become a partner');
             <div class:list={['sp-pack', { featured: p.featured }]} style={`--accent:${p.accent}`}>
               {p.flag && <span class="sp-pack-flag">{p.flag}</span>}
               <h3>{p.name}</h3>
+              {p.stock && <span class="sp-pack-stock">🔥 {p.stock}</span>}
               <div class="sp-price">
                 {p.price}
                 <small>{tr('HT', 'excl. tax')}</small>
@@ -390,7 +401,15 @@ const title = tr('Devenir partenaire', 'Become a partner');
         </p>
         <div class="sp-options">
           {options.map((o) => (
-            <div class="sp-option">
+            <div class:list={['sp-option', { 'sp-option-soldout': o.soldOut }]}>
+              {o.soldOut && (
+                <span
+                  class="sp-soldout-ribbon"
+                  style={`--ribbon-fs:${Math.min(0.82, 10.4 / o.soldOut.length).toFixed(3)}rem`}
+                >
+                  {o.soldOut}
+                </span>
+              )}
               <div class="sp-opt-head">
                 <h3>{o.name}</h3>
                 <span class="sp-opt-price">{o.price}</span>
