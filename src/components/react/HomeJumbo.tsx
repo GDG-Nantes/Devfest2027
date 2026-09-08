@@ -16,6 +16,7 @@ const translations: Record<string, Record<string, string>> = {
     'come-back': 'Nous serons de retour pour une édition sportive',
     date: 'les 11 et 12 Mars 2027',
     become_partner: 'Devenir partenaire',
+    cfp: 'Devenir speaker',
     exceptional: 'Édition exceptionnelle',
     'thanks-gdg-android':
       "Merci au GDG Nantes Android pour le développement de l'application mobile !",
@@ -24,6 +25,7 @@ const translations: Record<string, Record<string, string>> = {
     'come-back': 'Devfest Nantes will be back for a sporty edition',
     date: 'on March 11th and 12th, 2027',
     become_partner: 'Become a partner',
+    cfp: 'Become speaker',
     exceptional: 'Exceptional edition',
     'thanks-gdg-android':
       'Thanks to GDG Nantes Android for developing the mobile app!',
@@ -73,6 +75,14 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 flexWrap: 'wrap',
               }}
             >
+              <a
+                href='https://conference-hall.io/devfest-nantes-2027'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='jumbo-btn'
+              >
+                📣 {t('cfp')}
+              </a>
               <a href={`/${locale}/be-a-partner`} className='jumbo-btn'>
                 {t('become_partner')}
               </a>

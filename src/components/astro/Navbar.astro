@@ -19,7 +19,9 @@ const flagSrc = targetLocale === 'fr' ? '/images/flags/fr.svg' : '/images/flags/
 
 const menuItems = MENU.map((item) => ({
   label: t(item.label + '.name', { defaultValue: item.label }),
-  link: `/${locale}${item.link === '/' ? '' : item.link}`,
+  link: item.link.startsWith('http')
+    ? item.link
+    : `/${locale}${item.link === '/' ? '' : item.link}`,
   isActive: currentPath === item.link || currentPath === item.link + '/',
 }));
 ---
