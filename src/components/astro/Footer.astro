@@ -75,6 +75,8 @@ const previousEditions: FooterLink[] = [
               rel="noopener noreferrer"
               aria-label={social.type}
               class="social-icon"
+              data-umami-event="social-link"
+              data-umami-event-network={social.type}
             >
               <Fragment set:html={getSocialIcon(social.type)} />
             </a>
@@ -83,7 +85,11 @@ const previousEditions: FooterLink[] = [
       </div>
 
       <div class="footer-item half">
-        <a href="mailto:bureau@gdgnantes.com" class="email-link">
+        <a
+          href="mailto:bureau@gdgnantes.com"
+          class="email-link"
+          data-umami-event="contact-email"
+        >
           <Fragment set:html={getUiSvgIcon('email')} /> bureau@gdgnantes.com
         </a>
       </div>
@@ -130,7 +136,13 @@ const previousEditions: FooterLink[] = [
       <div class="footer-item fourth">
         <h3 class="footer-title">Newsletter</h3>
         <p>{t('no-spam')}</p>
-        <a href="https://eepurl.com/c7X2V9" target="_blank" rel="noopener noreferrer" class="btn btn-contained">
+        <a
+          href="https://eepurl.com/c7X2V9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-contained"
+          data-umami-event="newsletter-signup"
+        >
           <Fragment set:html={getUiSvgIcon('email')} /> {t('news-button')}
         </a>
       </div>

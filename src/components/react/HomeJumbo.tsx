@@ -65,6 +65,9 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
               flexDirection: 'column',
               gap: '12px',
               alignItems: 'center',
+              boxSizing: 'border-box',
+              width: '100%',
+              padding: '0 16px',
             }}
           >
             <div
@@ -73,6 +76,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 gap: '12px',
                 justifyContent: 'center',
                 flexWrap: 'wrap',
+                width: '100%',
               }}
             >
               <a
@@ -80,6 +84,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='jumbo-btn'
+                data-umami-event='sponsor-interest'
               >
                 📣 {t('cfp')}
               </a>
@@ -89,6 +94,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
               <a
                 href='#exceptional-info'
                 className='jumbo-btn'
+                data-umami-event='exceptional-edition-details'
                 onClick={(e) => {
                   e.preventDefault();
                   document
@@ -100,13 +106,20 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
               </a>
             </div>
             <div
-              style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}
+              style={{
+                display: 'flex',
+                gap: '12px',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                width: '100%',
+              }}
             >
               <a
                 href='https://photos.app.goo.gl/H1EqkeCNkjjYMxCCA'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='jumbo-btn'
+                data-umami-event='photos-2025'
               >
                 <CameraIcon size={16} /> Photos 2025
               </a>
@@ -115,6 +128,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 target='_blank'
                 rel='noopener noreferrer'
                 className='jumbo-btn'
+                data-umami-event='videos-2025'
               >
                 <PlayIcon size={16} /> Videos 2025
               </a>
@@ -143,6 +157,8 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                   target='_blank'
                   rel='noopener noreferrer'
                   className='jumbo-btn'
+                  data-umami-event='mobile-app-download'
+                  data-umami-event-platform='ios'
                 >
                   <AppleIcon size={16} /> iOS
                 </a>
@@ -151,6 +167,8 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                   target='_blank'
                   rel='noopener noreferrer'
                   className='jumbo-btn'
+                  data-umami-event='mobile-app-download'
+                  data-umami-event-platform='android'
                 >
                   <AndroidIcon size={16} /> Android
                 </a>

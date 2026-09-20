@@ -25,15 +25,21 @@ handlers:
     static_files: index.html
     upload: index\.html
     secure: always
+    http_headers:
+      Content-Security-Policy: "frame-ancestors 'self' https://cloud.umami.is"
 
   # Serve directory-style HTML pages (e.g. /fr/team -> fr/team/index.html)
   - url: /(.+)/
     static_files: \1/index.html
     upload: (.+)/index\.html$
     secure: always
+    http_headers:
+      Content-Security-Policy: "frame-ancestors 'self' https://cloud.umami.is"
 
   # Serve directory-style HTML pages without trailing slash (e.g. /fr/team -> fr/team/index.html)
   - url: /(.+)
     static_files: \1/index.html
     upload: (.+)/index\.html$
     secure: always
+    http_headers:
+      Content-Security-Policy: "frame-ancestors 'self' https://cloud.umami.is"
