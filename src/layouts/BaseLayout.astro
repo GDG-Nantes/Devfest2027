@@ -9,6 +9,7 @@ import { getTranslation } from '@/i18n/i18n';
 import { jsonLd } from '@/jsonLd';
 import Navbar from '@/components/astro/Navbar.astro';
 import Footer from '@/components/astro/Footer.astro';
+import Analytics from '@/components/astro/Analytics.astro';
 
 interface Props {
   title?: string;
@@ -20,7 +21,6 @@ const { title = 'Devfest Nantes', description, locale } = Astro.props;
 const t = await getTranslation(locale);
 const siteDescription = description || t('site.description');
 const URLSite = 'https://devfest2027.gdgnantes.com';
-const isProduction = import.meta.env.PROD;
 ---
 
 <!doctype html>
@@ -37,13 +37,7 @@ const isProduction = import.meta.env.PROD;
     <meta name="twitter:site" content="@devfestnantes" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-    {isProduction && (
-      <script
-        async
-        src="https://cloud.umami.is/script.js"
-        data-website-id="3962f1f9-2780-4bb2-ad18-bf194b8a4708"
-      />
-    )}
+    <Analytics locale={locale} />
   </head>
   <body>
     <Navbar locale={locale} />

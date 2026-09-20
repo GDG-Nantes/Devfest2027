@@ -1,0 +1,133 @@
+---
+interface Props {
+  locale: string;
+}
+
+const { locale } = Astro.props;
+const isProduction = import.meta.env.PROD;
+const websiteId = '3962f1f9-2780-4bb2-ad18-bf194b8a4708';
+const domain = 'devfest2027.gdgnantes.com';
+---
+
+{
+  isProduction && (
+    <>
+      <script
+        is:inline
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id={websiteId}
+        data-domains={domain}
+        data-performance="true"
+        data-do-not-track="true"
+      ></script>
+      <script
+        is:inline
+        defer
+        src="https://cloud.umami.is/recorder.js"
+        data-website-id={websiteId}
+      ></script>
+      <script is:inline define:vars={{ locale }}>
+        (() => {
+          const track = (name, data) => {
+            window.umami?.track(name, data);
+          };
+
+          const getLabel = (element) =>
+            (
+              element.getAttribute('aria-label') ||
+              element.textContent ||
+              ''
+            )
+              .trim()
+              .replace(/\s+/g, ' ')
+              .slice(0, 100);
+
+          document.addEventListener('click', (event) => {
+            if (!(event.target instanceof Element)) {
+              return;
+            }
+
+            const element = event.target.closest('a, button');
+            if (!element || element.hasAttribute('data-umami-event')) {
+              return;
+            }
+
+            if (element instanceof HTMLButtonElement) {
+              track('button-click', {
+                label: getLabel(element),
+                locale,
+              });
+              return;
+            }
+
+            const href = element.getAttribute('href');
+            if (!href) {
+              return;
+            }
+
+            let type = 'internal';
+            let target = href;
+
+            if (href.startsWith('mailto:')) {
+              type = 'email';
+              target = 'email';
+            } else if (href.startsWith('tel:')) {
+              type = 'phone';
+              target = 'phone';
+            } else {
+              const url = new URL(href, window.location.href);
+              const isDownload =
+                element.hasAttribute('download') ||
+                /\.(?:csv|docx?|ics|jpe?g|pdf|png|pptx?|svg|webp|xlsx?|zip)$/i.test(
+                  url.pathname
+                );
+
+              if (isDownload) {
+                type = 'download';
+              } else if (url.origin !== window.location.origin) {
+                type = 'outbound';
+              } else if (url.hash && url.pathname === window.location.pathname) {
+                type = 'anchor';
+              }
+
+              target =
+                type === 'outbound'
+                  ? `${url.hostname}${url.pathname}`
+                  : url.pathname + (type === 'anchor' ? url.hash : '');
+            }
+
+            track('link-click', {
+              type,
+              target: target.slice(0, 500),
+              label: getLabel(element),
+              locale,
+            });
+          });
+
+          window.addEventListener('error', (event) => {
+            if (event.target !== window) {
+              track('client-error', {
+                type: 'resource',
+                locale,
+              });
+              return;
+            }
+
+            track('client-error', {
+              type: event.error?.name || 'Error',
+              locale,
+            });
+          });
+
+          window.addEventListener('unhandledrejection', (event) => {
+            track('client-error', {
+              type: event.reason?.name || 'UnhandledRejection',
+              locale,
+            });
+          });
+        })();
+      </script>
+    </>
+  )
+}

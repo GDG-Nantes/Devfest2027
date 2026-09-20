@@ -107,6 +107,7 @@ export default function InteractiveMap({
           target='_blank'
           rel='noopener noreferrer'
           className='btn btn-secondary'
+          data-umami-event='venue-directions'
         >
           Rue René Viviani, 44200 Nantes →
         </a>
