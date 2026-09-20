@@ -87,7 +87,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
                   marginLeft: '16px',
                 }}
               >
-                <a href={targetPath} style={{ textAlign: 'center' }}>
+                <a
+                  href={targetPath}
+                  style={{ textAlign: 'center' }}
+                  data-umami-event='language-switch'
+                  data-umami-event-locale={targetLocale}
+                >
                   <img
                     src={flagSrc}
                     alt={targetLocale}
