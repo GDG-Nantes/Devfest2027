@@ -22,9 +22,10 @@ jobs:
         run: |
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             # Tag => déploiement en production (promotion du trafic)
-            # Nom de version App Engine: [a-z0-9-]. On remplace les . par des -
-            TAG=$(echo "$GITHUB_REF" | cut -d / -f 3 | tr '.' '-')
-            echo "VERSION=${TAG}" >> $GITHUB_OUTPUT
+            # Nom de version App Engine: [a-z0-9-], 63 caractères maximum.
+            TAG_NAME="${GITHUB_REF#refs/tags/}"
+            VERSION="$(echo "$TAG_NAME" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9-]+/-/g; s/^-+//; s/-+$//; s/(.{1,63}).*/\1/; s/-+$//')"
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
             echo "PROMOTE=true" >> $GITHUB_OUTPUT
           else
             # Push hors tag => version temporaire par branche, sans promotion du trafic.
