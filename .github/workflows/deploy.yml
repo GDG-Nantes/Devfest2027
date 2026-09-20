@@ -20,7 +20,9 @@ jobs:
         id: get_version
         run: |
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            echo "VERSION=$(echo $GITHUB_REF | cut -d / -f 3)" >> $GITHUB_OUTPUT
+            TAG_NAME="${GITHUB_REF#refs/tags/}"
+            VERSION="$(echo "$TAG_NAME" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9-]+/-/g; s/^-+//; s/-+$//; s/(.{1,63}).*/\1/; s/-+$//')"
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
             echo "PROMOTE=true" >> $GITHUB_OUTPUT
           else
             echo "VERSION=vdev" >> $GITHUB_OUTPUT
