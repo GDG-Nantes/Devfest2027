@@ -65,6 +65,9 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
               flexDirection: 'column',
               gap: '12px',
               alignItems: 'center',
+              boxSizing: 'border-box',
+              width: '100%',
+              padding: '0 16px',
             }}
           >
             <div
@@ -73,6 +76,7 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
                 gap: '12px',
                 justifyContent: 'center',
                 flexWrap: 'wrap',
+                width: '100%',
               }}
             >
               <a
@@ -102,7 +106,13 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
               </a>
             </div>
             <div
-              style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}
+              style={{
+                display: 'flex',
+                gap: '12px',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                width: '100%',
+              }}
             >
               <a
                 href='https://photos.app.goo.gl/H1EqkeCNkjjYMxCCA'
