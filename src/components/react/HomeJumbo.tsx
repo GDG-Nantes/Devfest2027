@@ -4,6 +4,7 @@ import {
   PlayIcon,
   AppleIcon,
   AndroidIcon,
+  TicketIcon,
 } from '@/components/icons/FlatIcons';
 
 interface HomeJumboProps {
@@ -18,6 +19,7 @@ const translations: Record<string, Record<string, string>> = {
     become_partner: 'Devenir partenaire',
     cfp: 'Devenir speaker',
     exceptional: 'Édition exceptionnelle',
+    tickets: 'Billetterie : vendredi 16 oct. à 13h',
     'thanks-gdg-android':
       "Merci au GDG Nantes Android pour le développement de l'application mobile !",
   },
@@ -27,6 +29,7 @@ const translations: Record<string, Record<string, string>> = {
     become_partner: 'Become a partner',
     cfp: 'Become speaker',
     exceptional: 'Exceptional edition',
+    tickets: 'Tickets: Friday Oct. 16th, 1 PM',
     'thanks-gdg-android':
       'Thanks to GDG Nantes Android for developing the mobile app!',
   },
@@ -70,6 +73,19 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
               padding: '0 16px',
             }}
           >
+            <a
+              href='#tickets'
+              className='jumbo-btn jumbo-btn-tickets'
+              data-umami-event='tickets-jumbo'
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById('tickets')
+                  ?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              <TicketIcon size={20} /> {t('tickets')}
+            </a>
             <div
               style={{
                 display: 'flex',
@@ -194,6 +210,18 @@ const HomeJumbo: React.FC<HomeJumboProps> = ({ locale }) => {
         }
         .jumbo-btn:hover {
           opacity: 0.85;
+        }
+        .jumbo-btn-tickets {
+          max-width: 100%;
+          box-sizing: border-box;
+          padding: 12px 28px;
+          background-color: var(--tertiary, #f4d35e);
+          color: var(--primary, #0d1b2a);
+          font-family: var(--font-heading), 'Bebas Neue', sans-serif;
+          font-size: 1.5rem;
+          letter-spacing: 0.04em;
+          text-align: center;
+          box-shadow: 0 0 24px rgba(244, 211, 94, 0.35);
         }
         .modal-overlay {
           position: fixed;

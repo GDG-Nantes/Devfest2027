@@ -168,3 +168,29 @@ export const AndroidIcon: React.FC<IconProps> = ({
     <path d='M17.523 15.341c-.583 0-1.055.473-1.055 1.055 0 .583.473 1.055 1.055 1.055.583 0 1.056-.473 1.056-1.055 0-.583-.473-1.055-1.056-1.055zm-11.046 0c-.583 0-1.055.473-1.055 1.055 0 .583.473 1.055 1.055 1.055.583 0 1.055-.473 1.055-1.055 0-.583-.472-1.055-1.055-1.055zm11.405-6.02l1.953-3.382a.406.406 0 00-.148-.554.406.406 0 00-.554.148l-1.978 3.424a12.04 12.04 0 00-5.155-1.139c-1.849 0-3.583.392-5.155 1.139L4.867 5.533a.406.406 0 00-.554-.148.406.406 0 00-.148.554l1.953 3.382C2.695 11.473.337 15.303 0 19.691h24c-.337-4.388-2.695-8.218-6.118-10.37z' />
   </svg>
 );
+
+export const TicketIcon: React.FC<IconProps> = ({
+  size = 24,
+  color = 'currentColor',
+  style,
+  className,
+}) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width={size}
+    height={size}
+    viewBox='0 0 24 24'
+    fill='none'
+    stroke={color}
+    strokeWidth={2}
+    strokeLinecap='round'
+    strokeLinejoin='round'
+    style={style}
+    className={className}
+  >
+    <path d='M2 9a3 3 0 0 0 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 0 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z' />
+    <path d='M13 5v2' />
+    <path d='M13 17v2' />
+    <path d='M13 11v2' />
+  </svg>
+);

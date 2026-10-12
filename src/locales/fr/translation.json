@@ -34,21 +34,33 @@
         "our-values": "Découvrir nos valeurs"
       },
       "tickets": {
-        "name": "Tickets",
-        "description": "La vente des places se fera en 2 sessions, une le 6 juin, la seconde le 5 septembre. Les billets étudiants et demandeurs d'emplois sont partagés directement avec les écoles et les missions locales. Merci de nous contacter si votre établissement n'a pas été contacté.",
-        "2daysEarly": "Pass 2 jours",
-        "2days-1st": "Pass 2 jours",
+        "name": "Billetterie",
+        "sale-label": "Ouverture de la billetterie",
+        "sale-day": "Vendredi 16 octobre",
+        "sale-time": "13h00",
+        "description": "Les billets seront en vente sur Billetweb. Soyez prêts, les places partent vite !",
+        "countdown": {
+          "days": "jours",
+          "hours": "heures",
+          "minutes": "min",
+          "seconds": "sec"
+        },
+        "open": "La billetterie est ouverte !",
+        "cta": "Accéder à la billetterie",
+        "2days": "Pass 2 jours",
+        "2days-detail": "Jeudi & vendredi",
         "1day": "Pass 1 jour",
-        "reduced": "Tarif réduit",
-        "2days-2nd": "Pass 2 jours"
+        "1day-detail": "Jeudi ou vendredi",
+        "coming-soon": "Bientôt disponible",
+        "reduced-info": "Les billets étudiants et demandeurs d'emploi sont partagés directement avec les écoles et les missions locales. Contactez-nous si votre établissement n'a pas été contacté."
       },
       "speakers": {
         "title": "Les Speakers",
         "seeAll": "Voir tous les speakers"
       },
       "exceptional": {
-        "title": "\u00c9dition exceptionnelle",
-        "description": "Exceptionnellement, le DevFest Nantes se tiendra une seule fois sur la p\u00e9riode 2026-2027. En raison de travaux \u00e0 la Cit\u00e9 des Congr\u00e8s, l'\u00e9v\u00e9nement aura lieu \u00e0 la H Arena. On vous donne rendez-vous les 11 et 12 mars 2027 !"
+        "title": "Édition exceptionnelle",
+        "description": "Exceptionnellement, le DevFest Nantes se tiendra une seule fois sur la période 2026-2027. En raison de travaux à la Cité des Congrès, l'événement aura lieu à la H Arena. On vous donne rendez-vous les 11 et 12 mars 2027 !"
       },
       "photos": {
         "p1": "Quelques photos du DevFest Nantes 2025",
