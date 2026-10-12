@@ -35,12 +35,24 @@
       },
       "tickets": {
         "name": "Tickets",
-        "description": "The ticket sales will take place in two sessions, one on June 6th, and the second on September 5th. Student and job seeker tickets are distributed directly through schools and local employment agencies. Please contact us if your institution has not been reached.",
-        "2daysEarly": "Early Bird",
-        "2days-1st": "2 days ticket",
-        "1day": "1 day ticket",
-        "reduced": "Reduced price",
-        "2days-2nd": "2 days ticket"
+        "sale-label": "Ticket sales open",
+        "sale-day": "Friday, October 16th",
+        "sale-time": "1:00 PM",
+        "description": "Tickets will be sold on Billetweb. Be ready, seats go fast!",
+        "countdown": {
+          "days": "days",
+          "hours": "hours",
+          "minutes": "min",
+          "seconds": "sec"
+        },
+        "open": "Ticket sales are open!",
+        "cta": "Go to ticketing",
+        "2days": "2 days pass",
+        "2days-detail": "Thursday & Friday",
+        "1day": "1 day pass",
+        "1day-detail": "Thursday or Friday",
+        "coming-soon": "Coming soon",
+        "reduced-info": "Student and job seeker tickets are distributed directly through schools and local employment agencies. Please contact us if your institution has not been reached."
       },
       "speakers": {
         "title": "Speakers",
@@ -48,7 +60,7 @@
       },
       "exceptional": {
         "title": "Exceptional edition",
-        "description": "Exceptionally, DevFest Nantes will only take place once over the 2026-2027 period. Due to renovation works at the Cit\u00e9 des Congr\u00e8s, the event will be held at the H Arena. See you on March 11th and 12th, 2027!"
+        "description": "Exceptionally, DevFest Nantes will only take place once over the 2026-2027 period. Due to renovation works at the Cité des Congrès, the event will be held at the H Arena. See you on March 11th and 12th, 2027!"
       },
       "photos": {
         "p1": "Some pictures of the 2025 DevFest Nantes",
@@ -73,7 +85,7 @@
       "name": "Attending",
       "map": {
         "title": "The Venue",
-        "description": "Located in Nantes, the event takes place at the H Arena with more than 3000m\u00b2 of conference rooms, hands-on labs and networking space."
+        "description": "Located in Nantes, the event takes place at the H Arena with more than 3000m² of conference rooms, hands-on labs and networking space."
       }
     },
     "partners": {
@@ -177,7 +189,7 @@
     "media-kit": "Media Kit",
     "previous-editions": "Previous editions",
     "partners": "For Partners",
-    "organizers": "Organized with \u2764\ufe0f by GDG Nantes",
+    "organizers": "Organized with ❤️ by GDG Nantes",
     "no-spam": "No spam, only the latest news and updates!",
     "news-button": "Discover"
   }
