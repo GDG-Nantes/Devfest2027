@@ -35,18 +35,10 @@
       },
       "tickets": {
         "name": "Tickets",
-        "sale-label": "Ticket sales open",
-        "sale-day": "Friday, October 16th",
-        "sale-time": "1:00 PM",
-        "description": "Tickets will be sold on Billetweb. Be ready, seats go fast!",
-        "countdown": {
-          "days": "days",
-          "hours": "hours",
-          "minutes": "min",
-          "seconds": "sec"
-        },
-        "open": "Ticket sales are open!",
-        "cta": "Go to ticketing",
+        "sale-label": "First sale",
+        "sold-out": "Sold out",
+        "description": "Thank you for your enthusiasm: all tickets from the first sale are gone!",
+        "second-sale": "A second sale will take place soon, stay tuned!",
         "2days": "2 days pass",
         "2days-detail": "Thursday & Friday",
         "1day": "1 day pass",

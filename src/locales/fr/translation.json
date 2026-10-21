@@ -35,18 +35,10 @@
       },
       "tickets": {
         "name": "Billetterie",
-        "sale-label": "Ouverture de la billetterie",
-        "sale-day": "Vendredi 16 octobre",
-        "sale-time": "13h00",
-        "description": "Les billets seront en vente sur Billetweb. Soyez prêts, les places partent vite !",
-        "countdown": {
-          "days": "jours",
-          "hours": "heures",
-          "minutes": "min",
-          "seconds": "sec"
-        },
-        "open": "La billetterie est ouverte !",
-        "cta": "Accéder à la billetterie",
+        "sale-label": "Première vente",
+        "sold-out": "Complet",
+        "description": "Merci pour votre engouement : tous les billets de la première vente sont partis !",
+        "second-sale": "Une seconde vente aura lieu prochainement, restez connectés !",
         "2days": "Pass 2 jours",
         "2days-detail": "Jeudi & vendredi",
         "1day": "Pass 1 jour",
