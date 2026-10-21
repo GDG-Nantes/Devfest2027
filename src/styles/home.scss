@@ -238,8 +238,13 @@
     max-width: 100%;
   }
 
-  .ticket-price.coming-soon,
-  .ticket-price.sold-out {
+  .ticket-info .ticket-next-sale {
+    margin-top: 0.6rem;
+    color: var(--tertiary);
+    font-weight: bold;
+  }
+
+  .ticket-price.coming-soon {
     font-family: var(--font-heading), 'Bebas Neue', sans-serif;
     font-size: 1.8rem;
     font-weight: normal;
