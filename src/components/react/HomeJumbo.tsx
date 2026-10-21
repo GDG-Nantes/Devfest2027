@@ -19,7 +19,7 @@ const translations: Record<string, Record<string, string>> = {
     become_partner: 'Devenir partenaire',
     cfp: 'Devenir speaker',
     exceptional: 'Édition exceptionnelle',
-    tickets: 'Billetterie : vendredi 16 oct. à 13h',
+    tickets: 'Billetterie : 1ère vente complète',
     'thanks-gdg-android':
       "Merci au GDG Nantes Android pour le développement de l'application mobile !",
   },
@@ -29,7 +29,7 @@ const translations: Record<string, Record<string, string>> = {
     become_partner: 'Become a partner',
     cfp: 'Become speaker',
     exceptional: 'Exceptional edition',
-    tickets: 'Tickets: Friday Oct. 16th, 1 PM',
+    tickets: 'Tickets: first sale sold out',
     'thanks-gdg-android':
       'Thanks to GDG Nantes Android for developing the mobile app!',
   },

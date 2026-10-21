@@ -20,10 +20,6 @@ const tTickets = await getTranslation(locale, 'pages.home.tickets');
 const tPhotos = await getTranslation(locale, 'pages.home.photos');
 const tMap = await getTranslation(locale, 'pages.attending.map');
 
-// Ticketing
-const ticketingUrl = 'https://www.billetweb.fr/billet-devfest-nantes-2027';
-const ticketSaleOpening = '2026-10-16T13:00:00+02:00';
-
 // Photo album
 const photos = [
   { src: '/images/home/album/faucheuses.jpg', alt: '' },
@@ -45,56 +41,26 @@ const photos = [
   <div id="tickets" class="section full-width tickets-section">
     <h2>{tTickets('name')}</h2>
 
-    <div class="sale-banner" data-opening={ticketSaleOpening}>
+    <div class="sale-banner">
       <p class="sale-label">{tTickets('sale-label')}</p>
-      <div class="sale-date">
-        <span class="sale-chip">
-          <Fragment set:html={getUiSvgIcon('calendar')} />
-          {tTickets('sale-day')}
-        </span>
-        <span class="sale-chip">
-          <Fragment set:html={getUiSvgIcon('clock')} />
-          {tTickets('sale-time')}
-        </span>
-      </div>
-
-      <div class="countdown" aria-hidden="true">
-        <div class="countdown-item"><span data-unit="days">--</span><small>{tTickets('countdown.days')}</small></div>
-        <div class="countdown-item"><span data-unit="hours">--</span><small>{tTickets('countdown.hours')}</small></div>
-        <div class="countdown-item"><span data-unit="minutes">--</span><small>{tTickets('countdown.minutes')}</small></div>
-        <div class="countdown-item"><span data-unit="seconds">--</span><small>{tTickets('countdown.seconds')}</small></div>
-      </div>
-      <p class="sale-open">{tTickets('open')}</p>
-
+      <p class="sold-out-stamp">{tTickets('sold-out')}</p>
       <p class="sale-description">{tTickets('description')}</p>
-      <a
-        href={ticketingUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="sale-cta"
-        data-umami-event="ticketing"
-      >
-        <Fragment set:html={getUiSvgIcon('ticket')} />
-        {tTickets('cta')}
-      </a>
+      <p class="second-sale">
+        <Fragment set:html={getUiSvgIcon('calendar')} />
+        {tTickets('second-sale')}
+      </p>
     </div>
 
     <div class="tickets-grid">
-      <a
-        href={ticketingUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="ticket-wrapper"
-        data-umami-event="ticketing-2days"
-      >
-        <div class="ticket active">
+      <div class="ticket-wrapper">
+        <div class="ticket disabled">
           <div class="ticket-header">{tTickets('2days')}</div>
-          <div class="ticket-price">140 € <span class="ht">HT</span></div>
+          <div class="ticket-price sold-out">{tTickets('sold-out')}</div>
           <div class="ticket-info">
             <p>{tTickets('2days-detail')}</p>
           </div>
         </div>
-      </a>
+      </div>
       <div class="ticket-wrapper">
         <div class="ticket disabled">
           <div class="ticket-header">{tTickets('1day')}</div>
@@ -353,32 +319,3 @@ const photos = [
   }
   .btn-primary:hover { background-color: #1a2d42; }
 </style>
-
-<script>
-  const banner = document.querySelector<HTMLElement>('.sale-banner');
-  if (banner?.dataset.opening) {
-    const opening = new Date(banner.dataset.opening).getTime();
-    const units = {
-      days: banner.querySelector('[data-unit="days"]'),
-      hours: banner.querySelector('[data-unit="hours"]'),
-      minutes: banner.querySelector('[data-unit="minutes"]'),
-      seconds: banner.querySelector('[data-unit="seconds"]'),
-    };
-    const pad = (n: number) => String(n).padStart(2, '0');
-    const tick = () => {
-      const diff = opening - Date.now();
-      if (diff <= 0) {
-        banner.classList.add('is-open');
-        clearInterval(timer);
-        return;
-      }
-      const s = Math.floor(diff / 1000);
-      units.days!.textContent = pad(Math.floor(s / 86400));
-      units.hours!.textContent = pad(Math.floor((s % 86400) / 3600));
-      units.minutes!.textContent = pad(Math.floor((s % 3600) / 60));
-      units.seconds!.textContent = pad(s % 60);
-    };
-    const timer = setInterval(tick, 1000);
-    tick();
-  }
-</script>
