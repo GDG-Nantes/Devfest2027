@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="plan-sponsors proposition-batiment"
       viewBox="-15 10 1265 650" width="1300" height="668"
       font-family="Roboto, Arial, sans-serif" role="img" aria-labelledby="batiment-titre">
-      <title id="batiment-titre">DevFest Nantes 2027 — H Arena — espaces du bâtiment</title>
-      <desc>After Party à gauche, sponsors et repas sur le terrain, accueil et vestiaire à droite du terrain, conférences au sud-est. Prestige niveau 3, Geofit niveau 2, Neodif niveau 0. Parvis discret. Salon 500 omis.</desc>
+      <title id="batiment-titre">Plan de la H Arena</title>
+      <desc>After Party à gauche, sponsors et repas sur le terrain, accueil et vestiaire à droite du terrain, conférences au sud-est. Prestige niveau 3, Geofit niveau 2, Neodif niveau 0.</desc>
       <style>
         .proposition-batiment .p-compas { fill: none; stroke: #afbecd; stroke-width: .12; }
         .proposition-batiment .p-compas-pointe { fill: #afbecd; }
@@ -38,7 +38,6 @@
         </marker>
       </defs>
       <rect x="-15" y="10" width="1265" height="650" fill="#0d1b2a"/>
-      <text class="p-titre" x="0" y="44">DevFest Nantes 2027 · H Arena</text>
         <g id="parvis" aria-label="Parvis, contour discret">
           <path class="p-parvis" d="M 572 169 L 608 166 L 742 126 L 731 184 L 719 233 L 670 364 L 589 342 Z"/>
           <text class="p-discret" x="655" y="250">Parvis</text>
