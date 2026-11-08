@@ -79,6 +79,11 @@
       "map": {
         "title": "Le Lieu",
         "description": "Située à Nantes, La H Arena propose pour le DevFest Nantes plus de 3000m² de salles de conférences, codelabs et lieu de rencontre…"
+      },
+      "plan": {
+        "title": "Plan de la H Arena",
+        "description": "Les libellés du plan sont en français. Le Salon 500 n’est pas représenté.",
+        "image-alt": "Plan des espaces du DevFest Nantes 2027 à la H Arena."
       }
     },
     "partners": {
