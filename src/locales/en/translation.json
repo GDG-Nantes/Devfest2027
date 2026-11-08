@@ -79,6 +79,11 @@
       "map": {
         "title": "The Venue",
         "description": "Located in Nantes, the event takes place at the H Arena with more than 3000m² of conference rooms, hands-on labs and networking space."
+      },
+      "plan": {
+        "title": "H Arena floor plan",
+        "description": "Plan labels are in French. The Salon 500 is not shown.",
+        "image-alt": "Floor plan of the H Arena for DevFest Nantes 2027. Labels are in French."
       }
     },
     "partners": {

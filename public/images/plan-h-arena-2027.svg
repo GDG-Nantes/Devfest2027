@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="plan-sponsors proposition-batiment"
+      viewBox="-15 10 1265 650" width="1300" height="668"
+      font-family="Roboto, Arial, sans-serif" role="img" aria-labelledby="batiment-titre">
+      <title id="batiment-titre">DevFest Nantes 2027 — H Arena — espaces du bâtiment</title>
+      <desc>After Party à gauche, sponsors et repas sur le terrain, accueil et vestiaire à droite du terrain, conférences au sud-est. Prestige niveau 3, Geofit niveau 2, Neodif niveau 0. Parvis discret. Salon 500 omis.</desc>
+      <style>
+        .proposition-batiment .p-compas { fill: none; stroke: #afbecd; stroke-width: .12; }
+        .proposition-batiment .p-compas-pointe { fill: #afbecd; }
+        .proposition-batiment .p-compas-texte { fill: #afbecd; font-size: .85px; text-anchor: middle; dominant-baseline: central; }
+
+        .proposition-batiment .p-enveloppe { fill: #132639; stroke: #2b4a68; stroke-width: 1.6; stroke-linejoin: round; }
+        .proposition-batiment .p-gradins { fill: #1b3045; stroke: #36516a; stroke-width: .8; stroke-linejoin: round; }
+        .proposition-batiment .p-rangees { fill: none; stroke: #3b5873; stroke-width: .6; }
+        .proposition-batiment .p-zone-salle { fill-opacity: .9; stroke: #0d1b2a; stroke-width: .8; stroke-linejoin: round; }
+        .proposition-batiment .p-zone-sponsors { fill: #1a3046; stroke: #a9c6de; stroke-width: 2; }
+        .proposition-batiment .p-zone-bar { fill: #382c46; stroke: #d9bbdb; stroke-width: 2; stroke-linejoin: round; }
+        .proposition-batiment .p-zone-accueil { fill: #3f2636; stroke: #e999a1; stroke-width: 2; stroke-linejoin: round; }
+        .proposition-batiment .p-zone-conferences { fill: #39362a; stroke: #f4d35e; stroke-width: 2; stroke-linejoin: round; }
+        .proposition-batiment .p-parvis { fill: none; stroke: #4c6276; stroke-width: 1; stroke-dasharray: 5 4; stroke-linejoin: round; }
+        .proposition-batiment .p-titre { fill: #f2f5f8; font-size: 24px; font-weight: 700; }
+        .proposition-batiment .p-zone-titre { fill: #f2f5f8; font-size: 18px; font-weight: 700; text-anchor: middle; }
+        .proposition-batiment .p-zone-sous { fill: #afbecd; font-size: 13px; text-anchor: middle; }
+        .proposition-batiment .p-nom-salle { fill: #f2f5f8; font-size: 24px; font-weight: 700; }
+        .proposition-batiment .p-niveau-salle { font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .proposition-batiment .p-petit { fill: #afbecd; font-size: 12px; font-weight: 700; }
+        .proposition-batiment .p-discret { fill: #6f8498; font-size: 13px; text-anchor: middle; }
+        .proposition-batiment .p-liaison { fill: none; stroke: #73869a; stroke-width: 1.2; }
+        .proposition-batiment .p-flux { fill: none; stroke: #f4d35e; stroke-width: 2.2; stroke-linejoin: round; }
+        .proposition-batiment .p-flux-bar { fill: none; stroke: #d9bbdb; stroke-width: 2.2; stroke-linejoin: round; }
+
+      </style>
+      <defs>
+        <marker id="batiment-fleche" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 1 1 L 9 5 L 1 9 Z" fill="#f4d35e"/>
+        </marker>
+        <marker id="batiment-fleche-bar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M 1 1 L 9 5 L 1 9 Z" fill="#d9bbdb"/>
+        </marker>
+      </defs>
+      <rect x="-15" y="10" width="1265" height="650" fill="#0d1b2a"/>
+      <text class="p-titre" x="0" y="44">DevFest Nantes 2027 · H Arena</text>
+        <g id="parvis" aria-label="Parvis, contour discret">
+          <path class="p-parvis" d="M 572 169 L 608 166 L 742 126 L 731 184 L 719 233 L 670 364 L 589 342 Z"/>
+          <text class="p-discret" x="655" y="250">Parvis</text>
+        </g>
+        <g id="batiment-arena">
+          <path class="p-enveloppe" d="M 274 73 L 476 167 L 483 153 L 511 166 L 511 171 L 572 166 L 588 341 L 537 340 L 536 359
+    L 561 396 L 536 414 L 488 391 L 312 514 L 116 422 L 112 381 L 72 385 L 70 362 L 13 303 L 24 291 L 2 269
+    L 52 237 L 37 231 L 48 207 L 66 215 Z"/>
+          <g id="gradins" aria-label="Tribunes, en arrière-plan">
+            <clipPath id="batiment-coupe-gradins"><path d="M 163 214 L 209 183 H 384 L 426 213 L 415 246 H 185 Z"/><path d="M 148 249 H 172 V 385 H 148 Z"/><path d="M 422 246 H 453 V 348 H 422 Z"/><path d="M 172 395 H 412 V 418 L 374 445 H 203 L 169 425 Z"/></clipPath>
+            <path class="p-gradins" d="M 163 214 L 209 183 H 384 L 426 213 L 415 246 H 185 Z"/><path class="p-gradins" d="M 148 249 H 172 V 385 H 148 Z"/><path class="p-gradins" d="M 422 246 H 453 V 348 H 422 Z"/><path class="p-gradins" d="M 172 395 H 412 V 418 L 374 445 H 203 L 169 425 Z"/>
+            <path class="p-rangees" clip-path="url(#batiment-coupe-gradins)" d="M 150 190 H 440 M 150 197 H 440 M 150 204 H 440 M 150 211 H 440 M 150 218 H 440 M 150 225 H 440 M 150 232 H 440 M 150 239 H 440 M 154 249 V 385 M 160 249 V 385 M 166 249 V 385 M 428 246 V 348 M 434 246 V 348 M 440 246 V 348 M 446 246 V 348 M 160 402 H 420 M 160 409 H 420 M 160 416 H 420 M 160 423 H 420 M 160 430 H 420 M 160 437 H 420"/>
+          </g>
+        </g>
+        <g id="espace-after-party" aria-label="After Party, bar à l’ouest de l’arène">
+          <path class="p-zone-bar" d="M 48 207 L 96 229 L 112 381 L 72 385 L 70 362 L 13 303 L 2 269 Z"/>
+          <text class="p-zone-titre" x="62" y="296">After</text>
+          <text class="p-zone-titre" x="62" y="318">Party</text>
+          <text class="p-zone-sous" x="62" y="338">Bar</text>
+        </g>
+        <g id="espace-sponsors-repas" aria-label="Sponsors et repas sur le terrain">
+          <rect class="p-zone-sponsors" x="185" y="259" width="225" height="123"/>
+          <text class="p-zone-titre" x="297.5" y="319">Sponsors / repas</text>
+          <text class="p-zone-sous" x="297.5" y="341">Terrain · N0</text>
+        </g>
+        <g id="espace-accueil-vestiaire" aria-label="Accueil et vestiaire">
+          <path class="p-zone-accueil" d="M 475 192 L 557 187 L 567 292 L 534 296 L 534 339 L 510 340 L 509 371 L 487 364 L 484 304 L 454 304 L 453 224 Z"/>
+          <text class="p-zone-titre" x="510" y="246">Accueil</text>
+          <text class="p-zone-titre" x="510" y="268">Vestiaire</text>
+        </g>
+        <g id="espace-conferences" aria-label="Conférences, salles Prestige, Geofit et Neodif">
+          <path class="p-zone-conferences" d="M 560 395 L 635 431 L 644 531 L 538 606 L 447 563 L 440 480 Z"/>
+          <text class="p-zone-titre" x="542" y="506">Conférences</text>
+        </g>
+        <g id="flux-espaces" aria-label="Liaisons entre les espaces">
+          <path class="p-flux-bar" d="M 183 272 H 106" marker-end="url(#batiment-fleche-bar)"/>
+          <path class="p-flux" d="M 474 290 H 414" marker-end="url(#batiment-fleche)"/>
+          <path class="p-flux" d="M 412 354 H 462 L 503 432" marker-end="url(#batiment-fleche)"/>
+          <text class="p-petit" x="418" y="372">PMR</text>
+        </g>
+        <g id="salles" aria-label="Salles de conférence par niveau">
+          <path class="p-liaison" d="M 600 478 H 776"/>
+          <circle cx="600" cy="478" r="4" fill="#73869a"/>
+          <g id="salle-neodif" data-niveau="0">
+      <path d="M 784.2 486.1 L 811.2 544.3 L 811.2 568.9 L 784.2 510.7 Z M 811.2 544.3 L 911.3 560.7 L 911.3 585.3 L 811.2 568.9 Z M 911.3 560.7 L 1032.6 490.2 L 1032.6 514.8 L 911.3 585.3 Z" fill="#756e41" stroke="#f4d35e" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M 784.2 486.1 L 905.5 416.4 L 1005.6 432 L 1032.6 490.2 L 911.3 560.7 L 811.2 544.3 Z" fill="#344449" stroke="#f4d35e" stroke-width="2.4" stroke-linejoin="round"/>
+      <path class="p-zone-salle" d="M 849.8 449.2 L 924.4 461.5 L 916.2 466.4 L 950.6 537.8 L 911.3 560.7 L 811.2 544.3 L 784.2 486.9 Z" fill="#f4d35e"/>
+      <circle cx="1052" cy="482" r="3.5" fill="none" stroke="#f4d35e" stroke-width="1.4"/>
+      <path d="M 1056 482 H 1100" stroke="#f4d35e" stroke-width="1.4"/>
+      <text class="p-nom-salle" x="1114" y="484">Neodif</text>
+      <text class="p-niveau-salle" x="1115" y="506" fill="#f4d35e">Niveau 0</text>
+    </g><g id="salle-geofit" data-niveau="2">
+      <path d="M 784.2 395.9 L 811.2 454.1 L 811.2 478.7 L 784.2 420.5 Z M 811.2 454.1 L 911.3 470.5 L 911.3 495.1 L 811.2 478.7 Z M 911.3 470.5 L 1032.6 400 L 1032.6 424.6 L 911.3 495.1 Z" fill="#5f385b" stroke="#c45b97" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M 784.2 395.9 L 905.5 326.2 L 1005.6 341.8 L 1032.6 400 L 911.3 470.5 L 811.2 454.1 Z" fill="#2e3550" stroke="#c45b97" stroke-width="2.4" stroke-linejoin="round"/>
+      <path class="p-zone-salle" d="M 839.9 363.9 L 879.3 370.5 L 931.8 420.5 L 911.3 470.5 L 811.2 454.1 L 784.2 396.7 Z" fill="#c45b97"/>
+      <circle cx="1052" cy="391.8" r="3.5" fill="none" stroke="#c45b97" stroke-width="1.4"/>
+      <path d="M 1056 391.8 H 1100" stroke="#c45b97" stroke-width="1.4"/>
+      <text class="p-nom-salle" x="1114" y="393.8">Geofit</text>
+      <text class="p-niveau-salle" x="1115" y="415.8" fill="#c45b97">Niveau 2</text>
+    </g><g id="salle-prestige" data-niveau="3">
+      <path d="M 784.2 305.7 L 811.2 363.9 L 811.2 388.5 L 784.2 330.3 Z M 811.2 363.9 L 911.3 380.3 L 911.3 404.9 L 811.2 388.5 Z M 911.3 380.3 L 1032.6 309.8 L 1032.6 334.4 L 911.3 404.9 Z" fill="#625b47" stroke="#c9a96a" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M 784.2 305.7 L 905.5 236 L 1005.6 251.6 L 1032.6 309.8 L 911.3 380.3 L 811.2 363.9 Z" fill="#2f3f4a" stroke="#c9a96a" stroke-width="2.4" stroke-linejoin="round"/>
+      <path class="p-zone-salle" d="M 879.3 318.8 L 964.6 269.6 L 1016.2 275.4 L 1032.6 309.8 L 995.7 331.1 L 931.8 368 Z" fill="#c9a96a"/>
+      <circle cx="1052" cy="301.6" r="3.5" fill="none" stroke="#c9a96a" stroke-width="1.4"/>
+      <path d="M 1056 301.6 H 1100" stroke="#c9a96a" stroke-width="1.4"/>
+      <text class="p-nom-salle" x="1114" y="303.6">Prestige</text>
+      <text class="p-niveau-salle" x="1115" y="325.6" fill="#c9a96a">Niveau 3</text>
+    </g>
+        </g>
+        <g id="reperes-cardinaux" transform="translate(1195 95) scale(11)"
+      aria-label="Nord, Est, Sud, Ouest">
+      <path class="p-compas" d="M 0 2 V -2 M -2 0 H 2"/>
+      <path class="p-compas-pointe" d="M 0 -2.7 L -.45 -1.7 L .45 -1.7 Z M 2.7 0 L 1.7 -.45 L 1.7 .45 Z M 0 2.7 L -.45 1.7 L .45 1.7 Z M -2.7 0 L -1.7 -.45 L -1.7 .45 Z"/>
+      <text class="p-compas-texte" x="0" y="-3.5">N</text>
+      <text class="p-compas-texte" x="3.5" y="0">E</text>
+      <text class="p-compas-texte" x="0" y="3.5">S</text>
+      <text class="p-compas-texte" x="-3.5" y="0">O</text>
+    </g>
+    </svg>
